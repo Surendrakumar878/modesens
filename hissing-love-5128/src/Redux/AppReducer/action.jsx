@@ -1,35 +1,42 @@
 import * as types from './actionTypes'
 import axios from 'axios'
 
-export const getbookRequest = () => {
+// -------------------------------for product description page dont change------------------------------------
+export const getproductdetreq = () => {
     return {
-        type: types.GET_BOOk_REQUEST
+        type: types.GET_PRODUCT_DETAILS_REQ
     }
 }
 
-export const getbookSuccess = (payload) => {
+export const getproddetailsSuccess = (data) => {
     return {
-        type: types.GET_BOOk_SUCCESS,
-        payload
+        type: types.GET_PRODUCT_DETAILS_SUCCESS,
+        payload:data
     }
 }
 
-export const getbookFailure = () => {
+export const getproddetailsFailure = () => {
     return {
-        type: types.GET_BOOk_FAILURE
+        type: types.GET_PRODUCT_DETAILS_ERROR
     }
 }
 
-export const getbook = (queryParams) => (dispatch) => {
-    dispatch(getbookRequest());
-    return axios.get("https://modesens-mocker-api.onrender.com/modesensdata", queryParams)
+export const getproddetails = (id) => (dispatch) => {
+    dispatch(getproductdetreq());
+    return axios.get(`https://modesens-mocker-api.onrender.com/modesensdata?id=${id}`)
         .then((res) => {
-            dispatch(getbookSuccess(res.data))
+            dispatch(getproddetailsSuccess(res.data))
         })
         .catch((err) => {
-            dispatch(getbookFailure())
+            dispatch(getproddetailsFailure())
         })
 }
+
+export {getproddetails};
+
+// -------------------------------for product description page dont change------------------------------------
+
+
 export const edit=(payload)=>(dispatch) => {
     axios.patch(`https://modesens-mocker-api.onrender.com/modesensdata/${payload.id}`,{book_name:payload.edit})
           .then((res) => {

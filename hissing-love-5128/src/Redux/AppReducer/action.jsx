@@ -1,37 +1,21 @@
 import * as types from './actionTypes'
 import axios from 'axios'
 
-export const getbookRequest = () => {
+export const getproductdetreq = () => {
     return {
-        type: types.GET_DATA_REQUEST
+
     }
 }
 
-export const getbookSuccess = (payload) => {
+export const getproddetailsSuccess = (data) => {
     return {
-        type: types.GET_DATA_SUCCESS,
-        payload
+
     }
 }
 
-export const getbookFailure = () => {
+export const getproddetailsFailure = () => {
     return {
-        type: types.GET_DATA_FAILURE
-    }
-}
 
- const getdata = () => (dispatch) => {
-    dispatch(getbookRequest());
-    return axios.get("https://modesens-mocker-api.onrender.com/modesensdata")
-        .then((res) => {
-            console.log(res.data)
-            dispatch(getbookSuccess(res.data))
-        })
-        .catch((err) => {
-            // dispatch(getbookFailure())
-        })
-}
-const edit=(payload)=>(dispatch) => {
     axios.patch(`https://modesens-mocker-api.onrender.com/modesensdata/${payload.id}`,{book_name:payload.edit})
           .then((res) => {
             console.log(res.data)

@@ -2,18 +2,19 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import Data from "./Data";
-// import { AuthContext } from "../../Context/AuthContext";
-// import SignupPopup from "../../PopUp/SignUpPopUp";
+import CartData from "./CartData";
+
 
 function Navbar() {
   const [menu, setMenu] = useState("");
-  // const { isAuth, setIsAuth } = useContext(AuthContext);
+  const [logmen,setLogmen]=useState("")
+  
   return (
     <div>
       <div className="navbar">
         <div className="logo">
           <img
-            src="https://cdn.modesens.com/static/img/20190228newlogo-black.svg"
+            src="https://i.postimg.cc/7hFL7SGx/1670760238004-removebg-preview.jpg"
             alt=""
           ></img>
         </div>
@@ -159,23 +160,40 @@ function Navbar() {
             WHY MODESENS
           </Link>
         </div>
-        <div className="rightIcons" style={{display: "flex"}}>
+        <div className="rightIcons">
           <div>
             <img
               src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/20px-Flag_of_India.svg.png"
               alt=""
             ></img>
-            </div>
-            <div>
-
+          </div>
+         
+          <div>
             <img
               src="https://cdn.modesens.com/static/img/20200612shopping_bag2.svg"
               alt=""
             />
           </div>
+          <div  >
+            <span
+            onMouseEnter={()=>{
+              let b="userlogin"
+              setLogmen(<CartData z={b} />)
+            }}
+            onMouseLeave={()=>{
+              setLogmen("")
+            }}>
+            <img 
+              src="https://cdn.modesens.com/static/img/20200612account_b2.svg"
+              alt=""
+              />{logmen}
+              </span>
+          </div>
+          
+          
           <div className="search">
             <img
-              style={{ width: "100%" }}
+              style={{ width: "50%%" }}
               src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-512.png"
               alt=""
             />
@@ -183,9 +201,9 @@ function Navbar() {
           </div>
           <div
             style={{ marginTop: "-10px", cursor: "pointer" }}
-           
-          >
             
+          >
+           
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import * as types from './actionTypes'
 
 const initialState = {
     data: [],
+    men:[],
     isLoading: false,
     isError: false
 }
@@ -23,6 +24,22 @@ export const reducer = (state = initialState, { type, payload }) => {
         case types.GET_BOOk_FAILURE: {
             return {
                 ...state, isLoading: false, isError: true, books: []
+            }
+        }
+
+        case types.GET_MENS_REQUEST: {
+            return {
+                ...state, isLoading: true
+            }
+        }
+        case types.GET_MENS_SUCCESS: {
+            return {
+                ...state, isLoading: false, men:payload
+            }
+        }
+        case types.GET_MENS_FAILURE: {
+            return {
+                ...state,  isError: true
             }
         }
         default: return state

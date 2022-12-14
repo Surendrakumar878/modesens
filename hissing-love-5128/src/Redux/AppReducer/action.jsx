@@ -19,7 +19,24 @@ export const getbookFailure = () => {
         type: types.GET_BOOk_FAILURE
     }
 }
+export const getmensRequest = () => {
+    return {
+        type: types.GET_MENS_REQUEST
+    }
+}
 
+export const getmensSuccess =(data)=> {
+    return {
+        type: types.GET_MENS_SUCCESS,
+        payload:data
+    }
+}
+
+export const getmensFailure = () => {
+    return {
+        type: types.GET_MENS_FAILURE
+    }
+}
 export const getbook = (queryParams) => (dispatch) => {
     dispatch(getbookRequest());
     return axios.get("https://modesens-mocker-api.onrender.com/modesensdata", queryParams)
@@ -30,6 +47,20 @@ export const getbook = (queryParams) => (dispatch) => {
             dispatch(getbookFailure())
         })
 }
+
+
+export const getmensData = () => (dispatch) => {
+    dispatch(getmensRequest());
+    return axios.get("https://modesens-mocker-api.onrender.com/modesensdata")
+        .then((res) => {
+            // console.log(res.data)
+            dispatch(getmensSuccess(res.data))
+        })
+        .catch((err) => {
+            dispatch(getmensFailure())
+        })
+}
+
 export const edit=(payload)=>(dispatch) => {
     axios.patch(`https://modesens-mocker-api.onrender.com/modesensdata/${payload.id}`,{book_name:payload.edit})
           .then((res) => {

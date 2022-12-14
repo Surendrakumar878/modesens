@@ -7,9 +7,6 @@ import Products from './page/Products';
 function App() {
   return (
     <div className="App">
-      {/* <Navbar />
-    <MainRoutes/> */}
-    <Products/>
 
     </div>
   );

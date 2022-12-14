@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Mens from '../components/productdist/Mens'
+import { Womens } from '../components/productdist/Womens'
 import Admin from './AdminPenal/Admin'
 // import { Admin } from './AdminPenal/Admin'
 import Admin_Login from './AdminPenal/Admin_Login'
@@ -15,6 +16,7 @@ export const MainRoutes = () => {
         <Route path='/admin' element={<Admin/>} />
         <Route path="/details/:id" element={<ProductDetails/>}></Route>
         <Route path='/mens' element={<Mens/>} />
+        <Route path='/womens' element={<Womens/>} />
         
       </Routes>
   )

@@ -11,10 +11,7 @@ function App() {
     setTheme((current)=>(current === "light"? "dark" :"light"))
   }
   return (
-    <ThemeContext.Provider value={{theme,toggleTheme}}>
 
-    <div className="App" id={theme}>
-      <Navbar toggleTheme={toggleTheme}/>
     <MainRoutes/>
     </div>
     </ThemeContext.Provider>

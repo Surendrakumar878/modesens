@@ -7,13 +7,13 @@ import { Link } from "react-router-dom";
 import {
   deleteDataFromCart,
   getdata,
+  getmensdata,
   update,
 } from "../../Redux/AppReducer/action";
 import styles from "./AdminPage.module.css";
 const Admin = () => {
   var name = JSON.parse(localStorage.getItem("username"));
   const mensData = useSelector((store) => {
-    console.log(store);
     return store.AppReducer.data;
   });
   const dispatch = useDispatch();
@@ -40,7 +40,7 @@ const Admin = () => {
 
   // console.log("product",product)
   useEffect(() => {
-    dispatch(getdata());
+    dispatch(getdata())
   }, []);
 
   console.log(mensData);

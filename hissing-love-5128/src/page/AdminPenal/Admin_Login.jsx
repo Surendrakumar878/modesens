@@ -1,18 +1,9 @@
-// import React from 'react'
-
-// export const Admin_Login = () => {
-//   return (
-//     <div>Admin_Login</div>
-//   )
-// }
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { login } from "../Redux/AuthReducer/action";
-// import { useDispatch } from "react-redux";
-// import axios from "axios";
+
 import {
     Box, Button,Flex,FormControl,Heading,Hide,Input,InputGroup,InputRightElement,Show,Stack,} from "@chakra-ui/react";
-//  function AdminLogin() {
+
     export default function Admin_Login() {
      
        
@@ -29,7 +20,7 @@ import {
             
               if (userId === "travel@gmail.com" && userpassword === "travelmojo") {
                 alert("successfull");
-                 navigate("/admin")
+                 navigate("/a")
                 localStorage.setItem("username", JSON.stringify(name));
                 // window.location.href = "index.html"
               } else {

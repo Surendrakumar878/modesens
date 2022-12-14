@@ -10,7 +10,6 @@ import { womenViewrsLiked } from "../../components/Navbar/productdetails/womensV
 import ViewersAlsoLikedSection from "../../components/Navbar/productdetails/ViewersAlsoLikedSection";
 import { mensViewerLiked } from "../../components/Navbar/productdetails/mensViewerLiked";
 import { Box } from "@chakra-ui/react";
-import { StarIcon } from "@chakra-ui/icons";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { ImageMagnifier } from "../../components/Navbar/productdetails/ImageMagnifier";

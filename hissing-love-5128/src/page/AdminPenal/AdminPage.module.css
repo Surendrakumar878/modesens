@@ -1,7 +1,9 @@
 #admin_header_main_div{
-    background-color:#F9F5EB;
+    /* background-color:#F9F5EB; */
      height: 100vh;
      width:100%;
+     /* padding: 20px; */
+     /* margin-left: 50px; */
     }
     #admin_header{
       display: flex;
@@ -130,5 +132,9 @@
             width: 100px;
             font-weight: 600;
             
+        }
+        #admin_header_main_div{
+            width:160%;
+            padding: 20px;
         }
     }

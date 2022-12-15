@@ -6,6 +6,7 @@ import Admin from './AdminPenal/Admin'
 // import { Admin } from './AdminPenal/Admin'
 import Admin_Login from './AdminPenal/Admin_Login'
 import Edit from './AdminPenal/Edit'
+import { Cart } from './cart/Cart'
 import { HomePage } from './HomePage'
 import ProductDetails from './ProductDetails/ProductDetails'
 import { SearchBar } from './Searchbar/SearchBar'
@@ -21,6 +22,7 @@ export const MainRoutes = () => {
         <Route path='/mens' element={<Mens/>} />
         <Route path='/womens' element={<Womens/>} />
         <Route path='/search' element={<SearchBar/>} />
+        <Route path='/cart' element={<Cart/>} />
         
       </Routes>
   )

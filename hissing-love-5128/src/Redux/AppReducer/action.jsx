@@ -1,75 +1,82 @@
 
   import * as types from './actionTypes'
   import axios from 'axios'
+
   
-  export const getbookRequest = () => {
+  export const getRequest = () => {
       return {
           type: types.GET_DATA_REQUEST
       }
   }
   
-  export const getbookSuccess = (payload) => {
+  export const getSuccess = (payload) => {
       return {
           type: types.GET_DATA_SUCCESS,
           payload
       }
   }
   
-  export const getbookFailure = () => {
+  export const getFailure = () => {
       return {
           type: types.GET_DATA_FAILURE
       }
   }
   
-   const getdata = () => (dispatch) => {
-      dispatch(getbookRequest());
-      return axios.get("https://modesens-mocker-api.onrender.com/modesensdata")
+   const getdata = (queryParams) => (dispatch) => {
+      dispatch(getRequest());
+      return axios.get("https://modesens-mocker-api.onrender.com/modesensdata",queryParams)
           .then((res) => {
-              console.log(res.data)
-              dispatch(getbookSuccess(res.data))
+              // console.log(res.data)
+              dispatch(getSuccess(res.data))
           })
           .catch((err) => {
-              // dispatch(getbookFailure())
+              // dispatch(getFailure())
           })
   }
   const getmensdata = () => (dispatch) => {
-    dispatch(getbookRequest());
+    dispatch(getRequest());
     return axios.get(" https://modesens-mocker-api.onrender.com/modesensdata?category=mens")
         .then((res) => {
             console.log(res.data)
-            dispatch(getbookSuccess(res.data))
+            dispatch(getSuccess(res.data))
         })
         .catch((err) => {
-            // dispatch(getbookFailure())
+            // dispatch(getFailure())
         })
 }
 const getwomensdata = () => (dispatch) => {
-    dispatch(getbookRequest());
+    dispatch(getRequest());
     return axios.get(" https://modesens-mocker-api.onrender.com/modesensdata?category=womens")
         .then((res) => {
-            console.log(res.data)
-            dispatch(getbookSuccess(res.data))
+            // console.log(res.data)
+            dispatch(getSuccess(res.data))
         })
         .catch((err) => {
-            // dispatch(getbookFailure())
+            // dispatch(getFailure())
         })
 }
-  const edit=(payload)=>(dispatch) => {
-      axios.patch(`https://modesens-mocker-api.onrender.com/modesensdata/${payload.id}`,{book_name:payload.edit})
+
+  const edit=(id,payload)=>(dispatch) => {
+    // const navigate = useNavigate();
+      return axios.patch(`https://modesens-mocker-api.onrender.com/modesensdata/${id}`,payload)
             .then((res) => {
-              console.log(res.data)
-              dispatch(getbookSuccess(res.data))
-                // dispatch(getbookSuccess(res.data))
-              alert("edit") 
+
+              // console.log(res.data)
+              
+                // dispatch(getSuccess(res.data))
+              // alert("edit") 
+              // navigate("/admin")
             })
             .catch((err) => {
-                // dispatch(getbookFailure())
+                // dispatch(getFailure())
             })
     
     }
     const deleteDataFromCart = (queryParams) => (dispatch) =>  {
       // console.log(id)
-      return axios.delete(`https://modesens-mocker-api.onrender.com/modesensdata/${queryParams}`);
+      return axios.delete(`https://modesens-mocker-api.onrender.com/modesensdata/${queryParams}`).then(()=>{
+        alert("delete data successfully");
+      })
     };
     
     const update =  (queryParams) => (dispatch) => {
@@ -82,7 +89,7 @@ const getwomensdata = () => (dispatch) => {
     const addNewData =  (queryParams) => (dispatch) => {
      
       return axios
-      .post(`https://modesens-mocker-api.onrender.com/modesensdata/${queryParams}`)
+      .post(`https://modesens-mocker-api.onrender.com/modesensdata`,queryParams)
       .then((res) => {
         // setProduct(res.data)
        

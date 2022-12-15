@@ -5,9 +5,6 @@ import {
     Box, Button,Flex,FormControl,Heading,Hide,Input,InputGroup,InputRightElement,Show,Stack,} from "@chakra-ui/react";
 
     export default function Admin_Login() {
-     
-       
-      
         const [name, setName] = useState("");
         const [userId, setUserId] = useState("");
         const [userpassword, setUserpassword] = useState("");
@@ -18,20 +15,27 @@ import {
             e.preventDefault();
            
             
-              if (userId === "travel@gmail.com" && userpassword === "travelmojo") {
+              if (userId === "cool@gmail.com" && userpassword === "cool") {
                 alert("successfull");
-                 navigate("/a")
+                 navigate("/admin")
+                setName("")
+                setUserId("")
+                setUserpassword("")
                 localStorage.setItem("username", JSON.stringify(name));
+
                 // window.location.href = "index.html"
               } else {
                 alert("user dose not exist");
+                setName("")
+                setUserId("")
+                setUserpassword("")
               }
             }
           
           
   return (
-    <Box align="center" bg={"white"}  >
-    <Stack align="center" w="50%" paddingBottom="300px" p="5%" m="5%"  spacing="120px" bg={"#fff8de"}>
+    <Box  bg={"white"} align="center" w={{lg:"50%",md:"50%",sm:"100%"}} pl={{lg:"",sm:"100px"}} m="5%"  spacing="120px"   >
+    <Stack >
     <Heading> Log in to your Admin Account</Heading>
     <form w={{ lg: '100%', sm: '50%', md: '75%' }}  onSubmit={handleSubmitU}>
     <Input

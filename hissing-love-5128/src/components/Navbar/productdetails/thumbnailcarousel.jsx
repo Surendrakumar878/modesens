@@ -90,7 +90,7 @@ function ThumbnailCarousel() {
             <img
             onClick={sharetosocial}
               src="https://cdn.modesens.com/static/img/20210908share.svg"
-              style={{ width: "25px", height: "25px",zIndex:"1111" }}
+              style={{ width: "25px", height: "25px",zIndex:"11" }}
               alt=""
             />
           </div>
@@ -149,7 +149,7 @@ function ThumbnailCarousel() {
             </svg>
             <img
               src="https://cdn.modesens.com/static/img/20210908share.svg"
-              style={{ width: "25px", height: "25px",zIndex:"1111" }}
+              style={{ width: "25px", height: "25px",zIndex:"11" }}
               alt=""
             />
           </div>

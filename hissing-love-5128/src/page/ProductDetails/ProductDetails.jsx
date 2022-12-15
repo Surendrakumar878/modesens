@@ -14,10 +14,12 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { ImageMagnifier } from "../../components/Navbar/productdetails/ImageMagnifier";
 import swal from "sweetalert";
+import LoginSignupModal from "../../components/LoginSignup/LoginSignupModal";
 
 const ProductDetails = () => {
   const id = useParams();
   const dispatch = useDispatch();
+  const [modalShow, setModalShow] = React.useState(false);
 
   console.log(id);
 
@@ -27,6 +29,20 @@ const ProductDetails = () => {
 
   return (
     <section className="proddetails_section">
+      <button onClick={() => setModalShow(true)}>
+        login-signup
+      </button>
+
+{/* --------------------------------loginsignupmodal------------------------------------------ */}
+
+<LoginSignupModal  show={modalShow}
+        onHide={() => setModalShow(false)}/>
+
+
+
+{/* --------------------------------loginsignupmodal------------------------------------------ */}
+
+
       <div className="breadcrumbs_proddesc">
         <Link to="/"> Coolmart/</Link> <Link to={`/details/${id}`}>Cotton Blend Parka In</Link>
       </div>
@@ -77,11 +93,11 @@ const ProductDetails = () => {
       <div className="title_prod_desc">Shop With ModeSens Concierge</div>
 
       <div className="Shop_with_concierge">
-        <div>
+        <div className="Shop_with_concierge_info">
           ModeSens Concierge helps you shop 500+ stores in one place. A premium
           benefit exclusively reserved for Silver and above members. Learn more
         </div>
-        <div>
+        <div className="Shop_with_concierge_button">
           <button>SELECT SIZE</button>
           <button
             style={{ background: "#1c1c1c", border: "none", color: "#fff" }}
@@ -133,6 +149,7 @@ const ProductDetails = () => {
             />
           </div>
           <div
+          className="compare_stores_div_title_price"
             style={{
               display: "flex",
               flexDirection: "column",
@@ -203,6 +220,7 @@ const ProductDetails = () => {
             />
           </div>
           <div
+          className="compare_stores_div_title_price"
             style={{
               display: "flex",
               flexDirection: "column",

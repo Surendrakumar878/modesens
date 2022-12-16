@@ -1,9 +1,10 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 
 function ViewerLikedCard({ el }) {
   return (
-    <Card
+    <Card key={el.id}
       style={{
         border: "none",
         width: "281px",

@@ -217,7 +217,7 @@ function LoginSignupModal(props) {
             title: "Logged In!",
             text: "Congratulations! Loggied in Successfully!",
             icon: "success",
-          });
+          });setLoginLoading(false)
         } else {
           swal({
             title: "Incorrect Email or Password!",

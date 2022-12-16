@@ -27,6 +27,15 @@ export const reducer = (state = initialState, action) => {
                 ...state, isAuthLoading: false, isAuthError: true
             }
         }
+        case types.USER_LOGOUT:{
+            return {
+                    isAuth: false,
+                    token: payload,
+                    isAuthLoading: false,
+                    isAuthError: false
+                
+            }
+        }
         default: return state
     }
 }

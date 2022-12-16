@@ -32,6 +32,11 @@ export const login = (payload) => (dispatch) => {
             dispatch(postLoginFailure())
         })
 }
+export const logOutUser =(payload)=>{
+return {
+    type:types.USER_LOGOUT,payload: payload
+}
+}
 
 
 

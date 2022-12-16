@@ -1,20 +1,43 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import Data from "./Data";
 import LoginSignupModal from "../LoginSignup/LoginSignupModal";
 // import CartData from "./CartData";
 import { useSelector } from "react-redux";
-
+import swal from "sweetalert";
 import { store } from '../../Redux/store';
+import { useDispatch } from "react-redux";
+import { logOutUser } from "../../Redux/AuthReducer/action";
+import { SearchBar } from "../../page/Searchbar/SearchBar";
 
 function Navbar() {
   const [modalShow, setModalShow] = React.useState(false);
   const token=useSelector((store)=>store.AuthReducer.token);
   console.log("token",token)
+  const dispatch=useDispatch()
   const [menu, setMenu] = useState("");
-  
-  
+  useEffect(()=>{
+
+  },[token])
+  function handleLogOut (){
+    return (swal({
+      title: "Are you sure?",
+      text: "You really want to log out?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Log out successfull", {
+          icon: "success",
+        });
+      } else {
+      
+      }
+    }));
+  }
   return (
     <div>
       <div className="navbar">
@@ -194,13 +217,32 @@ function Navbar() {
               alt=""
             />
           </div>
+          
           <div >
-            <span>
+            <span >{token.length> 0 ? <img  onClick={()=>{
+              swal({
+                title: "Are you sure?",
+                text: "You really want to log out?",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+              })
+              .then((willDelete) => {
+                if (willDelete) {dispatch(logOutUser(""))
+                  swal("Log out successfull", {
+                    icon: "success",
+                  });
+                } else {
+                
+                }
+              })
+            }} src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9CAMAAAC4XpwXAAAAY1BMVEX///8AAADX19chISHf399paWmQkJD8/PzPz88wMDCbm5uurq7y8vLs7OwaGhqLi4uCgoLl5eVubm51dXW5ubk3NzdYWFhSUlLAwMA+Pj4ODg57e3teXl6mpqZjY2MpKSlHR0em6miQAAAD1UlEQVRoge2b23aqMBBADSDBECRcFAQR/v8rS9sERG4ZOrHr9LDf7OpySy6TmYkeDjs6UMfLcy+ib/dSL7wRRZExi77tM9CoJK+cWPAWP7XuI/cXoWPcTwMx7W45M25Yntaz8pa7Z/LxuVssydvp983pg2TZ3VIYG/0gXpW3GNLz8T6bfPrKxODTtTlX1KkBvX/RkxOSWehy66orJ0QEyHIe6ssJwR77/Lbu7Lk6qHI+H18nwQ06eQOz3yNMO4PJCfEQ5ZFWlHsGM+KlJ6i9QRz6CionBC/iwDb7N3hb3gFPO+bEexncnqBFW1ig++aKtuxy7eOtB2/RwzccIbc/Yv/dkfeAZ8wnD7Q1P1c7LSHQ9nugl80OQMxswQcs6hHrn6HyGjG3gofaGDGtpeBDLsdM7KBDX6MWFNDUCrmUhK36ArmWgj08ehXtL7ZMhtxwS5lPANVMii4/OI9fG/dPdKupGLWK6ki1jnnk+rVHp31hoHGhyNfiffEwJ2/zjONi68gOsXsmQ3g4n9sXmcFOpcSLp2e/uIWm1tuAPGlGR16dCcyGwSKeG2en7hPYl2tSmdnkc1i+K5LkeEwSwdL3qjvedx2zs7Pzf8CDyAEQ8cUoxCPtzI97PnNFGR8BJCJ0WWpNfYQgZWGZlKFOeKYeKzN7JaGZOe0vd1G9nrncT1R+cInZsp/motG8BpvGfriDTMtKnrtf5+PSta0lNvQoX7myLtmi+eu9VjPbS6bVhu7sFGH3NOOHuczU+VwACrdFVF0VTD1NM5kDR9p10yry6Wb6H+VEFswBN48rPORbOk9/e17K43SQb2gPziEHnrrqD5eqjUd+VxSOr03Xb/n1kWGNq712/QpC1FLtiFFvzUeUE7WQ5MubWoRdSfyy7oIfRZgXzvJNPfk67jRqKl72PN5yb7nIaZfjWXS7/1DJhxw2GyxMeWeXTa+z28+vPD/CgR0pxEkEzB5gurtGhq59Qy9+lr6i1rUjyp92sqYdb+DPz8mDpn3DNcQMgyjS2dmifcOF7zTDIDJlr8f2DZdfkxz7wyNaTRXsUmagWDlFN+78qPX/169PixTjuwvwSPtWw8HbcLl6csBYRlj2k9rqesP+TYNlV31qCzSRHpJdnZoCZE+Q7CrAw/bvCcmuFh3s4r5Asqs0Gfilhd2+23f7bt/tf9yOk9dtteNUsFvtONX7VvvBe9T2T9luP0TWz+Gb7Zj8rh3W5LaR7bD2V4Zsr0Dhg62/IQgKmnj0C+0cIPex5X0/dJ3SxF2+7u8OXDNfJAh0bhoacz+qpDlzl2C54R9U/gt8AGF9Qw5Vc+BZAAAAAElFTkSuQmCC"/>:  
             <img onClick={() => setModalShow(true)}
               src="https://cdn.modesens.com/static/img/20200612account_b2.svg"
               alt=""
-              />
+              />}
               </span>
+
               
           </div>
           <div >
@@ -223,7 +265,7 @@ function Navbar() {
               src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-512.png"
               alt=""
             />
-            <input type="text" placeholder="SEARCH" />
+            {/* <SearchBar /> */}
           </div>
           <div
             style={{ marginTop: "-10px", cursor: "pointer" }}

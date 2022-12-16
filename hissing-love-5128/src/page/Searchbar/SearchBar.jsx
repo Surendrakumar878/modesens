@@ -36,7 +36,7 @@ export const SearchBar = () => {
     },[query])
    
   return (
-    <Box > <h1 >SearchBar{query}</h1> 
+    <Box > 
 
       <Box  onClick={()=>setShow("")}>  <SearchInput queryHanlder={queryHanlder}/></Box>
         <Box display={show}>

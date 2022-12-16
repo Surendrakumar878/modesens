@@ -62,17 +62,7 @@ const ProductDetails = () => {
 
   return (
     <section className="proddetails_section">
-      <button onClick={() => setModalShow(true)}>
-        login-signup
-      </button>
-
-{/* --------------------------------loginsignupmodal------------------------------------------ */}
-
-<LoginSignupModal  show={modalShow}
-        onHide={() => setModalShow(false)}/>
-
-
-
+      
 {/* --------------------------------loginsignupmodal------------------------------------------ */}
 
 

@@ -1,6 +1,7 @@
-import { Box, Center, Heading, Image, Text, Wrap, WrapItem } from '@chakra-ui/react';
+import { Box,  Image, Text, Wrap, WrapItem } from '@chakra-ui/react';
 import React, { useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom';
 import { getdata } from '../../Redux/AppReducer/action';
 import { SearchInput } from './SearchInput'
 
@@ -41,14 +42,14 @@ export const SearchBar = () => {
         <Box display={show}>
 <Wrap  boxShadow='dark-lg'  rounded='md' bg='white'   h="200px" w="650px" ml="600px" display={"flex"} justifyContent="space-around"  spacing={7} >
 {suggestion.map((i)=>{
-    return <WrapItem   w='140px' h='200px' key={i.id} display="flex"
+    return <Link to={`/details/${i.id}`}> <WrapItem   w='140px' h='200px' key={i.id} display="flex"
   flexDirection={"column"}  justifyContent="center" pl="20px"   > 
 
 <Image w="50%" src={i.image} alt="" />
     <Text>{i.title}</Text> 
    
     
-    </WrapItem>
+    </WrapItem></Link>
 })}
 </Wrap>
 </Box>

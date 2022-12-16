@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import {
-    Box, Button,Flex,FormControl,Heading,Hide,Input,InputGroup,InputRightElement,Show,Stack,} from "@chakra-ui/react";
+    Box, Button,Heading,Input,Stack,} from "@chakra-ui/react";
 
     export default function Admin_Login() {
         const [name, setName] = useState("");

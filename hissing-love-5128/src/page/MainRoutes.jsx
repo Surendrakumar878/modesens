@@ -10,7 +10,8 @@ import { Cart } from './cart/Cart'
 import { HomePage } from './HomePage'
 import ProductDetails from './ProductDetails/ProductDetails'
 import { SearchBar } from './Searchbar/SearchBar'
-
+import Comminity from '../page/Comminity'
+import WhyModesensPage from "../page/WhyModesensPage"
 export const MainRoutes = () => {
   return (
     <Routes>
@@ -19,10 +20,12 @@ export const MainRoutes = () => {
         <Route path='/admin' element={<Admin/>} />
         <Route path="/details/:id" element={<ProductDetails/>}></Route>
         <Route path="/product/:id" element={<Edit/>}></Route>
-        <Route path='/mens' element={<Mens/>} />
+        <Route path='/men' element={<Mens/>} />
         <Route path='/womens' element={<Womens/>} />
         <Route path='/search' element={<SearchBar/>} />
         <Route path='/cart' element={<Cart/>} />
+        <Route path='/community' element ={<Comminity />} />
+        <Route path='/whycoolmart' element ={<WhyModesensPage />} />
         
       </Routes>
   )

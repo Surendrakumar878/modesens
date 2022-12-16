@@ -7,10 +7,10 @@ export const postLoginRequest = () => {
     }
 }
 
-export const postLoginSuccess = (payload) => {
+export const postLoginSuccess = (data) => {
     return {
         type: types.USER_LOGIN_SUCCESS,
-        payload
+        payload:data
     }
 }
 
@@ -23,15 +23,10 @@ export const postLoginFailure = () => {
 export const login = (payload) => (dispatch) => {
     dispatch(postLoginRequest())
 
-    return axios({
-        method: 'post',
-        url: '/api/login',
-        baseURL: 'https://reqres.in',
-        data: payload
-    })
+     axios.post(`https://mocker-api.onrender.com/users`,payload)
         .then((r) => {
-           
-            return dispatch(postLoginSuccess(r.data.token))
+            // console.log(r);
+            dispatch(postLoginSuccess(r.data))
         })
         .catch((e) => {
             dispatch(postLoginFailure())

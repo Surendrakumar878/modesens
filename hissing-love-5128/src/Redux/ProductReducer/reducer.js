@@ -17,7 +17,7 @@ export const reducer = (state = initialstate, action) => {
         }
         case types.GET_PROD_DETAILS_SUCCESS: {
             return {
-                ...state, isLoading: false, prodData:payload
+                ...state, isLoading: false, ProdData:payload
             }
         }
         case types.GET_PROD_DETAILS_FAILURE: {
@@ -29,4 +29,3 @@ export const reducer = (state = initialstate, action) => {
     }
 }
 
-export {reducer};

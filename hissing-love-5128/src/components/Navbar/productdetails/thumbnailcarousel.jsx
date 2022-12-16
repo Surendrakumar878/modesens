@@ -3,7 +3,7 @@ import { ImageMagnifier } from "./ImageMagnifier";
 import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 
-function ThumbnailCarousel() {
+function ThumbnailCarousel({image}) {
   const navigate=useNavigate();
   const date = new Date();
 
@@ -63,7 +63,7 @@ function ThumbnailCarousel() {
             <ImageMagnifier
               width={"130px"}
               height={"180px"}
-              src={"https://cdn.modesens.com/availability/55757501?w=400"}
+              src={image}
             />
           </div>
           <div
@@ -123,7 +123,7 @@ function ThumbnailCarousel() {
             <ImageMagnifier
               width={"130px"}
               height={"180px"}
-              src={"https://cdn.modesens.com/availability/55757501?w=400"}
+              src={image}
             />
           </div>
           <div

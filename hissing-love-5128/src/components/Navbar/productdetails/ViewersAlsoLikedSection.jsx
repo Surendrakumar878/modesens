@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ViewerLikedCard from "./ViewersLikedCard";
 
 const ViewersAlsoLikedSection = ({ viewersLikedData }) => {
@@ -7,7 +8,7 @@ const ViewersAlsoLikedSection = ({ viewersLikedData }) => {
       {viewersLikedData.map((el) => {
         return (
           <div>
-            <ViewerLikedCard key={el.id} el={el} />
+            <Link to={`/details/${el.id}`}><ViewerLikedCard key={el.id} el={el} /></Link>
           </div>
         );
       })}

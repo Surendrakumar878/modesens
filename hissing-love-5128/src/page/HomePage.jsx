@@ -1,23 +1,25 @@
-import { Box, Button, Heading, Image, Text, Wrap, WrapItem } from "@chakra-ui/react";
+import { Box, Button, Center, Heading, Image, Text, Wrap, WrapItem } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 // import Navbar from '../components/Navbar/Navbar'
 import Carousel from "react-bootstrap/Carousel";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getwomensdata } from "../Redux/AppReducer/action";
+import { getdata, getwomensdata } from "../Redux/AppReducer/action";
 
 export const HomePage = () => {
-  const womens = useSelector((store) => store.AppReducer.data)
+  const data = useSelector((store) => store.AppReducer.data)
     // console.log(mens)
+    const womens=data.filter((i)=>i.category==="womens")
+    const special=data.filter((i)=>i.rating.rate>4)
     const dispatch = useDispatch()
 
 
     useEffect(() => {
       
-        dispatch(getwomensdata())
+        dispatch(getdata())
 
     }, [])
-    // console.log(mens)
+    console.log(data)
   return (
     <Box>
       <Box>
@@ -111,13 +113,19 @@ export const HomePage = () => {
       <Box>
         <Box textAlign={"center"}>
           <Heading>Shop Women</Heading>
-          <Wrap  boxShadow='dark-lg' pt="100px"  pb="100px"  rounded='md' bg='white'   h="400px" w="950px" ml="200px" display={"flex"} justifyContent="space-around"  spacing={7} >
+          <Wrap  boxShadow='dark-lg' pt="10px"  pb="10px"   bg='white'   h="400px" w="1150px" ml="100px" display={"flex"} justifyContent="space-around"  spacing={7} >
 {womens.map((i)=>{
-    return <Link to={`/details/${i.id}`}> <WrapItem  mb="110px"   w='140px' h='200px' key={i.id} display="flex"
-  flexDirection={"column"}  justifyContent="center" pl="20px"   > 
+    return <Link to={`/details/${i.id}`}> <WrapItem  mb="110px" ml="10px"  w='195px' h='auto' border={"1px solid red"} key={i.id} display="flex"
+  flexDirection={"column"}  justifyContent="center"    > 
 
-<Image w="100%" src={i.image} alt="" />
+<Box border={"1px solid red"} h="250px" w="100%" >
+  
+  <Image w="70%" src={i.image} alt="" />
+  </Box> 
+  <Box border={"1px solid red"} h="100px" w="100%" >
+
     <Text>{i.title}</Text> 
+  </Box>
    
     
     </WrapItem></Link>
@@ -128,13 +136,19 @@ export const HomePage = () => {
       <Box textAlign={"center"}>
         <Box>
           <Heading>New To sale</Heading>
-          <Wrap  boxShadow='dark-lg' pt="100px"  pb="100px"  rounded='md' bg='white'   h="400px" w="950px" ml="200px" display={"flex"} justifyContent="space-around"  spacing={7} >
-{womens.map((i)=>{
-    return <Link to={`/details/${i.id}`}> <WrapItem  mb="110px"   w='140px' h='200px' key={i.id} display="flex"
-  flexDirection={"column"}  justifyContent="center" pl="20px"   > 
+          <Wrap  boxShadow='dark-lg' pt="10px"  pb="10px"   bg='white'   h="400px" w="1150px" ml="100px" display={"flex"} justifyContent="space-around"  spacing={7} >
+{data.map((i)=>{
+    return <Link to={`/details/${i.id}`}> <WrapItem  mb="110px" ml="10px"  w='195px' h='auto' border={"1px solid red"} key={i.id} display="flex"
+  flexDirection={"column"}  justifyContent="center"    > 
 
-<Image w="100%" src={i.image} alt="" />
+<Box border={"1px solid red"} h="250px" w="100%" >
+  
+  <Image w="70%" src={i.image} alt="" />
+  </Box> 
+  <Box border={"1px solid red"} h="100px" w="100%" >
+
     <Text>{i.title}</Text> 
+  </Box>
    
     
     </WrapItem></Link>
@@ -146,13 +160,19 @@ export const HomePage = () => {
       <Box textAlign={"center"}>
         <Box>
           <Heading>Special Offers</Heading>
-          <Wrap  boxShadow='dark-lg' pt="100px"  pb="100px"  rounded='md' bg='white'   h="400px" w="950px" ml="200px" display={"flex"} justifyContent="space-around"  spacing={7} >
-{womens.map((i)=>{
-    return <Link to={`/details/${i.id}`}> <WrapItem  mb="110px"   w='140px' h='200px' key={i.id} display="flex"
-  flexDirection={"column"}  justifyContent="center" pl="20px"   > 
+          <Wrap  boxShadow='dark-lg' pt="10px"  pb="10px"   bg='white'   h="400px" w="1150px" ml="100px" display={"flex"} justifyContent="space-around"  spacing={7} >
+{special.map((i)=>{
+    return <Link to={`/details/${i.id}`}> <WrapItem  mb="110px" ml="10px"  w='195px' h='auto' border={"1px solid red"} key={i.id} display="flex"
+  flexDirection={"column"}  justifyContent="center"    > 
 
-<Image w="100%" src={i.image} alt="" />
+<Box border={"1px solid red"} h="250px" w="100%" >
+  
+  <Image w="60%" src={i.image} alt="" />
+  </Box> 
+  <Box border={"1px solid red"} h="100px" w="100%" >
+
     <Text>{i.title}</Text> 
+  </Box>
    
     
     </WrapItem></Link>
@@ -164,13 +184,19 @@ export const HomePage = () => {
       <Box textAlign={"center"}>
         <Box>
           <Heading>Trending Now</Heading>
-          <Wrap  boxShadow='dark-lg' pt="100px"  pb="100px"  rounded='md' bg='white'   h="400px" w="950px" ml="200px" display={"flex"} justifyContent="space-around"  spacing={7} >
+          <Wrap  boxShadow='dark-lg' pt="10px"  pb="10px"   bg='white'   h="400px" w="1150px" ml="100px" display={"flex"} justifyContent="space-around"  spacing={7} >
 {womens.map((i)=>{
-    return <Link to={`/details/${i.id}`}> <WrapItem  mb="110px"   w='140px' h='200px' key={i.id} display="flex"
-  flexDirection={"column"}  justifyContent="center" pl="20px"   > 
+    return <Link to={`/details/${i.id}`}> <WrapItem  mb="110px" ml="10px"  w='195px' h='auto' border={"1px solid red"} key={i.id} display="flex"
+  flexDirection={"column"}  justifyContent="center"    > 
 
-<Image w="100%" src={i.image} alt="" />
+<Box border={"1px solid red"} h="250px" w="100%" >
+  
+  <Image w="70%" src={i.image} alt="" />
+  </Box> 
+  <Box border={"1px solid red"} h="100px" w="100%" >
+
     <Text>{i.title}</Text> 
+  </Box>
    
     
     </WrapItem></Link>
@@ -182,13 +208,19 @@ export const HomePage = () => {
       <Box>
         <Box textAlign={"center"}>
           <Heading>Recently Viewed</Heading>
-          <Wrap  boxShadow='dark-lg' pt="100px"  pb="100px"  rounded='md' bg='white'   h="400px" w="950px" ml="200px" display={"flex"} justifyContent="space-around"  spacing={7} >
+          <Wrap  boxShadow='dark-lg' pt="10px"  pb="10px"   bg='white'   h="400px" w="1150px" ml="100px" display={"flex"} justifyContent="space-around"  spacing={7} >
 {womens.map((i)=>{
-    return <Link to={`/details/${i.id}`}> <WrapItem  mb="110px"   w='140px' h='200px' key={i.id} display="flex"
-  flexDirection={"column"}  justifyContent="center" pl="20px"   > 
+    return <Link to={`/details/${i.id}`}> <WrapItem  mb="110px" ml="10px"  w='195px' h='auto' border={"1px solid red"} key={i.id} display="flex"
+  flexDirection={"column"}  justifyContent="center"    > 
 
-<Image w="100%" src={i.image} alt="" />
+<Box border={"1px solid red"} h="250px" w="100%" >
+  
+  <Image w="70%" src={i.image} alt="" />
+  </Box> 
+  <Box border={"1px solid red"} h="100px" w="100%" >
+
     <Text>{i.title}</Text> 
+  </Box>
    
     
     </WrapItem></Link>
@@ -200,24 +232,35 @@ export const HomePage = () => {
       <Box>
         <Box textAlign={"center"}>
           <Heading>Community Posts</Heading>
-          <Box>
-            <img src="https://cdn.modesens.com/umedia/1707011s?w=400" alt="" />
+          <Box p='50px' w={"100%"} display={"flex"} justifyContent="space-around" >
+            <Image w="15%" src="https://cdn.modesens.com/umedia/1707011s?w=400" alt="" />
+            <Image w="15%" src="https://cdn.modesens.com/umedia/1707018s?w=400" alt="" />
+            <Image w="15%" src="https://cdn.modesens.com/umedia/1707030s?w=400" alt="" />
+            <Image w="15%" src="https://cdn.modesens.com/umedia/1707141s?w=400" alt="" />
           </Box>
           <Button>VIEW ALL</Button>
         </Box>
       </Box>
-      <Box w={{lg:"100%"}} display={"flex"}>
-        <Box w="50%" textAlign={"center"}>
+      <Box textAlign={"center"} w={{lg:"100%"}} display={"flex"} justifyContent="space-around" >
+        <Box w="30%" alignItems={"center"} >
           <Heading>Download the ModeSens App</Heading>
           <Text>A seamless experience that takes your style
 to the next level.</Text>
-          <img src="https://cdn.modesens.com/static/img/20220826appdownload_en.svg" alt="" />
+<Button borderRadius={0} bg={"black"} color="white">DOWNLOAD NOW</Button>
+<Center>
+
+          <Image  src="https://cdn.modesens.com/static/img/20220826appdownload_en.svg" alt="" />
+</Center>
         </Box>
-        <Box w="50%" textAlign={"center"}>
+        <Box w="30%">
           <Heading>Download the ModeSens App</Heading>
           <Text>Get timely, accurate product information
 every time you browse.</Text>
+<Button borderRadius={0} bg={"black"} color="white">INSTALL NOW</Button>
+<Center>
+
           <img src="https://cdn.modesens.com/static/img/20211109downloadright.png" alt="" />
+</Center>
         </Box>
       </Box>
     </Box>

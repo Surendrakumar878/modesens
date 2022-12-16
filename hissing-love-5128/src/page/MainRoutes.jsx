@@ -22,7 +22,7 @@ export const MainRoutes = () => {
         <Route path="/product/:id" element={<Edit/>}></Route>
         <Route path='/men' element={<Mens/>} />
         <Route path='/womens' element={<Womens/>} />
-        <Route path='/search' element={<SearchBar/>} />
+        {/* <Route path='/search' element={<SearchBar/>} /> */}
         <Route path='/cart' element={<Cart/>} />
         <Route path='/community' element ={<Comminity />} />
         <Route path='/whycoolmart' element ={<WhyModesensPage />} />

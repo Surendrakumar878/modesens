@@ -64,11 +64,7 @@ margin-left: 0px;
   visibility: visible;
   
 }
-.admin{
-  display: none;
-  height: 0px;
-  width: 0px;
-}
+
 
 }
 
@@ -179,3 +175,4 @@ margin-left: 0px;
 .firstdata > div > div > a:hover {
   border-bottom: 1px solid rgb(142, 40, 40);
 }
+

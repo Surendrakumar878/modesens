@@ -29,4 +29,3 @@ export const reducer = (state = initialstate, action) => {
     }
 }
 
-export {reducer};

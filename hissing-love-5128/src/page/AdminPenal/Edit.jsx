@@ -45,7 +45,7 @@ const Edit = () => {
         <Link to="/">
           <img
             id={styles.admin_logo}
-            src="https://i.postimg.cc/2SR23Rqv/Black-and-Red-Cool-and-Funky-Gaming-Logo-5.gif"
+            src="https://i.postimg.cc/gcL4D1yK/Black-and-Red-Cool-and-Funky-Gaming-Logo-removebg-preview-1.png"
             alt=""
           />
         </Link>

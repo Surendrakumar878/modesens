@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import Mens from '../components/productdist/Mens'
 import { Womens } from '../components/productdist/Womens'
 import Admin from './AdminPenal/Admin'
-// import { Admin } from './AdminPenal/Admin'
+
 import Admin_Login from './AdminPenal/Admin_Login'
 import Edit from './AdminPenal/Edit'
 import { Cart } from './cart/Cart'

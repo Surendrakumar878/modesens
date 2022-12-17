@@ -131,7 +131,9 @@ export const Footer = () => {
       <br />
       <hr className={style.hrTag} />
       <div className={style.contacticons}>
-        <div className={style.leftside}>
+        <div className={style.leftside} style={{
+      
+        }}>
           <img
             src="https://thumbs.dreamstime.com/z/c-shape-8574661.jpg"
             alt="f"

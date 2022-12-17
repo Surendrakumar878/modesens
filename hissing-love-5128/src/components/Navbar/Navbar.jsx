@@ -10,7 +10,10 @@ import { store } from '../../Redux/store';
 import { useDispatch } from "react-redux";
 import { logOutUser } from "../../Redux/AuthReducer/action";
 import { SearchBar } from "../../page/Searchbar/SearchBar";
-
+import MiniNav from "./MiniNav";
+import {AiOutlineUser} from 'react-icons/ai'
+import {HiShoppingCart} from 'react-icons/hi'
+import {RxHamburgerMenu} from 'react-icons/rx'
 function Navbar() {
   const [modalShow, setModalShow] = React.useState(false);
   const token=useSelector((store)=>store.AuthReducer.token);
@@ -20,6 +23,11 @@ function Navbar() {
   useEffect(()=>{
 
   },[token])
+  const handleMiniNav=(ty)=>{
+    
+    <MiniNav ty={ty}/>
+    
+  }
   function handleLogOut (){
     return (swal({
       title: "Are you sure?",
@@ -46,15 +54,16 @@ function Navbar() {
             src="https://i.postimg.cc/7hFL7SGx/1670760238004-removebg-preview.jpg"
             alt=""
           ></img>
-           <img className="short_logo"
-            src="https://thumbs.dreamstime.com/z/c-shape-8574661.jpg"
-            alt=""
-            ></img>
-           
+           <RxHamburgerMenu onClick={handleMiniNav} className="short_logo"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHMAAAB8CAMAAABty38BAAAAYFBMVEX///8AAADh4eHPz8/n5+ciIiLr6+smJib8/Pz4+Pjx8fHMzMy/v7+ysrKXl5fZ2dmkpKSsrKy4uLg1NTWMjIydnZ18fHzFxcVoaGguLi5vb29TU1NHR0dZWVl1dXVCQkLOlxADAAACE0lEQVRoge2ZjXKjIBRGr8C6gPwIgmjapu//loup22l3Kp220HQ292Qy0dFwRgOGjwuAIAiCIAiC/I/wm5GWrWTparPYkpKDrm7cGEvKoYmy61RB+tDIeS8OnayRsuvIcQdq5hyu4LSHTvHYSLnKwy4ErpGzOFjmJspzSQngp+rG1R0rd7Ed6mKPxyaCIAiC1Ie3yBa8nB3yMcnqcjgVesYu66+6rA+0fJHfnlfgCnmF30pesc2c6UddZ7O8MhUGaZuhUhoseXyGJsr5+NHHMw3yyuQKT3G+HeGW1mXLK9dZlEIQBEGQarz7Vyb7ush3IlKebp6m33WZllJeybRZNC7mldREWa6v3DVy3kxe+WH1lftGyuO80qoUeZW8ci7WXEGv1Y3F+solrwAjdWFN1rkQBEEQBEEQBHkLDlLsU/ut5Pw0G89vIZ9m/Hzff/GFCiS7NeTlsLeoLgmd+H9a7432ZoQZgkyGjlEEqeIwzuzjRu9ScE6Mi56HoIwKdlYu2piMgj4mZ1SMRgoKTBig1BsRe5btgUQ5jgniJ67Sem/HIF2UaXTUgKfOanpi5M5CGpizZxYVyU7whEcyn6Tqeztr3as+Um/VJ272YBTx3iRjDc23jEellTMk+KQpMXkzMZ22tYnhpLdfQYvZeTNEw7I30OKa0Bfhrz6+3tils/LnHspfb+5n/X3tO1ulD16c8AZ/ADk2Kx9+F5QLAAAAAElFTkSuQmCC"
+            
+            />
+            
+    
         </div>
-        {/* <div className="logomini">
+        {/* <div >
 
-        <img
+        <img className=".short_logo"
             src="https://thumbs.dreamstime.com/z/c-shape-8574661.jpg"
             alt=""
             ></img>
@@ -211,11 +220,8 @@ function Navbar() {
             ></img>
           </div>
          
-          <div>
-            <img className="bag"
-              src="https://cdn.modesens.com/static/img/20200612shopping_bag2.svg"
-              alt=""
-            />
+          <div style={{color:"red"}} className="mini" >
+            <HiShoppingCart size="26px"  />
           </div>
           
           <div >
@@ -237,7 +243,7 @@ function Navbar() {
                 }
               })
             }} src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9CAMAAAC4XpwXAAAAY1BMVEX///8AAADX19chISHf399paWmQkJD8/PzPz88wMDCbm5uurq7y8vLs7OwaGhqLi4uCgoLl5eVubm51dXW5ubk3NzdYWFhSUlLAwMA+Pj4ODg57e3teXl6mpqZjY2MpKSlHR0em6miQAAAD1UlEQVRoge2b23aqMBBADSDBECRcFAQR/v8rS9sERG4ZOrHr9LDf7OpySy6TmYkeDjs6UMfLcy+ib/dSL7wRRZExi77tM9CoJK+cWPAWP7XuI/cXoWPcTwMx7W45M25Yntaz8pa7Z/LxuVssydvp983pg2TZ3VIYG/0gXpW3GNLz8T6bfPrKxODTtTlX1KkBvX/RkxOSWehy66orJ0QEyHIe6ssJwR77/Lbu7Lk6qHI+H18nwQ06eQOz3yNMO4PJCfEQ5ZFWlHsGM+KlJ6i9QRz6CionBC/iwDb7N3hb3gFPO+bEexncnqBFW1ig++aKtuxy7eOtB2/RwzccIbc/Yv/dkfeAZ8wnD7Q1P1c7LSHQ9nugl80OQMxswQcs6hHrn6HyGjG3gofaGDGtpeBDLsdM7KBDX6MWFNDUCrmUhK36ArmWgj08ehXtL7ZMhtxwS5lPANVMii4/OI9fG/dPdKupGLWK6ki1jnnk+rVHp31hoHGhyNfiffEwJ2/zjONi68gOsXsmQ3g4n9sXmcFOpcSLp2e/uIWm1tuAPGlGR16dCcyGwSKeG2en7hPYl2tSmdnkc1i+K5LkeEwSwdL3qjvedx2zs7Pzf8CDyAEQ8cUoxCPtzI97PnNFGR8BJCJ0WWpNfYQgZWGZlKFOeKYeKzN7JaGZOe0vd1G9nrncT1R+cInZsp/motG8BpvGfriDTMtKnrtf5+PSta0lNvQoX7myLtmi+eu9VjPbS6bVhu7sFGH3NOOHuczU+VwACrdFVF0VTD1NM5kDR9p10yry6Wb6H+VEFswBN48rPORbOk9/e17K43SQb2gPziEHnrrqD5eqjUd+VxSOr03Xb/n1kWGNq712/QpC1FLtiFFvzUeUE7WQ5MubWoRdSfyy7oIfRZgXzvJNPfk67jRqKl72PN5yb7nIaZfjWXS7/1DJhxw2GyxMeWeXTa+z28+vPD/CgR0pxEkEzB5gurtGhq59Qy9+lr6i1rUjyp92sqYdb+DPz8mDpn3DNcQMgyjS2dmifcOF7zTDIDJlr8f2DZdfkxz7wyNaTRXsUmagWDlFN+78qPX/169PixTjuwvwSPtWw8HbcLl6csBYRlj2k9rqesP+TYNlV31qCzSRHpJdnZoCZE+Q7CrAw/bvCcmuFh3s4r5Asqs0Gfilhd2+23f7bt/tf9yOk9dtteNUsFvtONX7VvvBe9T2T9luP0TWz+Gb7Zj8rh3W5LaR7bD2V4Zsr0Dhg62/IQgKmnj0C+0cIPex5X0/dJ3SxF2+7u8OXDNfJAh0bhoacz+qpDlzl2C54R9U/gt8AGF9Qw5Vc+BZAAAAAElFTkSuQmCC"/>:  
-            <img onClick={() => setModalShow(true)}
+            <AiOutlineUser size="26px" onClick={() => setModalShow(true)}
               src="https://cdn.modesens.com/static/img/20200612account_b2.svg"
               alt=""
               />}
@@ -260,7 +266,7 @@ function Navbar() {
           
           
           <div className="search">
-            <img
+            <img 
               style={{ width: "50%%" }}
               src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-512.png"
               alt=""

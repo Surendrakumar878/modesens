@@ -8,24 +8,50 @@
   padding-left: 1%;
   margin-top: 1%;
   border: 2px solid black;
+  position: fixed;
+  /* display: absolute; */
+  z-index: 1;
   /* justify-content: space-between; */
+  
 }
 .short_logo{
-  visibility: hidden;
+  visibility: collapse;
   width: 0px;
   height: 0px
 }
+.short_log{
+  visibility: collapse;
+  
+  
+  
+}
+
 @media screen and  (max-width: 1150px)
 {
-
+.hamburger{
+  display: block;
+}
  
  .short_logo{
   visibility: visible;
   width: 30%;
   height: 30%;
+  margin-top: 0px;
+  /* margin: 50% ; */
+}
+
+ .ham_icon{
+  visibility: visible;
+  width: 30%;
+  height: 30%;
+  margin-left: 30px;
+ }
+
+ .links{
+  visibility: collapse;
  }
  .full_logo{
-  visibility: hidden;
+  visibility: collapse;
   width: 0px;
   height: 0px
  }
@@ -47,7 +73,7 @@ margin-left: 0px;
   
 }
 .flag_icon{
-  visibility: hidden;
+  visibility: collapse;
   height: 0px;
   width: 0px;
 }
@@ -64,10 +90,20 @@ margin-left: 0px;
   visibility: visible;
   
 }
-
-
+.secondDiv{
+visibility: collapse;
 }
 
+.mini{
+  size:"28px"
+}
+}
+@media screen and  (max-width: 700px){
+  .mini{
+    size: 16px;
+    /* visibility: collapse; */
+  }
+}
 
 .full_logo {
   width: 100%;
@@ -79,7 +115,7 @@ margin-left: 0px;
   /* padding-top:1%; */
   margin-left: 20px;
   /* width: 1000px; */
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding-left: 10px;
   padding-right: 10px;
   width: 110%;
@@ -100,7 +136,7 @@ margin-left: 0px;
   margin-left: 35%;
   align-items: center;
   gap: 15px;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
 }
 .rightIcons img {
   height: 20px;

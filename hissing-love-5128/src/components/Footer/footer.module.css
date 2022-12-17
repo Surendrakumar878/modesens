@@ -173,10 +173,20 @@ input[type="radio"]:checked {
   width: 170px;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 768px) {
   .mainbox {
     grid-template-columns: repeat(3, 1fr);
   }
+  .contacticons {
+    display: grid;
+    grid-template-columns: 2,1fr;
+    /* margin: auto; */
+    justify-content: center;
+  }
+  .leftside{
+    margin-left: 30%;
+  }
+  
 }
 @media only screen and (max-width: 500px) {
   .mainbox {
@@ -185,4 +195,6 @@ input[type="radio"]:checked {
   .contacticons {
     padding: 0;
   }
+ 
+ 
 }

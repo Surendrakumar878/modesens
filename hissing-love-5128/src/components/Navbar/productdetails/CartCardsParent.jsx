@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import CartCard from "./CartCard";
 import ViewerLikedCard from "./ViewersLikedCard";
 
-const ViewersAlsoLikedSection = ({ viewersLikedData }) => {
+const CartCardsParent = ({ viewersLikedData }) => {
   return (
     <>
       {viewersLikedData.map((el) => {
         return (
           <div>
-            <Link to={`/details/${el.id}`}><ViewerLikedCard key={el.id} el={el} /></Link>
+            <CartCard key={el.id} el={el} />
           </div>
         );
       })}
@@ -16,4 +17,4 @@ const ViewersAlsoLikedSection = ({ viewersLikedData }) => {
   );
 };
 
-export default ViewersAlsoLikedSection;
+export default CartCardsParent;

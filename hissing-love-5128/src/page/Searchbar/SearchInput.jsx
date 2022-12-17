@@ -1,3 +1,4 @@
+import { Input } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react'
 
 export const SearchInput = ({queryHanlder}) => {
@@ -10,8 +11,8 @@ export const SearchInput = ({queryHanlder}) => {
 
     },[queryHanlder,input])
   return (
-    <div><h1>input</h1>
-        <input type="text" placeholder='inpur' value={input} onChange={handleTnput} />
-    </div>
+    
+        <Input variant='flushed' type="text" placeholder='Search by keyword or store URL' value={input} onChange={handleTnput} />
+  
   )
 }

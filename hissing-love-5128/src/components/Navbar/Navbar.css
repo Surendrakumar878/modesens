@@ -1,4 +1,5 @@
 .navbar {
+  visibility: visible;
   display: grid;
   grid-template-columns: 10% 60% 30%;
   align-items: center;
@@ -6,10 +7,69 @@
   height: 50px;
   padding-left: 1%;
   margin-top: 1%;
+  border: 2px solid black;
   /* justify-content: space-between; */
 }
+.short_logo{
+  visibility: hidden;
+  width: 0px;
+  height: 0px
+}
+@media screen and  (max-width: 1150px)
+{
 
-.navbar > div > img {
+ 
+ .short_logo{
+  visibility: visible;
+  width: 30%;
+  height: 30%;
+ }
+ .full_logo{
+  visibility: hidden;
+  width: 0px;
+  height: 0px
+ }
+ .links{
+font-size: 15px;
+margin-left: 0px;
+ }
+ .navbar {
+  visibility: visible;
+  display: grid;
+  grid-template-columns: 10% 60% 30%;
+  align-items: left;
+}
+.secondDiv > div > div > a {
+  /* display: none; */
+  font-size: 50%;
+  font-weight: bold;
+  
+  
+}
+.flag_icon{
+  visibility: hidden;
+  height: 0px;
+  width: 0px;
+}
+.rightIcons {
+  visibility: visible;
+  display: flex;
+  margin-left: 15%;
+  align-items: center;
+  gap: 15px;
+  border: 2px solid green;
+  width: 70%;
+}
+.bag{
+  visibility: visible;
+  
+}
+
+
+}
+
+
+.full_logo {
   width: 100%;
   /* padding-top:7%; */
   margin-left: 20px;
@@ -17,13 +77,16 @@
 .links {
   display: flex;
   /* padding-top:1%; */
-  margin-left: 30px;
+  margin-left: 20px;
   /* width: 1000px; */
-  /* border: 1px solid black; */
+  border: 1px solid black;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 110%;
 }
 .links > a {
   margin-left: 3%;
-  font-size: 80%;
+  font-size: 75%;
   font-weight: bold;
   width: auto;
   color: black;
@@ -37,6 +100,7 @@
   margin-left: 35%;
   align-items: center;
   gap: 15px;
+  border: 2px solid blue;
 }
 .rightIcons img {
   height: 20px;
@@ -62,6 +126,7 @@
   /* margin-left:8%; */
   margin-bottom: 10%;
   height: 40%;
+ 
 }
 .secondDiv > div {
   z-index: 1;
@@ -99,6 +164,7 @@
 }
 .firstdata > div > div {
   padding: 4%;
+  
 }
 .firstdata > div > div > a {
   font-size: 80%;
@@ -109,3 +175,4 @@
 .firstdata > div > div > a:hover {
   border-bottom: 1px solid rgb(142, 40, 40);
 }
+

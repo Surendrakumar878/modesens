@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import "../ProductDetails/productdetails.css";
 import ThumbnailCarousel from "../../components/Navbar/productdetails/thumbnailcarousel";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -15,48 +15,89 @@ import "aos/dist/aos.css";
 import { ImageMagnifier } from "../../components/Navbar/productdetails/ImageMagnifier";
 import swal from "sweetalert";
 import LoginSignupModal from "../../components/LoginSignup/LoginSignupModal";
-
+import { addtocart, getproddata } from "../../Redux/ProductReducer/action";
+import { store } from "../../Redux/store";
+import { useState } from "react";
+import { kidsViewersLiked } from "../../components/Navbar/productdetails/kidsViewerLiked";
+import { beautyViewersLiked } from "../../components/Navbar/productdetails/beautyViewersLiked";
 const ProductDetails = () => {
   const id = useParams();
   const dispatch = useDispatch();
   const [modalShow, setModalShow] = React.useState(false);
+  const [viewersdata,setViwersData]=useState([]);
+  const token=useSelector((store)=>store.AuthReducer.token);
+  console.log("toekn",token)
+  const prodData=useSelector((store)=>store.ProductReducer.ProdData);
+  // console.log(prodData);
+  // console.log(id);
+  const navigate=useNavigate();
+const cartData=useSelector((store)=>store.ProductReducer.CartData);
+console.log(cartData);
 
-  console.log(id);
+  useEffect(()=>{
+    dispatch( getproddata(id))
+    // console.log(prodData[0])
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+  },[id])
 
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
 
+  const navigateFunction=()=>{
+    if(prodData.length==0){
+      return
+    }
+    if(prodData[0].category=="mens"){
+      navigate("/mens")
+    }
+    else if(prodData[0].category=="womens"){
+      navigate("/womens")
+    }
+    if(prodData[0].category=="kids"){
+      navigate("/kids")
+    }
+    if(prodData[0].category=="beauty"){
+      navigate("/beauty")
+    }
+  }
+  const addtocartfunction=(data)=>{
+         let newcart2=cartData.filter((el)=>{
+          return el.id==data.id
+         })
+         if(newcart2.length>0){
+          swal({
+            title:"Item already available in cart",
+            text:"It seems item is already present in your cart",
+            icon:"warning"
+          })
+         }
+         else{
+          let newcart=[...cartData,data]
+          dispatch(addtocart(newcart))
+         }
+  }
+
   return (
     <section className="proddetails_section">
-      <button onClick={() => setModalShow(true)}>
-        login-signup
-      </button>
-
-{/* --------------------------------loginsignupmodal------------------------------------------ */}
-
-<LoginSignupModal  show={modalShow}
-        onHide={() => setModalShow(false)}/>
-
-
-
+      
 {/* --------------------------------loginsignupmodal------------------------------------------ */}
 
 
       <div className="breadcrumbs_proddesc">
-        <Link to="/"> Coolmart/</Link> <Link to={`/details/${id}`}>Cotton Blend Parka In</Link>
+        <Link to="/"> Coolmart/</Link> <Link to={`/details/${id}`}>{prodData.length>0 && prodData[0].title}</Link>
       </div>
 
       <div className="thumbnail_and_details">
         <div className="thumbnail_carousel">
-          <ThumbnailCarousel />
+          <ThumbnailCarousel image={`${prodData.length>0 ? prodData[0].image:""}`} />
         </div>
         <div className="thumbnail_details">
           <div style={{ marginTop: "0px" }}>
-            <p style={{ fontSize: "20px", fontWeight: "bold" }}>Cotton Blend Parka In</p>
+            <p style={{ fontSize: "20px", fontWeight: "bold" }}>{prodData.length>0 && prodData[0].title}</p>
           </div>
           <div>
-            <p style={{ fontSize: "14px" }}>womens wear</p>
+            <p style={{ fontSize: "14px" }}>Category : {prodData.length>0 && prodData[0].category}</p>
           </div>
           <div>
             <p
@@ -66,7 +107,7 @@ const ProductDetails = () => {
                 color: "#C00000",
               }}
             >
-             $ 153.99
+             ₹ {prodData.length>0 && prodData[0].price}
             </p>
           </div>
           <div>
@@ -77,7 +118,7 @@ const ProductDetails = () => {
                 textDecoration: "underline",
               }}
             >
-              Shop From 9 Stores
+              Shop From {prodData.length>0 && prodData[0].stores} Stores
             </p>
           </div>
           <div>
@@ -105,7 +146,7 @@ const ProductDetails = () => {
               title:"Added To Cart",
               icon:"success",
               text:"Item added to cart make sure to checkout!"
-            })}}
+            });addtocartfunction(prodData[0])}}
           >
             ADD TO BAG
           </button>
@@ -143,7 +184,7 @@ const ProductDetails = () => {
             }}
           >
             <img
-              src="https://cdn.modesens.com/media/15832145"
+              src={prodData.length>0 ? prodData[0].image:""}
               style={{ width: "50px", height: "60px" }}
               alt=""
             />
@@ -159,7 +200,7 @@ const ProductDetails = () => {
           >
             <div style={{ marginTop: "0px", width: "100%" }}>
               <p style={{ fontSize: "20px", fontWeight: "bold" }}>
-                title cfzgh
+              {prodData.length>0 && prodData[0].title}
               </p>
             </div>
             <div style={{ marginTop: "0px", width: "100%" }}>
@@ -170,7 +211,7 @@ const ProductDetails = () => {
                   color: "#C00000",
                 }}
               >
-                title cfzgh
+               {prodData.length>0 && prodData[0].category}
               </p>
             </div>
             <div style={{ marginTop: "0px", width: "100%" }}>
@@ -181,7 +222,7 @@ const ProductDetails = () => {
                   textDecoration: "underline",
                 }}
               >
-                Shop From 9 Stores
+                Shop From Store 1
               </p>
             </div>
           </div>
@@ -198,7 +239,7 @@ const ProductDetails = () => {
                 title:"Added To Cart",
                 icon:"success",
                 text:"Item added to cart make sure to checkout!"
-              })}}
+              });addtocartfunction(prodData[0])}}
             >
               ADD TO BAG
             </button>
@@ -214,7 +255,7 @@ const ProductDetails = () => {
             }}
           >
             <img
-              src="https://cdn.modesens.com/media/15832145"
+              src={prodData.length>0 ? prodData[0].image:""}
               style={{ width: "50px", height: "60px" }}
               alt=""
             />
@@ -230,7 +271,7 @@ const ProductDetails = () => {
           >
             <div style={{ marginTop: "0px", width: "100%" }}>
               <p style={{ fontSize: "20px", fontWeight: "bold" }}>
-                title cfzgh
+              {prodData.length>0 && prodData[0].title}
               </p>
             </div>
             <div style={{ marginTop: "0px", width: "100%" }}>
@@ -241,7 +282,7 @@ const ProductDetails = () => {
                   color: "#C00000",
                 }}
               >
-                title cfzgh
+               {prodData.length>0 && prodData[0].category}
               </p>
             </div>
             <div style={{ marginTop: "0px", width: "100%" }}>
@@ -252,7 +293,7 @@ const ProductDetails = () => {
                   textDecoration: "underline",
                 }}
               >
-                Shop From 9 Stores
+                Shop From store 2
               </p>
             </div>
           </div>
@@ -269,7 +310,7 @@ const ProductDetails = () => {
                 title:"Added To Cart",
                 icon:"success",
                 text:"Item added to cart make sure to checkout!"
-              })}}
+              });addtocartfunction(prodData[0])}}
             >
               ADD TO BAG
             </button>
@@ -320,7 +361,7 @@ const ProductDetails = () => {
       <div className="title_prod_desc">Product Details</div>
 
       <div data-aos="fade-up">
-        <ProjectDetailsCarousel />
+        <ProjectDetailsCarousel image={prodData.length>0 ? prodData[0].image:""} title={prodData.length>0 && prodData[0].title} description={prodData.length>0 && prodData[0].description} />
       </div>
 
       <div className="title_prod_desc" style={{ marginBottom: "20px" }}>
@@ -332,7 +373,7 @@ const ProductDetails = () => {
       </div>
 
       <div className="view_more_also_liked">
-        <button>VIEW MORE</button>
+        <button onClick={navigateFunction}>VIEW MORE</button>
       </div>
 
       <div className="title_prod_desc" style={{ marginBottom: "20px" }}>
@@ -358,15 +399,11 @@ const ProductDetails = () => {
           >
             <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
           </svg>
-          <span>4.1</span>
+          <span>{prodData.length>0 && prodData[0].rating.rate}</span>
         </div>
         <div data-aos="fade-right">
-          <span>432 Reviews</span>
+          <span>{prodData.length>0 && prodData[0].rating.count} Reviews</span>
         </div>
-      </div>
-
-      <div style={{height:"200px"}}>
-
       </div>
     </section>
   );

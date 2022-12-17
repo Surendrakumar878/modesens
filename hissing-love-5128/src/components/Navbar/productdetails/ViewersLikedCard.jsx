@@ -1,9 +1,10 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 
 function ViewerLikedCard({ el }) {
   return (
-    <Card
+    <Card key={el.id}
       style={{
         border: "none",
         width: "281px",
@@ -11,6 +12,7 @@ function ViewerLikedCard({ el }) {
         display: "flex",
         alignItems: "center",
         flexDirection: "column",
+        textAlign:"center",
         justifyContent: "space-evenly",
         fontFamily: "SuisseIntl",
       }}
@@ -49,7 +51,7 @@ function ViewerLikedCard({ el }) {
         <Card.Text
           style={{ fontSize: "14px", marginBottom: "7px", marginTop: "7px" }}
         >
-          $ {el.price}
+          ₹ {el.price}
         </Card.Text>
         <Card.Text style={{ fontSize: "14px", color: "#8e838e" }}>
           Compare {el.stores} stores

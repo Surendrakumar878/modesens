@@ -133,10 +133,10 @@ export const Footer = () => {
       <div className={style.contacticons}>
         <div className={style.leftside}>
           <img
-            src="https://cdn.modesens.com/static/img/20180905footer_logo.svg"
+            src="https://thumbs.dreamstime.com/z/c-shape-8574661.jpg"
             alt="f"
           />
-          <p>© 2022, ModeSens Inc</p>
+          <p>© 2022, Coolmart Inc</p>
         </div>
 
         <div className={style.rightside}>

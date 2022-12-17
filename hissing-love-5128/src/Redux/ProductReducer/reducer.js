@@ -3,7 +3,8 @@ import * as types from "./actionTypes";
 const initialstate={
     isLoading:false,
     ProdData:[],
-    isError:false
+    isError:false,
+    CartData:[]
 }
 
 export const reducer = (state = initialstate, action) => {
@@ -23,6 +24,21 @@ export const reducer = (state = initialstate, action) => {
         case types.GET_PROD_DETAILS_FAILURE: {
             return {
                 ...state,isError: true
+            }
+        }
+        case types.ADD_CART_ITEMS: {
+            return{
+                ...state,CartData:payload
+            }  
+        }
+        case types.CLEAR_CART_CHECKOUT: {
+            return{
+                ...state,CartData:payload
+            }
+        }
+        case types.REMOVE_ITEM_FROM_CART: {
+            return{
+                ...state,CartData:payload
             }
         }
         default: return state

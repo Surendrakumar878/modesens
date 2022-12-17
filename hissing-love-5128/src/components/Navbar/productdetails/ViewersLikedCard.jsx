@@ -12,6 +12,7 @@ function ViewerLikedCard({ el }) {
         display: "flex",
         alignItems: "center",
         flexDirection: "column",
+        textAlign:"center",
         justifyContent: "space-evenly",
         fontFamily: "SuisseIntl",
       }}
@@ -50,7 +51,7 @@ function ViewerLikedCard({ el }) {
         <Card.Text
           style={{ fontSize: "14px", marginBottom: "7px", marginTop: "7px" }}
         >
-          $ {el.price}
+          ₹ {el.price}
         </Card.Text>
         <Card.Text style={{ fontSize: "14px", color: "#8e838e" }}>
           Compare {el.stores} stores

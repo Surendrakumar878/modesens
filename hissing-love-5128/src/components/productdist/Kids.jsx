@@ -1,21 +1,21 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getwomensdata } from '../../Redux/AppReducer/action'
+import { getkidsdata } from '../../Redux/AppReducer/action'
 import "./mens.css"
 
-export const Womens = () => {
-  const womens = useSelector((store) => store.AppReducer.data)
-   
+export const Kids = () => {
+  const beauty = useSelector((store) => store.AppReducer.data)
+    
     const dispatch = useDispatch()
     useEffect(() => {
-      dispatch(getwomensdata())
+      dispatch(getkidsdata())
 
     }, [])
-  
+    
   return (
     <div>
     <div className="designerman" >
-        <h1 >Designer Clothing for Women</h1>
+        <h1 >Designer Products for Kids</h1>
         <p style={{ fontSize: "11.9px", marginTop: "25px" }}>Shop designer clothing for men with price comparison across 500+ stores in one place. Discover the latest designer clothing for men at ModeSens.</p>
     </div>
     <div className="filter" style={{ display: "flex", marginTop: "28px" }}>
@@ -44,7 +44,7 @@ export const Womens = () => {
         </div>
 
         <div className="productbox" >
-            {womens.length > 0 && womens.map(el => {
+            {beauty.length > 0 && beauty.map(el => {
                 return <div key={el.id} >
                     <img src={el.image} />
                     <h3 >{el.title}</h3>
@@ -58,3 +58,5 @@ export const Womens = () => {
 
   )
 }
+
+export default Kids

@@ -82,6 +82,12 @@ margin-left: 15px;
     
     }
 
+    .productbox div img {
+        height: 120px;
+        width: 70%;
+        margin-left: 30px;
+    }
+
     .designerman{
         margin-left:20px;
         width:90%;

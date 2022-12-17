@@ -9,7 +9,6 @@ const Mens = () => {
 const mens = useSelector((store) => store.AppReducer.data)
     console.log(mens)
     const [serachParams, setsearchParams] = useSearchParams();
-
     const initiasort = serachParams.getAll("sort")
     const dispatch = useDispatch()
     const location =useLocation()

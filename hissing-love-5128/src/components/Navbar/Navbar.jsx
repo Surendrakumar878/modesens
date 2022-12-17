@@ -50,12 +50,14 @@ function Navbar() {
     <div>
       <div className="navbar">
         <div className="logo">
-           <Link to="/"/>
+           <Link to="/">
+
 
           <img className="full_logo"
             src="https://i.postimg.cc/7hFL7SGx/1670760238004-removebg-preview.jpg"
             alt=""
-          ></img>
+            ></img>
+            </Link>
            <RxHamburgerMenu onClick={handleMiniNav} className="short_logo"
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHMAAAB8CAMAAABty38BAAAAYFBMVEX///8AAADh4eHPz8/n5+ciIiLr6+smJib8/Pz4+Pjx8fHMzMy/v7+ysrKXl5fZ2dmkpKSsrKy4uLg1NTWMjIydnZ18fHzFxcVoaGguLi5vb29TU1NHR0dZWVl1dXVCQkLOlxADAAACE0lEQVRoge2ZjXKjIBRGr8C6gPwIgmjapu//loup22l3Kp220HQ292Qy0dFwRgOGjwuAIAiCIAiC/I/wm5GWrWTparPYkpKDrm7cGEvKoYmy61RB+tDIeS8OnayRsuvIcQdq5hyu4LSHTvHYSLnKwy4ErpGzOFjmJspzSQngp+rG1R0rd7Ed6mKPxyaCIAiC1Ie3yBa8nB3yMcnqcjgVesYu66+6rA+0fJHfnlfgCnmF30pesc2c6UddZ7O8MhUGaZuhUhoseXyGJsr5+NHHMw3yyuQKT3G+HeGW1mXLK9dZlEIQBEGQarz7Vyb7ush3IlKebp6m33WZllJeybRZNC7mldREWa6v3DVy3kxe+WH1lftGyuO80qoUeZW8ci7WXEGv1Y3F+solrwAjdWFN1rkQBEEQBEEQBHkLDlLsU/ut5Pw0G89vIZ9m/Hzff/GFCiS7NeTlsLeoLgmd+H9a7432ZoQZgkyGjlEEqeIwzuzjRu9ScE6Mi56HoIwKdlYu2piMgj4mZ1SMRgoKTBig1BsRe5btgUQ5jgniJ67Sem/HIF2UaXTUgKfOanpi5M5CGpizZxYVyU7whEcyn6Tqeztr3as+Um/VJ272YBTx3iRjDc23jEellTMk+KQpMXkzMZ22tYnhpLdfQYvZeTNEw7I30OKa0Bfhrz6+3tils/LnHspfb+5n/X3tO1ulD16c8AZ/ADk2Kx9+F5QLAAAAAElFTkSuQmCC"
             

@@ -69,7 +69,7 @@ export const HomePage = () => {
         </Carousel>
       </Box>
       <Box textAlign={"center"}>
-        <Heading fontSize={{ lg: "40px", md: "40px", sm: "40px" }}>
+        <Heading fontSize={{ lg: "34px", md: "34px", sm: "34px" }}>
           New Partners and Designers
         </Heading>
         <Box>
@@ -123,7 +123,7 @@ export const HomePage = () => {
       </Box>
       <Box>
         <Box textAlign={"center"}>
-          <Heading fontSize={{ lg: "40px", md: "40px", sm: "40px" }}>
+          <Heading fontSize={{ lg: "34px", md: "34px", sm: "34px" }}>
             Shop Women
           </Heading>
           <Wrap
@@ -152,7 +152,7 @@ export const HomePage = () => {
                     flexDirection={"column"}
                     justifyContent="center"
                   >
-                    <Box position="relative" right="-140px">
+                    <Box position="relative" right="-134px">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="heartsvg"
@@ -191,7 +191,7 @@ export const HomePage = () => {
       </Box>
       <Box textAlign={"center"}>
         <Box>
-          <Heading fontSize={{ lg: "40px", md: "40px", sm: "40px" }}>
+          <Heading fontSize={{ lg: "34px", md: "34px", sm: "34px" }}>
             New To sale
           </Heading>
           <Wrap
@@ -220,7 +220,7 @@ export const HomePage = () => {
                     flexDirection={"column"}
                     justifyContent="center"
                   >
-                    <Box position="relative" right="-140px">
+                    <Box position="relative" right="-134px">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="heartsvg"
@@ -281,7 +281,7 @@ export const HomePage = () => {
       </Box>
       <Box textAlign={"center"}>
         <Box>
-          <Heading fontSize={{ lg: "40px", md: "40px", sm: "40px" }}>
+          <Heading fontSize={{ lg: "34px", md: "34px", sm: "34px" }}>
             Special Offers
           </Heading>
           <Wrap
@@ -310,7 +310,7 @@ export const HomePage = () => {
                     flexDirection={"column"}
                     justifyContent="center"
                   >
-                    <Box position="relative" right="-140px">
+                    <Box position="relative" right="-134px">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="heartsvg"
@@ -371,7 +371,7 @@ export const HomePage = () => {
       </Box>
       <Box textAlign={"center"}>
         <Box>
-          <Heading fontSize={{ lg: "40px", md: "40px", sm: "40px" }}>
+          <Heading fontSize={{ lg: "34px", md: "34px", sm: "34px" }}>
             Trending Now
           </Heading>
           <Wrap
@@ -400,7 +400,7 @@ export const HomePage = () => {
                     flexDirection={"column"}
                     justifyContent="center"
                   >
-                    <Box position="relative" right="-140px">
+                    <Box position="relative" right="-134px">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="heartsvg"
@@ -461,7 +461,7 @@ export const HomePage = () => {
       </Box>
       <Box>
         <Box textAlign={"center"}>
-          <Heading fontSize={{ lg: "40px", md: "40px", sm: "40px" }}>
+          <Heading fontSize={{ lg: "34px", md: "34px", sm: "34px" }}>
             Recently Viewed
           </Heading>
           <Wrap
@@ -490,7 +490,7 @@ export const HomePage = () => {
                     flexDirection={"column"}
                     justifyContent="center"
                   >
-                    <Box position="relative" right="-140px">
+                    <Box position="relative" right="-134px">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="heartsvg"
@@ -551,7 +551,7 @@ export const HomePage = () => {
       </Box>
       <Box>
         <Box textAlign={"center"}>
-          <Heading fontSize={{ lg: "40px", md: "40px", sm: "40px" }}>
+          <Heading fontSize={{ lg: "34px", md: "34px", sm: "34px" }}>
             Community Posts
           </Heading>
           <Box
@@ -591,14 +591,14 @@ export const HomePage = () => {
         justifyContent="space-around"
       >
         <Box w={{ lg: "30%", md: "30%", sm: "30%" }} alignItems={"center"}>
-          <Heading fontSize={{ lg: "40px", md: "40px", sm: "40px" }}>
+          <Heading fontSize={{ lg: "34px", md: "34px", sm: "34px" }}>
             Download the ModeSens App
           </Heading>
-          <Text fontSize={{ lg: "40px", md: "40px", sm: "40px" }}>
+          <Text fontSize={{ lg: "20x", md: "24px", sm: "24px" }}>
             A seamless experience that takes your style to the next level.
           </Text>
           <Button
-            fontSize={{ lg: "40px", md: "40px", sm: "40px" }}
+            fontSize={{ lg: "20px", md: "24px", sm: "24px" }}
             borderRadius={0}
             bg={"black"}
             color="white"
@@ -613,14 +613,14 @@ export const HomePage = () => {
           </Center>
         </Box>
         <Box w={{ lg: "30%", md: "30%", sm: "30%" }}>
-          <Heading fontSize={{ lg: "40px", md: "40px", sm: "40px" }}>
+          <Heading fontSize={{ lg: "34px", md: "34px", sm: "34px" }}>
             Download the ModeSens App
           </Heading>
-          <Text>
+          <Text fontSize={{ lg: "20x", md: "24px", sm: "24px" }}>
             Get timely, accurate product information every time you browse.
           </Text>
           <Button
-            fontSize={{ lg: "40px", md: "40px", sm: "40px" }}
+            fontSize={{ lg: "24px", md: "24px", sm: "24px" }}
             borderRadius={0}
             bg={"black"}
             color="white"

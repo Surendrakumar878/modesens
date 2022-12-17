@@ -8,9 +8,9 @@
   padding-left: 1%;
   margin-top: 1%;
   border: 2px solid black;
-  position: fixed;
+  /* position: fixed; */
   /* display: absolute; */
-  z-index: 1;
+  /* z-index: 1; */
   /* justify-content: space-between; */
   
 }

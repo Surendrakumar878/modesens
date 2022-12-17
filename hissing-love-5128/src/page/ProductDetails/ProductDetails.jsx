@@ -15,7 +15,7 @@ import "aos/dist/aos.css";
 import { ImageMagnifier } from "../../components/Navbar/productdetails/ImageMagnifier";
 import swal from "sweetalert";
 import LoginSignupModal from "../../components/LoginSignup/LoginSignupModal";
-import { getproddata } from "../../Redux/ProductReducer/action";
+import { addtocart, getproddata } from "../../Redux/ProductReducer/action";
 import { store } from "../../Redux/store";
 import { useState } from "react";
 import { kidsViewersLiked } from "../../components/Navbar/productdetails/kidsViewerLiked";
@@ -31,6 +31,8 @@ const ProductDetails = () => {
   // console.log(prodData);
   // console.log(id);
   const navigate=useNavigate();
+const cartData=useSelector((store)=>store.ProductReducer.CartData);
+console.log(cartData);
 
   useEffect(()=>{
     dispatch( getproddata(id))
@@ -58,6 +60,22 @@ const ProductDetails = () => {
     if(prodData[0].category=="beauty"){
       navigate("/beauty")
     }
+  }
+  const addtocartfunction=(data)=>{
+         let newcart2=cartData.filter((el)=>{
+          return el.id==data.id
+         })
+         if(newcart2.length>0){
+          swal({
+            title:"Item already available in cart",
+            text:"It seems item is already present in your cart",
+            icon:"warning"
+          })
+         }
+         else{
+          let newcart=[...cartData,data]
+          dispatch(addtocart(newcart))
+         }
   }
 
   return (
@@ -128,7 +146,7 @@ const ProductDetails = () => {
               title:"Added To Cart",
               icon:"success",
               text:"Item added to cart make sure to checkout!"
-            })}}
+            });addtocartfunction(prodData[0])}}
           >
             ADD TO BAG
           </button>
@@ -221,7 +239,7 @@ const ProductDetails = () => {
                 title:"Added To Cart",
                 icon:"success",
                 text:"Item added to cart make sure to checkout!"
-              })}}
+              });addtocartfunction(prodData[0])}}
             >
               ADD TO BAG
             </button>
@@ -292,7 +310,7 @@ const ProductDetails = () => {
                 title:"Added To Cart",
                 icon:"success",
                 text:"Item added to cart make sure to checkout!"
-              })}}
+              });addtocartfunction(prodData[0])}}
             >
               ADD TO BAG
             </button>

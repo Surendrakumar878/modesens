@@ -35,3 +35,25 @@ export const getproddetailsFailure = () => {
 }
 
 export {getproddata};
+
+
+export const addtocart = (data) => {
+    return {
+        type: types.ADD_CART_ITEMS,
+        payload:data
+    }
+}
+
+export const checkoutclear = (data) => {
+    return {
+        type: types.CLEAR_CART_CHECKOUT,
+        payload:data
+    }
+}
+
+export const removefromcart = (data) => {
+    return {
+        type: types.REMOVE_ITEM_FROM_CART,
+        payload:data
+    }
+}

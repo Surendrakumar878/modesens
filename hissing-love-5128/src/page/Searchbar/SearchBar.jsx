@@ -1,4 +1,4 @@
-import { Box,  Image, Text, Wrap, WrapItem } from '@chakra-ui/react';
+import { Box,  Button,  Drawer,  DrawerBody,  DrawerContent,  DrawerOverlay,  Image, Text, useDisclosure, Wrap, WrapItem } from '@chakra-ui/react';
 import React, { useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
@@ -34,13 +34,42 @@ export const SearchBar = () => {
             console.log("hell",newSugg)
         }
     },[query])
-   
+    const { isOpen, onOpen, onClose } = useDisclosure()
+  const btnRef = React.useRef()
+    // const [size, setSize] = React.useState('')
+    // const { isOpen, onOpen, onClose } = useDisclosure()
+  
+    // const handleClick = (newSize) => {
+    //   setSize(newSize)
+    //   onOpen()
+    // }
+  
+    // const sizes = [ 'md']
+  
+
+
   return (
     <Box > 
+       {/* <Drawer onClose={onClose} isOpen={isOpen} size={size}></Drawer> */}
+   <Box>
+   
+     <Box ref={btnRef} colorScheme='teal' onClick={onOpen}><SearchInput  queryHanlder={queryHanlder} /></Box> 
+      <Drawer
+      size="md"
+        isOpen={isOpen}
+        placement='right'
+        onClose={onClose}
+        finalFocusRef={btnRef}
+      >
+        <DrawerOverlay />
+        <DrawerContent>
+        
 
-      <Box  onClick={()=>setShow("")}>  <SearchInput queryHanlder={queryHanlder}/></Box>
-        <Box display={show}>
-<Wrap  boxShadow='dark-lg'  rounded='md' bg='white'   h="200px" w="650px" ml="600px" display={"flex"} justifyContent="space-around"  spacing={7} >
+
+          <DrawerBody>
+         <SearchInput queryHanlder={queryHanlder}/>
+       
+<Wrap w="109%" ml="-22px"  boxShadow='dark-lg'  rounded='md' bg='white'   h="200px"   display={"flex"} justifyContent="space-around"  spacing={7} >
 {suggestion.map((i)=>{
     return <Link to={`/details/${i.id}`}> <WrapItem   w='140px' h='200px' key={i.id} display="flex"
   flexDirection={"column"}  justifyContent="center" pl="20px"   > 
@@ -52,7 +81,13 @@ export const SearchBar = () => {
     </WrapItem></Link>
 })}
 </Wrap>
-</Box>
+
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
+    </Box>
+
+      
     </Box>
   )
 }

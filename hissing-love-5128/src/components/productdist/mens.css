@@ -29,9 +29,10 @@
 
 .productbox div h3 {
     font-size: 11.9px;
-    margin-top: "8px";
+    margin-top:12px;
     color: #8E8E8E;
-    font-weight: "bolder"
+    font-weight:bolder
+    
 }
 
 .productbox div p {
@@ -51,11 +52,19 @@
     width: 25%
 }
 
-.filter p {
+.filter h4{
     color: #8E8E8E;
     font-weight: bold;
-    font-size: 11.9px;
-    margin-left: 20px;
+    font-size: 13.5px;
+    margin-left: 30px;
+    
+}
+.related{
+margin-left: 15px;
+}
+.related p{
+    margin-left:15px;
+    font-size: 13px;
 }
 
 

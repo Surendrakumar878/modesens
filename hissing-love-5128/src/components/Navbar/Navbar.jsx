@@ -50,6 +50,8 @@ function Navbar() {
     <div>
       <div className="navbar">
         <div className="logo">
+           <Link to="/"/>
+
           <img className="full_logo"
             src="https://i.postimg.cc/7hFL7SGx/1670760238004-removebg-preview.jpg"
             alt=""
@@ -70,7 +72,7 @@ function Navbar() {
             </div> */}
         <div className="links">
           <Link
-            to="women"
+            to="womens"
             onMouseEnter={() => {
               let d = "women";
               setMenu(<Data r={d} />);
@@ -98,7 +100,7 @@ function Navbar() {
             MEN
           </Link>
           <Link
-            to="products"
+            to="beauty"
             onMouseEnter={() => {
               let d = "beauty";
               setMenu(
@@ -114,7 +116,7 @@ function Navbar() {
             BEAUTY
           </Link>
           <Link
-            to="men"
+            to="kids"
             onMouseEnter={() => {
               let d = "kids";
               setMenu(
@@ -271,7 +273,7 @@ function Navbar() {
               src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-512.png"
               alt=""
             />
-            {/* <SearchBar /> */}
+            <SearchBar />
           </div>
           <div
             style={{ marginTop: "-10px", cursor: "pointer" }}

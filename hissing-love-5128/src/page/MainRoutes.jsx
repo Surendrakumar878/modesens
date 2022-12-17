@@ -1,5 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import Beauty from '../components/productdist/Beauty'
+import Kids from '../components/productdist/Kids'
 import Mens from '../components/productdist/Mens'
 import { Womens } from '../components/productdist/Womens'
 import Admin from './AdminPenal/Admin'
@@ -22,6 +24,10 @@ export const MainRoutes = () => {
         <Route path="/product/:id" element={<Edit/>}></Route>
         <Route path='/men' element={<Mens/>} />
         <Route path='/womens' element={<Womens/>} />
+
+        <Route path='/beauty' element={<Beauty/>} />
+        <Route path='/kids' element={<Kids/>} />
+        <Route path='/search' element={<SearchBar/>} /
         {/* <Route path='/search' element={<SearchBar/>} /> */}
         <Route path='/cart' element={<Cart/>} />
         <Route path='/community' element ={<Comminity />} />

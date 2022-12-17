@@ -33,9 +33,9 @@
               // dispatch(getFailure())
           })
   }
-  const getmensdata = () => (dispatch) => {
+  const getmensdata = (params) => (dispatch) => {
     dispatch(getRequest());
-    return axios.get(" https://modesens-mocker-api.onrender.com/modesensdata?category=mens")
+    return axios.get(" https://modesens-mocker-api.onrender.com/modesensdata?category=mens",params)
         .then((res) => {
             console.log(res.data)
             dispatch(getSuccess(res.data))
@@ -46,7 +46,7 @@
 }
 const getwomensdata = () => (dispatch) => {
     dispatch(getRequest());
-    return axios.get(" https://modesens-mocker-api.onrender.com/modesensdata?category=womens")
+    return axios.get("https://modesens-mocker-api.onrender.com/modesensdata?category=womens")
         .then((res) => {
             // console.log(res.data)
             dispatch(getSuccess(res.data))
@@ -55,7 +55,26 @@ const getwomensdata = () => (dispatch) => {
             // dispatch(getFailure())
         })
 }
-
+const getbeautydata = () => (dispatch) => {
+  dispatch(getRequest());
+  return axios.get("https://modesens-mocker-api.onrender.com/modesensdata?category=beauty")
+      .then((res) => {
+          dispatch(getSuccess(res.data))
+      })
+      .catch((err) => {
+          // dispatch(getFailure())
+      })
+}
+const getkidsdata = () => (dispatch) => {
+  dispatch(getRequest());
+  return axios.get("https://modesens-mocker-api.onrender.com/modesensdata?category=kids")
+      .then((res) => {
+          dispatch(getSuccess(res.data))
+      })
+      .catch((err) => {
+          // dispatch(getFailure())
+      })
+}
   const edit=(id,payload)=>(dispatch) => {
     // const navigate = useNavigate();
       return axios.patch(`https://modesens-mocker-api.onrender.com/modesensdata/${id}`,payload)
@@ -102,7 +121,7 @@ const getwomensdata = () => (dispatch) => {
      };
   
     
-    export {update,deleteDataFromCart,edit,getdata,addNewData,getmensdata,getwomensdata}
+    export {update,deleteDataFromCart,edit,getdata,addNewData,getmensdata,getwomensdata,getbeautydata,getkidsdata}
   
 
 

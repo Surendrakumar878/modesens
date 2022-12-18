@@ -44,9 +44,9 @@
             // dispatch(getFailure())
         })
 }
-const getwomensdata = () => (dispatch) => {
+const getwomensdata = (params) => (dispatch) => {
     dispatch(getRequest());
-    return axios.get("https://modesens-mocker-api.onrender.com/modesensdata?category=womens")
+    return axios.get("https://modesens-mocker-api.onrender.com/modesensdata?category=womens",params)
         .then((res) => {
             // console.log(res.data)
             dispatch(getSuccess(res.data))
@@ -55,9 +55,9 @@ const getwomensdata = () => (dispatch) => {
             // dispatch(getFailure())
         })
 }
-const getbeautydata = () => (dispatch) => {
+const getbeautydata = (params) => (dispatch) => {
   dispatch(getRequest());
-  return axios.get("https://modesens-mocker-api.onrender.com/modesensdata?category=beauty")
+  return axios.get("https://modesens-mocker-api.onrender.com/modesensdata?category=beauty",params)
       .then((res) => {
           dispatch(getSuccess(res.data))
       })
@@ -65,9 +65,9 @@ const getbeautydata = () => (dispatch) => {
           // dispatch(getFailure())
       })
 }
-const getkidsdata = () => (dispatch) => {
+const getkidsdata = (params) => (dispatch) => {
   dispatch(getRequest());
-  return axios.get("https://modesens-mocker-api.onrender.com/modesensdata?category=kids")
+  return axios.get("https://modesens-mocker-api.onrender.com/modesensdata?category=kids",params)
       .then((res) => {
           dispatch(getSuccess(res.data))
       })

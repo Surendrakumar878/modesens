@@ -28,7 +28,7 @@ const ProductDetails = () => {
   const token=useSelector((store)=>store.AuthReducer.token);
   console.log("toekn",token)
   const prodData=useSelector((store)=>store.ProductReducer.ProdData);
-  // console.log(prodData);
+   console.log(prodData);
   // console.log(id);
   const navigate=useNavigate();
 const cartData=useSelector((store)=>store.ProductReducer.CartData);
@@ -49,7 +49,7 @@ console.log(cartData);
       return
     }
     if(prodData[0].category=="mens"){
-      navigate("/mens")
+      navigate("/men")
     }
     else if(prodData[0].category=="womens"){
       navigate("/womens")
@@ -140,6 +140,7 @@ console.log(cartData);
         </div>
         <div className="Shop_with_concierge_button">
           <button>SELECT SIZE</button>
+          {prodData[0].available==true?
           <button
             style={{ background: "#1c1c1c", border: "none", color: "#fff" }}
             onClick={()=>{swal({
@@ -149,7 +150,12 @@ console.log(cartData);
             });addtocartfunction(prodData[0])}}
           >
             ADD TO BAG
-          </button>
+          </button>:
+          <button disabled
+          style={{ background: "#c00000", border: "none", color: "#fff" }}>
+          Stock Not Available
+        </button>
+          }
         </div>
       </div>
 
@@ -227,7 +233,7 @@ console.log(cartData);
             </div>
           </div>
           <div style={{ width: "156.23px" }}>
-            <button
+            {prodData[0].available==true?<button
               style={{
                 background: "#1c1c1c",
                 border: "none",
@@ -242,7 +248,13 @@ console.log(cartData);
               });addtocartfunction(prodData[0])}}
             >
               ADD TO BAG
-            </button>
+            </button>:
+             <button disabled 
+             style={{ background: "#c00000", border: "none", color: "#fff", width: "100%",
+             height: "40px" }}>
+             Stock Not Available
+           </button>
+            }
           </div>
         </div>
         <div>
@@ -298,7 +310,7 @@ console.log(cartData);
             </div>
           </div>
           <div style={{ width: "156.23px" }}>
-            <button
+          {prodData[0].available==true?<button
               style={{
                 background: "#1c1c1c",
                 border: "none",
@@ -313,7 +325,13 @@ console.log(cartData);
               });addtocartfunction(prodData[0])}}
             >
               ADD TO BAG
-            </button>
+            </button>:
+             <button disabled 
+             style={{ background: "#c00000", border: "none", color: "#fff", width: "100%",
+             height: "40px" }}>
+             Stock Not Available
+           </button>
+            }
           </div>
         </div>
       </div>

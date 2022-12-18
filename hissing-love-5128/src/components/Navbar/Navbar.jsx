@@ -225,7 +225,7 @@ function Navbar() {
           </div>
          
           <div style={{color:"red"}} className="mini" >
-            <HiShoppingCart size="26px"  />
+            <Link to={"/cart"}><HiShoppingCart size="26px"  /></Link>
           </div>
           
           <div >

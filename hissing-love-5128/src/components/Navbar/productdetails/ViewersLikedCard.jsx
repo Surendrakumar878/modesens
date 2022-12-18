@@ -16,6 +16,7 @@ function ViewerLikedCard({ el }) {
         justifyContent: "space-evenly",
         fontFamily: "SuisseIntl",
       }}
+      className="viewer_liked_Card"
     >
       <div
         style={{
@@ -44,6 +45,7 @@ function ViewerLikedCard({ el }) {
         src={el.image}
         style={{ width: "229px", height: "265px" }}
       />
+      <div className="hide_CARD_VIEW"  style={{ width: "229px", height: "40px",border:"1px solid #1c1c1c",background:"transparent",color:"#000" }}>VIEW MORE</div>
       <Card.Body>
         <Card.Title style={{ fontSize: "14px", fontWeight: "600" }}>
           {el.title}
@@ -56,6 +58,11 @@ function ViewerLikedCard({ el }) {
         <Card.Text style={{ fontSize: "14px", color: "#8e838e" }}>
           Compare {el.stores} stores
         </Card.Text>
+        {el.available==true? <Card.Text style={{ fontSize: "14px", color: "#000" }}>
+          Stock Available
+        </Card.Text>:<Card.Text style={{ fontSize: "14px", color: "#c00000" }}>
+          Stock Not Available
+        </Card.Text>} 
       </Card.Body>
     </Card>
   );

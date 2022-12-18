@@ -288,7 +288,7 @@ function Navbar() {
          <Link to="cart">
 
           <div style={{color:"red"}} className="mini" >
-            <HiShoppingCart size="26px"  />
+            <Link to={"/cart"}><HiShoppingCart size="26px"  /></Link>
           </div>
          </Link>
          <LoginSignupModal  show={modalShow}

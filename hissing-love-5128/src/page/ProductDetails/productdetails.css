@@ -21,8 +21,7 @@ body {
   z-index: 1111;
   background: blur;
   background-color: rgba(0, 0, 0, 0.9);
-backdrop-filter: blur(10px);
-
+  backdrop-filter: blur(10px);
   top: 280px;
 }
 .proddetails_section {
@@ -613,9 +612,10 @@ backdrop-filter: blur(10px);
   .viewer_ALSO_LIKED{
     width: 100%;
       display: grid;
-      padding-left: 20%;
+      padding-left: 15%;
       grid-template-columns: repeat(1,281px);
       grid-template-rows: repeat(8,441px);
+      
       -ms-grid-row-align: center;
       -ms-grid-column-align: center;
   }

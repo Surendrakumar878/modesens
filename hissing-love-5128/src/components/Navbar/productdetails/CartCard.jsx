@@ -11,6 +11,7 @@ function CartCard({ el }) {
   const dispatch = useDispatch();
   const cartData = useSelector((store) => store.ProductReducer.CartData);
   const [total, setTotal] = useState(0);
+  const [count,setCount]=useState(1);
 
   console.log(cartData, "card");
 
@@ -42,7 +43,7 @@ function CartCard({ el }) {
       style={{
         border: "none",
         width: "281px",
-        height: "441px",
+        height: "461px",
         display: "flex",
         boxShadow:
           "rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset",
@@ -117,6 +118,7 @@ function CartCard({ el }) {
             Stock Not Available
           </Card.Text>
         )}
+    
       </Card.Body>
     </Card>
   );

@@ -117,9 +117,9 @@ export const Cart = () => {
           </div>
 
           <div className="empty_cart_btn">
-            <button>SHOP WOMEN</button>
-            <button>SHOP MEN</button>
-            <button>SHOP KIDS</button>
+            <button onClick={()=>{navigate("/womens")}}>SHOP WOMEN</button>
+            <button onClick={()=>{navigate("/men")}}>SHOP MEN</button>
+            <button onClick={()=>{navigate("/kids")}}>SHOP KIDS</button>
           </div>
           <div className="title_prod_desc" style={{ marginBottom: "20px" }}>
             Recently Viewed

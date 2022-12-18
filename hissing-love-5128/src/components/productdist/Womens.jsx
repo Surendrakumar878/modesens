@@ -1,7 +1,7 @@
 import { Button } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useLocation, useSearchParams } from "react-router-dom"
+import { Link, useLocation, useSearchParams } from "react-router-dom"
 import { getwomensdata } from '../../Redux/AppReducer/action'
 import "./mens.css"
 
@@ -103,12 +103,13 @@ export const Womens = () => {
 
                 <div className="productbox" >
                     {womens.length > 0 && womens.map(el => {
-                        return <div key={el.id} >
-                            <img src={el.image} />
-                            <h3 >{el.title}</h3>
-                            <p><span>$169(60% OFF)</span>-${el.price}</p>
-                            <p style={{ color: "#8E8E8E", fontWeight: "bold", fontSize: "11.9px", marginTop: "16px", marginBottom: "8px" }}>Compare 22 stores</p>
-                        </div>
+                        return <Link to={`/details/${el.id}`}>
+                        <div key={el.id} >
+                        <img src={el.image} />
+                        <h3 >{el.title}</h3>
+                        <p><span>$169(60% OFF)</span>-${el.price}</p>
+                        <p style={{ color: "#8E8E8E", fontWeight: "bold", fontSize: "11.9px", marginTop: "16px", marginBottom: "8px" }}>Compare 22 stores</p>
+                    </div></Link>
                     })}
                 </div>
             </div>

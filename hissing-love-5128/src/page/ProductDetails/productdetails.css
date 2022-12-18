@@ -10,6 +10,21 @@ body {
   background-color: #fff;
   overflow-x: hidden;
 }
+.hide_CARD_VIEW{
+  display: none;
+}
+.viewer_liked_Card:hover  .hide_CARD_VIEW{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 1111;
+  background: blur;
+  background-color: rgba(0, 0, 0, 0.9);
+backdrop-filter: blur(10px);
+
+  top: 280px;
+}
 .proddetails_section {
   width: 75%;
   margin: auto;

@@ -12,6 +12,8 @@ import { useNavigate } from "react-router-dom";
 
 export const Cart = () => {
   const cartData = useSelector((store) => store.ProductReducer.CartData);
+  const isAuth = useSelector((store) => store.AuthReducer.isAuth);
+  // console.log("Isauth",isAuth)
   const [total, setTotal] = useState(0);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -31,6 +33,13 @@ export const Cart = () => {
   }, []);
 
   function checkoutfuction() {
+    if(isAuth==false){
+      return swal({
+        title:"Not Logged in!",
+        text:"It seems you are not logged in. Login now!",
+        icon:"warning"
+      })
+    }
     swal({
       title: "Order Placed Successfully",
       text: "Thank you for shopping with coolmart and being cool.",

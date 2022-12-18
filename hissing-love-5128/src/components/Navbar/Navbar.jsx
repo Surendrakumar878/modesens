@@ -17,6 +17,17 @@ import {RxHamburgerMenu} from 'react-icons/rx'
 import { Box, Button, Flex, Hide, IconButton, Image, Menu, MenuButton, MenuItem, MenuList, Show } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 function Navbar() {
+  const [data, setData] = useState([
+    "SHOPPING",
+    "CLOTHING",
+    "BAGS",
+    "SHOES",
+    "ACCEESSORIES",
+    "BEAUTY",
+    "SALES",
+    "PRE OWNED",
+    "OCCASIONS",
+  ]);
   const [modalShow, setModalShow] = React.useState(false);
   const token=useSelector((store)=>store.AuthReducer.token);
   console.log("token",token)

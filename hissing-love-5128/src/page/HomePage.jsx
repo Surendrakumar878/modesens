@@ -31,8 +31,8 @@ export const HomePage = () => {
   }, []);
   console.log(data);
   return (
-    <Box pos="ralative" w={{ lg: "100%", md: "100%", sm: "100%" }}>
-      <Box>
+    <Box  w={{ lg: "100%", md: "100%", sm: "100%" }}>
+      <Box zIndex={"-1"} >
         <Carousel>
           <Carousel.Item>
             <img

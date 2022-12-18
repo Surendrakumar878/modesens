@@ -6,15 +6,34 @@
 
 - About the project
 - Demo
+- User Features
+- Admin Features
 - Technologies
 - Status
 
 
 ## About the project
 
-This project is a web application named as Coolmart builded by us. The purpose of building this project is for educational purposes. For more information scroll below. Thank You!
+This project is a web application for E-Commerce mostly focused on the functionality of user and admin sides named Coolmart developed by us. The purpose of building this project is for educational purposes. For more information scroll below. Thank You!
+
+## User Features
 
 
+- Login 
+- Signup ( Real time OTP authentication )
+- Add to Cart
+- Product details
+- Searching products
+- Sorting
+
+## Admin Features
+
+- Login
+- Toggle Stock availability
+- Change details of product
+- Sorting
+- Filtering
+- Adding new products
 
 ## Demo
 

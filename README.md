@@ -37,7 +37,7 @@ This project is a web application for E-Commerce mostly focused on the functiona
 
 ## Demo
 
-deployed link for demo:- to be updated
+deployed link for demo:- https://coolmart.netlify.app/
 
 
 ## Technologies

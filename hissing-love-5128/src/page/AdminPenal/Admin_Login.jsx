@@ -34,11 +34,12 @@ import {
           
           
   return (
-    <Box  bg={"white"} align="center" w={{lg:"50%",md:"50%",sm:"100%"}} pl={{lg:"",sm:"100px"}} m="5%"  spacing="120px"   >
+    <Box  bg={"white"} align="center" w={{lg:"90%",md:"50%",sm:"100%"}} pl={{lg:"",sm:"100px"}} m="5%"  spacing="120px"   >
     <Stack >
     <Heading> Log in to your Admin Account</Heading>
-    <form w={{ lg: '100%', sm: '50%', md: '75%' }}  onSubmit={handleSubmitU}>
+    <form w={{ lg: '50%', sm: '50%', md: '75%' }}  onSubmit={handleSubmitU}>
     <Input
+     w={{ lg: '50%', sm: '50%', md: '75%' }}
         variant="flushed"
         type="text "
         placeholder="name"
@@ -47,6 +48,7 @@ import {
       />
       <br />
       <Input
+       w={{ lg: '50%', sm: '50%', md: '75%' }}
         variant="flushed"
         type="text "
         placeholder="userId"
@@ -55,6 +57,7 @@ import {
       />
       <br />
       <Input
+       w={{ lg: '50%', sm: '50%', md: '75%' }}
         variant="flushed"
         type="text "
         placeholder="password"

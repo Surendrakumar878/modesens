@@ -14,6 +14,8 @@ import MiniNav from "./MiniNav";
 import {AiOutlineUser} from 'react-icons/ai'
 import {HiShoppingCart} from 'react-icons/hi'
 import {RxHamburgerMenu} from 'react-icons/rx'
+import { Box, Button, Flex, Hide, IconButton, Image, Menu, MenuButton, MenuItem, MenuList, Show } from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
 function Navbar() {
   const [modalShow, setModalShow] = React.useState(false);
   const token=useSelector((store)=>store.AuthReducer.token);
@@ -47,16 +49,77 @@ function Navbar() {
     }));
   }
   return (
-    <div>
-      <div className="navbar">
+    <Box position={"fixed"}>
+      {/* <Flex p={5}  w={{ lg: '100%', sm: '100%', md: '100%' }} justifyContent="space-evenly" color="gray.500" >
+        <Show mr={10}  breakpoint='(max-width: 770px)'><Menu>
+  <MenuButton
+    as={IconButton}
+    aria-label='Options'
+    icon={<HamburgerIcon />}
+    variant='outline'
+  />
+  <MenuList>
+    <MenuItem  >
+    Home
+    </MenuItem>
+    <MenuItem >
+    FEATURE
+    </MenuItem>
+    <MenuItem >
+    PRICE
+    </MenuItem>
+    <MenuItem  >
+    CONTECT US
+    </MenuItem>
+  </MenuList>
+</Menu></Show>
+          <Box display={"flex"}  ml={4}  fontWeight="bold"
+            textTransform="uppercase"
+            fontSize={{lg:"32px",sm:"30px",md:"28px"}}
+            letterSpacing="wide"
+            color="orange">
+            DELIVARY </Box>
+<Hide below='md' >
+          <Button textTransform="uppercase" bg="white" >Home</Button>
+          <Button textTransform="uppercase" bg="white" >FEATURE</Button>
+          <Button textTransform="uppercase" bg="white" >PRICE</Button>
+          <Button textTransform="uppercase" bg="white" >CONTECT US</Button>
+          </Hide>
+          <Button textTransform="uppercase" bg="orange" color={"white"}>LOGIN</Button>
+          </Flex> */}
+
+
+      <Flex   visibility="visible" zIndex={1} p={8}  w={{ lg: '100%', sm: '100%', md: '100%' }} justifyContent="space-evenly" color="gray.500">
+      <Show mr={10}  breakpoint='(max-width: 770px)'><Menu>
+  <MenuButton
+    as={IconButton}
+    aria-label='Options'
+    icon={<HamburgerIcon />}
+    variant='outline'
+  />
+  <MenuList>
+    <MenuItem  >
+    Home
+    </MenuItem>
+    <MenuItem >
+    FEATURE
+    </MenuItem>
+    <MenuItem >
+    PRICE
+    </MenuItem>
+    <MenuItem  >
+    CONTECT US
+    </MenuItem>
+  </MenuList>
+</Menu></Show>
         <div className="logo">
            <Link to="/">
 
 
-          <img className="full_logo"
+          <Image  w={{ lg: "100%", md: "100%", sm: "100%" }}  
             src="https://i.postimg.cc/7hFL7SGx/1670760238004-removebg-preview.jpg"
             alt=""
-            ></img>
+            />
             </Link>
            <RxHamburgerMenu onClick={handleMiniNav} className="short_logo"
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHMAAAB8CAMAAABty38BAAAAYFBMVEX///8AAADh4eHPz8/n5+ciIiLr6+smJib8/Pz4+Pjx8fHMzMy/v7+ysrKXl5fZ2dmkpKSsrKy4uLg1NTWMjIydnZ18fHzFxcVoaGguLi5vb29TU1NHR0dZWVl1dXVCQkLOlxADAAACE0lEQVRoge2ZjXKjIBRGr8C6gPwIgmjapu//loup22l3Kp220HQ292Qy0dFwRgOGjwuAIAiCIAiC/I/wm5GWrWTparPYkpKDrm7cGEvKoYmy61RB+tDIeS8OnayRsuvIcQdq5hyu4LSHTvHYSLnKwy4ErpGzOFjmJspzSQngp+rG1R0rd7Ed6mKPxyaCIAiC1Ie3yBa8nB3yMcnqcjgVesYu66+6rA+0fJHfnlfgCnmF30pesc2c6UddZ7O8MhUGaZuhUhoseXyGJsr5+NHHMw3yyuQKT3G+HeGW1mXLK9dZlEIQBEGQarz7Vyb7ush3IlKebp6m33WZllJeybRZNC7mldREWa6v3DVy3kxe+WH1lftGyuO80qoUeZW8ci7WXEGv1Y3F+solrwAjdWFN1rkQBEEQBEEQBHkLDlLsU/ut5Pw0G89vIZ9m/Hzff/GFCiS7NeTlsLeoLgmd+H9a7432ZoQZgkyGjlEEqeIwzuzjRu9ScE6Mi56HoIwKdlYu2piMgj4mZ1SMRgoKTBig1BsRe5btgUQ5jgniJ67Sem/HIF2UaXTUgKfOanpi5M5CGpizZxYVyU7whEcyn6Tqeztr3as+Um/VJ272YBTx3iRjDc23jEellTMk+KQpMXkzMZ22tYnhpLdfQYvZeTNEw7I30OKa0Bfhrz6+3tils/LnHspfb+5n/X3tO1ulD16c8AZ/ADk2Kx9+F5QLAAAAAElFTkSuQmCC"
@@ -72,7 +135,8 @@ function Navbar() {
             alt=""
             ></img>
             </div> */}
-        <div className="links">
+            <Hide below='md' >
+        <Box className="links">
           <Link
             to="womens"
             onMouseEnter={() => {
@@ -91,12 +155,11 @@ function Navbar() {
               let d = "men";
               setMenu(
                 <Data
-                  r={d}
-                  onMouseLeave={() => {
-                    setMenu("");
-                  }}
-                />
+                  r={d}/>
               );
+            }}
+            onMouseLeave={() => {
+              setMenu("");
             }}
           >
             MEN
@@ -211,11 +274,10 @@ function Navbar() {
               );
             }}
           >
-            WHY COOLMART
+            WHYCOOLMART
           </Link>
-        </div>
-        <LoginSignupModal  show={modalShow}
-        onHide={() => setModalShow(false)}/>
+        </Box >
+        </Hide>
         <div className="rightIcons">
           <div className="flag_icon">
             <img
@@ -223,11 +285,14 @@ function Navbar() {
               alt=""
             ></img>
           </div>
-         
+         <Link to="cart">
+
           <div style={{color:"red"}} className="mini" >
             <HiShoppingCart size="26px"  />
           </div>
-          
+         </Link>
+         <LoginSignupModal  show={modalShow}
+        onHide={() => setModalShow(false)}/>
           <div >
             <span >{token.length> 0 ? <img  onClick={()=>{
               swal({
@@ -284,9 +349,10 @@ function Navbar() {
            
           </div>
         </div>
-      </div>
-      <div>{menu}</div>
-    </div>
+      </Flex>
+        <Box w="100%" position={"absolute"} bg="white">{menu}</Box>
+      
+    </Box>
   );
 }
 

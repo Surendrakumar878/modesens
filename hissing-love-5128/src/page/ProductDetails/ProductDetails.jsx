@@ -45,25 +45,25 @@ console.log(cartData);
   }, []);
 
   const navigateFunction=()=>{
-    if(prodData.length==0){
+    if(prodData.length===0){
       return
     }
-    if(prodData[0].category=="mens"){
+    if(prodData[0].category==="mens"){
       navigate("/men")
     }
-    else if(prodData[0].category=="womens"){
+    else if(prodData[0].category==="womens"){
       navigate("/womens")
     }
-    if(prodData[0].category=="kids"){
+    if(prodData[0].category==="kids"){
       navigate("/kids")
     }
-    if(prodData[0].category=="beauty"){
+    if(prodData[0].category==="beauty"){
       navigate("/beauty")
     }
   }
   const addtocartfunction=(data)=>{
          let newcart2=cartData.filter((el)=>{
-          return el.id==data.id
+          return el.id===data.id
          })
          if(newcart2.length>0){
           swal({
@@ -140,7 +140,7 @@ console.log(cartData);
         </div>
         <div className="Shop_with_concierge_button">
           <button>SELECT SIZE</button>
-          {prodData[0].available==true?
+          {prodData.length>0 && prodData[0].available===true?
           <button
             style={{ background: "#1c1c1c", border: "none", color: "#fff" }}
             onClick={()=>{swal({
@@ -233,7 +233,7 @@ console.log(cartData);
             </div>
           </div>
           <div style={{ width: "156.23px" }}>
-            {prodData[0].available==true?<button
+            {prodData.length>0 && prodData[0].available===true?<button
               style={{
                 background: "#1c1c1c",
                 border: "none",
@@ -310,7 +310,7 @@ console.log(cartData);
             </div>
           </div>
           <div style={{ width: "156.23px" }}>
-          {prodData[0].available==true?<button
+          {prodData.length>0 && prodData[0].available==true?<button
               style={{
                 background: "#1c1c1c",
                 border: "none",

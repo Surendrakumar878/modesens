@@ -57,7 +57,7 @@
  }
  .links{
 font-size: 15px;
-margin-left: 0px;
+margin-left: 100px;
  }
  .navbar {
   visibility: visible;
@@ -121,15 +121,15 @@ visibility: collapse;
   width: 110%;
 }
 .links > a {
-  margin-left: 3%;
-  font-size: 75%;
+  margin-left: 3.5%;
+  font-size: 80%;
   font-weight: bold;
   width: auto;
   color: black;
   text-decoration: none;
 }
 .links > a:hover {
-  /* border-bottom: 1px solid rgb(142, 40, 40); */
+  border-bottom: 1px solid rgb(142, 40, 40);
 }
 .rightIcons {
   display: flex;

@@ -14,13 +14,14 @@ import React, { useEffect, useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import ViewerLikedCard from "../components/Navbar/productdetails/ViewersLikedCard";
 import { getdata, getwomensdata } from "../Redux/AppReducer/action";
 
 export const HomePage = () => {
   const data = useSelector((store) => store.AppReducer.data);
-  const [show, setShow] = useState("400px");
-  const [see, setSee] = useState("400px");
-  const [more, setMore] = useState("400px");
+  const [show, setShow] = useState("441px");
+  const [see, setSee] = useState("441px");
+  const [more, setMore] = useState("441px");
   const [showStatus, setShowStatus] = useState(true);
   const womens = data.filter((i) => i.category === "womens");
   const special = data.filter((i) => i.rating.rate > 4);
@@ -380,7 +381,7 @@ export const HomePage = () => {
             Shop Women
           </Box>
           <Wrap
- mb="10px"            boxShadow="dark-lg"
+ mb="10px"           
             Box
             pt={{ lg: "10px", md: "10px", sm: "10px" }}
             pb={{ lg: "10px", md: "10px", sm: "10px" }}
@@ -700,9 +701,9 @@ export const HomePage = () => {
           </Box>
           <Wrap
            mb="10px"
-            boxShadow="dark-lg"
-            pt={{ lg: "10px", md: "10px", sm: "10px" }}
-            pb={{ lg: "10px", md: "10px", sm: "10px" }}
+            
+            // pt={{ lg: "10px", md: "10px", sm: "10px" }}
+            // pb={{ lg: "10px", md: "10px", sm: "10px" }}
             bg="white"
             h={{ lg: show, md: "400px", sm: "400px" }}
             w={{ lg: "100%", sm: "100%", md: "100%" }}
@@ -715,47 +716,7 @@ export const HomePage = () => {
               return (
                 <Link to={`/details/${i.id}`}>
                   {" "}
-                  <WrapItem
-                    mb={{ lg: "110px", md: "110px", sm: "110px" }}
-                    ml={{ lg: "10px", md: "10px", sm: "10px" }}
-                    w={{ lg: "195px", md: "195px" }}
-                    h={{ lg: "auto", md: "auto", sm: "auto" }}
-                    key={i.id}
-                    display="flex"
-                    flexDirection={"column"}
-                    justifyContent="center"
-                  >
-                    <Box position="relative" right="-134px">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="heartsvg"
-                        width="20"
-                        height="20"
-                        style={{ marginBottom: "10px", marginTop: "5px" }}
-                        fill="gray"
-                        viewBox="0 0 512 512"
-                      >
-                        <path d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z" />
-                      </svg>
-                    </Box>
-                    <Box
-                      h={{ lg: "250px", md: "250px", sm: "250px" }}
-                      w={{ lg: "100%", sm: "100%", md: "100%" }}
-                    >
-                      <Image
-                        w={{ lg: "70%", md: "70%", sm: "70%" }}
-                        src={i.image}
-                        alt=""
-                      />
-                    </Box>
-                    <Box
-                      h={{ lg: "100px", md: "70px" }}
-                      w={{ lg: "100%", md: "100%", sm: "100%" }}
-                      fontSize={{ lg: "20px", md: "20px", sm: "20px" }}
-                    >
-                      <Text>{i.title}</Text>
-                    </Box>
-                  </WrapItem>
+                 <ViewerLikedCard el={i} />
                 </Link>
               );
             })}
@@ -791,7 +752,7 @@ export const HomePage = () => {
           </Box>
           <Wrap
           mb="10px"
-            boxShadow="dark-lg"
+           
             pt={{ lg: "10px", md: "10px", sm: "10px" }}
             pb={{ lg: "10px", md: "10px", sm: "10px" }}
             bg="white"
@@ -806,47 +767,7 @@ export const HomePage = () => {
               return (
                 <Link to={`/details/${i.id}`}>
                   {" "}
-                  <WrapItem
-                    mb={{ lg: "110px", md: "110px", sm: "110px" }}
-                    ml={{ lg: "10px", md: "10px", sm: "10px" }}
-                    w={{ lg: "195px", md: "195px" }}
-                    h={{ lg: "auto", md: "auto", sm: "auto" }}
-                    key={i.id}
-                    display="flex"
-                    flexDirection={"column"}
-                    justifyContent="center"
-                  >
-                    <Box position="relative" right="-134px">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="heartsvg"
-                        width="20"
-                        height="20"
-                        style={{ marginBottom: "10px", marginTop: "5px" }}
-                        fill="gray"
-                        viewBox="0 0 512 512"
-                      >
-                        <path d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z" />
-                      </svg>
-                    </Box>
-                    <Box
-                      h={{ lg: "250px", md: "250px", sm: "250px" }}
-                      w={{ lg: "100%", sm: "100%", md: "100%" }}
-                    >
-                      <Image
-                        w={{ lg: "70%", md: "70%", sm: "70%" }}
-                        src={i.image}
-                        alt=""
-                      />
-                    </Box>
-                    <Box
-                      h={{ lg: "100px", md: "70px" }}
-                      w={{ lg: "100%", md: "100%", sm: "100%" }}
-                      fontSize={{ lg: "20px", md: "20px", sm: "20px" }}
-                    >
-                      <Text>{i.title}</Text>
-                    </Box>
-                  </WrapItem>
+                 <ViewerLikedCard el={i} />
                 </Link>
               );
             })}
@@ -884,9 +805,9 @@ export const HomePage = () => {
           </Box>
           <Wrap
            mb="10px"
-            boxShadow="dark-lg"
-            pt={{ lg: "10px", md: "10px", sm: "10px" }}
-            pb={{ lg: "10px", md: "10px", sm: "10px" }}
+           
+            // pt={{ lg: "10px", md: "10px", sm: "10px" }}
+            // pb={{ lg: "10px", md: "10px", sm: "10px" }}
             bg="white"
             h={{ lg: see, md: "400px", sm: "400px" }}
             w={{ lg: "100%", sm: "100%", md: "100%" }}
@@ -899,47 +820,7 @@ export const HomePage = () => {
               return (
                 <Link to={`/details/${i.id}`}>
                   {" "}
-                  <WrapItem
-                    mb={{ lg: "110px", md: "110px", sm: "110px" }}
-                    ml={{ lg: "10px", md: "10px", sm: "10px" }}
-                    w={{ lg: "195px", md: "195px" }}
-                    h={{ lg: "auto", md: "auto", sm: "auto" }}
-                    key={i.id}
-                    display="flex"
-                    flexDirection={"column"}
-                    justifyContent="center"
-                  >
-                    <Box position="relative" right="-134px">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="heartsvg"
-                        width="20"
-                        height="20"
-                        style={{ marginBottom: "10px", marginTop: "5px" }}
-                        fill="gray"
-                        viewBox="0 0 512 512"
-                      >
-                        <path d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z" />
-                      </svg>
-                    </Box>
-                    <Box
-                      h={{ lg: "250px", md: "250px", sm: "250px" }}
-                      w={{ lg: "100%", sm: "100%", md: "100%" }}
-                    >
-                      <Image
-                        w={{ lg: "70%", md: "70%", sm: "70%" }}
-                        src={i.image}
-                        alt=""
-                      />
-                    </Box>
-                    <Box
-                      h={{ lg: "100px", md: "70px" }}
-                      w={{ lg: "100%", md: "100%", sm: "100%" }}
-                      fontSize={{ lg: "20px", md: "20px", sm: "20px" }}
-                    >
-                      <Text>{i.title}</Text>
-                    </Box>
-                  </WrapItem>
+                 <ViewerLikedCard el={i} />
                 </Link>
               );
             })}
@@ -975,9 +856,9 @@ export const HomePage = () => {
           </Box>
           <Wrap
            mb="10px"
-            boxShadow="dark-lg"
-            pt={{ lg: "10px", md: "10px", sm: "10px" }}
-            pb={{ lg: "10px", md: "10px", sm: "10px" }}
+          
+            // pt={{ lg: "10px", md: "10px", sm: "10px" }}
+            // pb={{ lg: "10px", md: "10px", sm: "10px" }}
             bg="white"
             h={{ lg: more, md: "400px", sm: "400px" }}
             w={{ lg: "100%", sm: "100%", md: "100%" }}

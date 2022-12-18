@@ -20,6 +20,7 @@ import {
   Box,
   Button,
   Flex,
+  Grid,
   Heading,
   Hide,
   IconButton,
@@ -70,7 +71,7 @@ function Navbar() {
     });
   }
   return (
-    <Box position={"fixed"} zIndex="10000" bg="white">
+    <Box position={"fixed"} zIndex="1000" bg="white"  w={{ lg: "100%", sm: "100%", md: "100%" }}>
       {/* <Flex p={5}  w={{ lg: '100%', sm: '100%', md: '100%' }} justifyContent="space-evenly" color="gray.500" >
         <Show mr={10}  breakpoint='(max-width: 770px)'><Menu>
   <MenuButton
@@ -109,12 +110,14 @@ function Navbar() {
           <Button textTransform="uppercase" bg="orange" color={"white"}>LOGIN</Button>
           </Flex> */}
 
-      <Flex
+      <Grid
+      templateColumns='repeat(3, 1fr)'
         visibility="visible"
         zIndex={"10000"}
-        p={8}
+        // p={8}
+        pt="20px"
         w={{ lg: "100%", sm: "100%", md: "100%" }}
-        justifyContent="space-evenly"
+        // justifyContent="space-evenly"
         color="gray.500"
       >
         <Show breakpoint="(max-width: 770px)">
@@ -132,7 +135,7 @@ function Navbar() {
             </MenuList>
           </Menu>
         </Show>
-        <div className="logo">
+        <Box ml="20px">
           <LinkBox to="/">
             <Image
               w={{ lg: "50%", md: "100%", sm: "100%" }}
@@ -140,12 +143,8 @@ function Navbar() {
               alt=""
             />
           </LinkBox>
-          <RxHamburgerMenu
-            onClick={handleMiniNav}
-            className="short_logo"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHMAAAB8CAMAAABty38BAAAAYFBMVEX///8AAADh4eHPz8/n5+ciIiLr6+smJib8/Pz4+Pjx8fHMzMy/v7+ysrKXl5fZ2dmkpKSsrKy4uLg1NTWMjIydnZ18fHzFxcVoaGguLi5vb29TU1NHR0dZWVl1dXVCQkLOlxADAAACE0lEQVRoge2ZjXKjIBRGr8C6gPwIgmjapu//loup22l3Kp220HQ292Qy0dFwRgOGjwuAIAiCIAiC/I/wm5GWrWTparPYkpKDrm7cGEvKoYmy61RB+tDIeS8OnayRsuvIcQdq5hyu4LSHTvHYSLnKwy4ErpGzOFjmJspzSQngp+rG1R0rd7Ed6mKPxyaCIAiC1Ie3yBa8nB3yMcnqcjgVesYu66+6rA+0fJHfnlfgCnmF30pesc2c6UddZ7O8MhUGaZuhUhoseXyGJsr5+NHHMw3yyuQKT3G+HeGW1mXLK9dZlEIQBEGQarz7Vyb7ush3IlKebp6m33WZllJeybRZNC7mldREWa6v3DVy3kxe+WH1lftGyuO80qoUeZW8ci7WXEGv1Y3F+solrwAjdWFN1rkQBEEQBEEQBHkLDlLsU/ut5Pw0G89vIZ9m/Hzff/GFCiS7NeTlsLeoLgmd+H9a7432ZoQZgkyGjlEEqeIwzuzjRu9ScE6Mi56HoIwKdlYu2piMgj4mZ1SMRgoKTBig1BsRe5btgUQ5jgniJ67Sem/HIF2UaXTUgKfOanpi5M5CGpizZxYVyU7whEcyn6Tqeztr3as+Um/VJ272YBTx3iRjDc23jEellTMk+KQpMXkzMZ22tYnhpLdfQYvZeTNEw7I30OKa0Bfhrz6+3tils/LnHspfb+5n/X3tO1ulD16c8AZ/ADk2Kx9+F5QLAAAAAElFTkSuQmCC"
-          />
-        </div>
+          
+        </Box>
         {/* <div >
 
         <img className=".short_logo"
@@ -154,32 +153,36 @@ function Navbar() {
             ></img>
             </div> */}
         <Hide below="md">
-          <Box className="links">
-            <LinkBox
-              _hover={{ borderBottom: "1px solid rgb(142, 40, 40)" }}
-              to="womens"
-              onMouseEnter={() => {
-                let d = "women";
-                setMenu(<Data r={d} />);
-              }}
-              onMouseLeave={() => {
-                setMenu("");
-              }}
-            >
-              WOMEN{" "}
-            </LinkBox>
-            <Link
-              to="men"
-              onMouseEnter={() => {
-                let d = "men";
-                setMenu(<Data r={d} />);
-              }}
-              onMouseLeave={() => {
-                setMenu("");
-              }}
-            >
-              MEN
-            </Link>
+          <Box className="links" display={"flex"} justifyContent="space-evenly" alignItems={"center"} pt="10px" w="100%">
+          <Link
+            to="womens"
+            onMouseEnter={() => {
+              let d = "women";
+              setMenu(<Data r={d} />);
+            }}
+            onMouseLeave={() => {
+              setMenu("");
+            }}
+          >
+            WOMEN{" "}
+          </Link>
+          <Link
+            to="men"
+            onMouseEnter={() => {
+              let d = "men";
+              setMenu(
+                <Data
+                  r={d}
+                  
+                />
+              );
+            }}
+            onMouseLeave={() => {
+              setMenu("");
+            }}
+          >
+            MEN
+          </Link>
             <Link
               to="beauty"
               onMouseEnter={() => {
@@ -229,6 +232,7 @@ function Navbar() {
               HOME
             </Link>
             <Link
+            ml={3}
               to="offers"
               onMouseEnter={() => {
                 let d = "offers";
@@ -295,25 +299,25 @@ function Navbar() {
           </Box>
         </Hide>
         <div className="rightIcons">
-          <div className="flag_icon">
+          {/* <div className="flag_icon">
             <img
               src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/20px-Flag_of_India.svg.png"
               alt=""
             ></img>
-          </div>
+          </div> */}
           <LinkBox to="cart" display="flex">
             <div style={{ color: "red" }} className="mini">
               <Link to={"/cart"}>
                 <HiShoppingCart size="26px" />
               </Link>
             </div>
-            <Box disabled={true} fontSize="12px" className="drop">
+            {/* <Box disabled={true} fontSize="12px" className="drop">
               <Heading fontSize="12px">
                 <AvatarGroup spacing="1rem">
                   <Avatar boxSize={8} bg="teal.500" />
                 </AvatarGroup>
-              </Heading>
-              <Box className="dropmenu" bg="white" p="30px">
+              </Heading> */}
+            {/* <Box className="dropmenu" bg="white" p="30px">
                 {" "}
                 <Heading mt="30px" fontSize="12px">
                   Hi
@@ -339,8 +343,8 @@ function Navbar() {
                 >
                   Logout
                 </Heading>{" "}
-              </Box>{" "}
-            </Box>
+              </Box>{" "} */}
+            {/* </Box> */}
           </LinkBox>
           <LoginSignupModal
             show={modalShow}
@@ -400,7 +404,7 @@ function Navbar() {
           </div>
           <div style={{ marginTop: "-10px", cursor: "pointer" }}></div>
         </div>
-      </Flex>
+      </Grid>
       <Box w="100%" position={"absolute"} bg="white">
         {menu}
       </Box>

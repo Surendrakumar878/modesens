@@ -1,44 +1,87 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useLocation, useSearchParams } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
 import { getbeautydata } from '../../Redux/AppReducer/action'
 import "./mens.css"
+import { Button } from '@chakra-ui/react'
+import BasicUsage from './Modal'
 
 export const Beauty = () => {
   const beauty = useSelector((store) => store.AppReducer.data)
-    
+  const [serachParams, setsearchParams] = useSearchParams();
+  const initiasort = serachParams.getAll("sort")  
+  const location =useLocation()
+  const [sort, setSort] = useState(initiasort[0] || "")  
     const dispatch = useDispatch()
-    useEffect(() => {
-      dispatch(getbeautydata())
+    const handleSort = (e) => {
+    setSort(e.target.value)
+}
 
-    }, [])
-    
+          useEffect(()=>{
+if(location ||beauty.length===0){
+    const sortBy=serachParams.get("sort")
+    const getdataParams={
+        params:{
+            _sort :sortBy && "price",
+            _order:sortBy
+        }
+    }
+    dispatch(getbeautydata(getdataParams))
+}
+    },[beauty.length,dispatch,location.search])
+
+    useEffect(() => {
+        let params = {};
+        sort && (params.sort = sort)
+        setsearchParams(params)
+    }, [setsearchParams, sort])
   return (
     <div>
     <div className="designerman" >
         <h1 >Designer Beauty</h1>
-        <p style={{ fontSize: "11.9px", marginTop: "25px" }}>Shop designer clothing for men with price comparison across 500+ stores in one place. Discover the latest designer clothing for men at ModeSens.</p>
+        <p style={{ fontSize: "11.9px", marginTop: "25px" ,fontWeight:"bold"}}>Shop designer clothing for men with price comparison across 500+ stores in one place. Discover the latest designer clothing for men at ModeSens.</p>
     </div>
     <div className="filter" style={{ display: "flex", marginTop: "28px" }}>
 
         <div  className="filterbox">
-            <p >MODESENS/SHOP/MENS/CLOTHING</p>
+               <h4>MODESENS/SHOP/MENS/CLOTHING</h4>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <p style={{ color: "#8E8E8E", fontWeight: "bold", fontSize: "11.9px", marginLeft: "20px" }}>10,000+ITEMS</p>
-                <img />
+                 <p style={{ color: "black", fontWeight: "bold", fontSize: "13px", marginLeft: "30px",marginTop:"22px" }}>10,000+ITEMS</p>
+                <img  src="https://cdn-icons-png.flaticon.com/512/54/54481.png" style={{marginTop:"22px",width:"18px",height:"20px" ,marginRight: "40px"}} />
             </div>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <p style={{ color: "#8E8E8E", fontWeight: "bold", fontSize: "11.9px", marginLeft: "20px" }}>Filter By:</p>
-                <p style={{ color: "#8E8E8E", fontWeight: "bold", fontSize: "11.9px", marginRight: "20px" }}>Reset</p>
+                <p style={{ color: "black", fontWeight: "bold", fontSize: "13px", marginLeft: "30px" }}>Sort By:</p>
+                <p style={{ color: "black", fontWeight: "bold", fontSize: "13px", marginRight: "40px" }}>Reset</p>
             </div>
-            <div>
-                <h3 style={{ color: "#8E8E8E", fontWeight: "bold", fontSize: "11.9px", marginLeft: "20px" }}>RELATEC CATEGORY</h3>
-                <p>Men</p>
-                <p>Men Activewear</p>
-                <p>Men Bitchewear</p>
-                <p>Men Coats</p>
-                <p>Men Jackets</p>
-                <p>Men Jeans</p>
-                <p>Men Jeans</p>
+             <div onClick={handleSort}style={{ marginLeft: "30px",fontSize: "13px",marginTop:"10px" }}>
+                        <h3 style={{fontSize: "11.9px" ,fontWeight:"bold"}}>Price</h3>
+                        <input type="radio" value="asc" name="sortBy" defaultChecked={sort === "asc"} style={{marginRight:"7px",marginTop:"5px"}}/>
+                    <label>Ascending</label>
+                    <br />
+                    <input type="radio" value="desc" name="sortBy" defaultChecked={sort === "desc"} style={{marginRight:"7px"}} />
+                    <label>Descending</label></div>
+                    <div className="save_btn" style={{marginTop:"10px"}}>
+                        <Button>SAVE MY SEARCH</Button></div>     
+            <div className='related'>
+                <h3 style={{ color: "black", fontWeight: "bold", fontSize: "11.9px", marginLeft: "15px" ,marginTop:"10px",marginBottom:"10px"}}>Related Category</h3>
+                <p>Women beauty</p>
+                <p>Mens Grooming</p>
+                <p>Kids Care</p>
+                <p>Beauty Sale</p>
+                <p>Pre-Owned Beauty</p>
+            </div>
+            <div className='related'>
+                <h3 style={{ color: "black", fontWeight: "bold", fontSize: "11.9px", marginLeft: "15px" ,marginTop:"10px",marginBottom:"10px"}}>Related Searches</h3>
+                <p>Gucci Beauty</p>
+                <p>Fendi Beauty</p>
+                <p>Valentino Beauty</p>
+                <p>Saint Laurent Beauty</p>
+                <p>Balenciaga Beauty</p>
+                <p>Prada Beauty</p>
+                <p>Versace Beauty</p>
+                <p>Burberry Beauty</p>
+                <p>Givenchy Beauty</p>
+                <p>Alexander Mcqueen Beauty</p>
             </div>
 
         </div>

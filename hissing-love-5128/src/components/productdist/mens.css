@@ -65,8 +65,22 @@ margin-left: 15px;
 .related p{
     margin-left:15px;
     font-size: 13px;
+    color: #8E8E8E;
 }
-
+.save_btn button{
+    margin-left: 30px;
+    border-radius:0px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: white;
+    width:80%;
+    
+   
+}
+.save_btn button:hover{
+    background-color: black;
+color: white;
+}
 
 @media only screen and (max-width:380px) {
     .filterbox {
@@ -80,6 +94,12 @@ margin-left: 15px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     
+    }
+
+    .productbox div img {
+        height: 120px;
+        width: 70%;
+        margin-left: 30px;
     }
 
     .designerman{

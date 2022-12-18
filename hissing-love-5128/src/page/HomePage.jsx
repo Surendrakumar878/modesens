@@ -32,7 +32,7 @@ export const HomePage = () => {
   console.log(data);
   return (
     <Box  w={{ lg: "100%", md: "100%", sm: "100%" }}>
-      <Box zIndex={"-1"} >
+      <Box zIndex={-10} >
         <Carousel>
           <Carousel.Item>
             <img
@@ -380,13 +380,13 @@ export const HomePage = () => {
             Shop Women
           </Box>
           <Wrap
-            boxShadow="dark-lg"
+ mb="10px"            boxShadow="dark-lg"
             Box
             pt={{ lg: "10px", md: "10px", sm: "10px" }}
             pb={{ lg: "10px", md: "10px", sm: "10px" }}
             bg="white"
             h={{ lg: "200px", md: "400px", sm: "400px" }}
-            w={{ lg: "92%", sm: "100%", md: "100%" }}
+            w={{ lg: "93%", sm: "100%", md: "100%" }}
             ml={{ lg: "50px", md: "50px", sm: "25%" }}
             mr={{ lg: "50px", md: "50px", sm: "25%" }}
             display={"flex"}
@@ -396,7 +396,7 @@ export const HomePage = () => {
             <WrapItem
               mb={{ lg: "100px", md: "110px", sm: "110px" }}
               ml={{ lg: "10px", md: "10px", sm: "10px" }}
-              w={{ lg: "15%", md: "195px" }}
+              w={{ lg: "10%", md: "195px" }}
               h={{ lg: "150px", md: "auto", sm: "auto" }}
               display="flex"
               flexDirection={"column"}
@@ -429,7 +429,7 @@ export const HomePage = () => {
             <WrapItem
               mb={{ lg: "100px", md: "110px", sm: "110px" }}
               ml={{ lg: "10px", md: "10px", sm: "10px" }}
-              w={{ lg: "15%", md: "195px" }}
+              w={{ lg: "10%", md: "195px" }}
               h={{ lg: "150px", md: "auto", sm: "auto" }}
               display="flex"
               flexDirection={"column"}
@@ -462,7 +462,7 @@ export const HomePage = () => {
             <WrapItem
               mb={{ lg: "100px", md: "110px", sm: "110px" }}
               ml={{ lg: "10px", md: "10px", sm: "10px" }}
-              w={{ lg: "15%", md: "195px" }}
+              w={{ lg: "10%", md: "195px" }}
               h={{ lg: "150px", md: "auto", sm: "auto" }}
               display="flex"
               flexDirection={"column"}
@@ -495,7 +495,7 @@ export const HomePage = () => {
             <WrapItem
               mb={{ lg: "100px", md: "110px", sm: "110px" }}
               ml={{ lg: "10px", md: "10px", sm: "10px" }}
-              w={{ lg: "15%", md: "195px" }}
+              w={{ lg: "10%", md: "195px" }}
               h={{ lg: "150px", md: "auto", sm: "auto" }}
               display="flex"
               flexDirection={"column"}
@@ -528,7 +528,7 @@ export const HomePage = () => {
             <WrapItem
               mb={{ lg: "100px", md: "110px", sm: "110px" }}
               ml={{ lg: "10px", md: "10px", sm: "10px" }}
-              w={{ lg: "15%", md: "195px" }}
+              w={{ lg: "10%", md: "195px" }}
               h={{ lg: "150px", md: "auto", sm: "auto" }}
               display="flex"
               flexDirection={"column"}
@@ -561,7 +561,7 @@ export const HomePage = () => {
             <WrapItem
               mb={{ lg: "100px", md: "110px", sm: "110px" }}
               ml={{ lg: "10px", md: "10px", sm: "10px" }}
-              w={{ lg: "15%", md: "195px" }}
+              w={{ lg: "10%", md: "195px" }}
               h={{ lg: "150px", md: "auto", sm: "auto" }}
               display="flex"
               flexDirection={"column"}
@@ -594,7 +594,7 @@ export const HomePage = () => {
             <WrapItem
               mb={{ lg: "100px", md: "110px", sm: "110px" }}
               ml={{ lg: "10px", md: "10px", sm: "10px" }}
-              w={{ lg: "15%", md: "195px" }}
+              w={{ lg: "10%", md: "195px" }}
               h={{ lg: "150px", md: "auto", sm: "auto" }}
               display="flex"
               flexDirection={"column"}
@@ -627,7 +627,7 @@ export const HomePage = () => {
             <WrapItem
               mb={{ lg: "100px", md: "110px", sm: "110px" }}
               ml={{ lg: "10px", md: "10px", sm: "10px" }}
-              w={{ lg: "15%", md: "195px" }}
+              w={{ lg: "10%", md: "195px" }}
               h={{ lg: "150px", md: "auto", sm: "auto" }}
               display="flex"
               flexDirection={"column"}
@@ -660,7 +660,7 @@ export const HomePage = () => {
             <WrapItem
               mb={{ lg: "100px", md: "110px", sm: "110px" }}
               ml={{ lg: "10px", md: "10px", sm: "10px" }}
-              w={{ lg: "15%", md: "195px" }}
+              w={{ lg: "10%", md: "195px" }}
               h={{ lg: "150px", md: "auto", sm: "auto" }}
               display="flex"
               flexDirection={"column"}
@@ -699,6 +699,7 @@ export const HomePage = () => {
             New To sale
           </Box>
           <Wrap
+           mb="10px"
             boxShadow="dark-lg"
             pt={{ lg: "10px", md: "10px", sm: "10px" }}
             pb={{ lg: "10px", md: "10px", sm: "10px" }}
@@ -789,6 +790,7 @@ export const HomePage = () => {
             Special Offers
           </Box>
           <Wrap
+          mb="10px"
             boxShadow="dark-lg"
             pt={{ lg: "10px", md: "10px", sm: "10px" }}
             pb={{ lg: "10px", md: "10px", sm: "10px" }}
@@ -851,7 +853,9 @@ export const HomePage = () => {
           </Wrap>
           <Box>
             {showStatus ? (
-              <Button
+              <Button 
+
+              borderRadius={0}
                 onClick={() => {
                   setSee("auto");
                   setShowStatus(false);
@@ -862,7 +866,7 @@ export const HomePage = () => {
             ) : (
               <Button
                 onClick={() => {
-                  setShow("400px");
+                  setSee("400px");
                   setShowStatus(true);
                 }}
               >
@@ -879,6 +883,7 @@ export const HomePage = () => {
             Trending Now
           </Box>
           <Wrap
+           mb="10px"
             boxShadow="dark-lg"
             pt={{ lg: "10px", md: "10px", sm: "10px" }}
             pb={{ lg: "10px", md: "10px", sm: "10px" }}
@@ -969,6 +974,7 @@ export const HomePage = () => {
             Recently Viewed
           </Box>
           <Wrap
+           mb="10px"
             boxShadow="dark-lg"
             pt={{ lg: "10px", md: "10px", sm: "10px" }}
             pb={{ lg: "10px", md: "10px", sm: "10px" }}
@@ -1054,7 +1060,7 @@ export const HomePage = () => {
         </Box>
       </Box>
       <Box>
-        <Box textAlign={"center"}>
+        <Box textAlign={"center"}  mb="10px">
           <Box fontSize={{ lg: "34px", md: "34px", sm: "34px" }}>
             Community Posts
           </Box>

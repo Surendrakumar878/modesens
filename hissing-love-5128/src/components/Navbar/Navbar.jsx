@@ -6,15 +6,31 @@ import LoginSignupModal from "../LoginSignup/LoginSignupModal";
 // import CartData from "./CartData";
 import { useSelector } from "react-redux";
 import swal from "sweetalert";
-import { store } from '../../Redux/store';
+import { store } from "../../Redux/store";
 import { useDispatch } from "react-redux";
 import { logOutUser } from "../../Redux/AuthReducer/action";
 import { SearchBar } from "../../page/Searchbar/SearchBar";
 import MiniNav from "./MiniNav";
-import {AiOutlineUser} from 'react-icons/ai'
-import {HiShoppingCart} from 'react-icons/hi'
-import {RxHamburgerMenu} from 'react-icons/rx'
-import { Box, Button, Flex, Hide, IconButton, Image, Menu, MenuButton, MenuItem, MenuList, Show } from "@chakra-ui/react";
+import { AiOutlineUser } from "react-icons/ai";
+import { HiShoppingCart } from "react-icons/hi";
+import { RxHamburgerMenu } from "react-icons/rx";
+import {
+  Avatar,
+  AvatarGroup,
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Hide,
+  IconButton,
+  Image,
+  LinkBox,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Show,
+} from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 function Navbar() {
   const [data, setData] = useState([
@@ -29,38 +45,32 @@ function Navbar() {
     "OCCASIONS",
   ]);
   const [modalShow, setModalShow] = React.useState(false);
-  const token=useSelector((store)=>store.AuthReducer.token);
-  console.log("token",token)
-  const dispatch=useDispatch()
+  const token = useSelector((store) => store.AuthReducer.token);
+  console.log("token", token);
+  const dispatch = useDispatch();
   const [menu, setMenu] = useState("");
-  useEffect(()=>{
-
-  },[token])
-  const handleMiniNav=(ty)=>{
-    
-    <MiniNav ty={ty}/>
-    
-  }
-  function handleLogOut (){
-    return (swal({
+  useEffect(() => {}, [token]);
+  const handleMiniNav = (ty) => {
+    <MiniNav ty={ty} />;
+  };
+  function handleLogOut() {
+    return swal({
       title: "Are you sure?",
       text: "You really want to log out?",
       icon: "warning",
       buttons: true,
       dangerMode: true,
-    })
-    .then((willDelete) => {
+    }).then((willDelete) => {
       if (willDelete) {
         swal("Log out successfull", {
           icon: "success",
         });
       } else {
-      
       }
-    }));
+    });
   }
   return (
-    <Box position={"fixed"}>
+    <Box position={"fixed"} zIndex="10000" bg="white">
       {/* <Flex p={5}  w={{ lg: '100%', sm: '100%', md: '100%' }} justifyContent="space-evenly" color="gray.500" >
         <Show mr={10}  breakpoint='(max-width: 770px)'><Menu>
   <MenuButton
@@ -99,45 +109,42 @@ function Navbar() {
           <Button textTransform="uppercase" bg="orange" color={"white"}>LOGIN</Button>
           </Flex> */}
 
-
-      <Flex   visibility="visible" zIndex={1} p={8}  w={{ lg: '100%', sm: '100%', md: '100%' }} justifyContent="space-evenly" color="gray.500">
-      <Show mr={10}  breakpoint='(max-width: 770px)'><Menu>
-  <MenuButton
-    as={IconButton}
-    aria-label='Options'
-    icon={<HamburgerIcon />}
-    variant='outline'
-  />
-  <MenuList>
-    <MenuItem  >
-    Home
-    </MenuItem>
-    <MenuItem >
-    FEATURE
-    </MenuItem>
-    <MenuItem >
-    PRICE
-    </MenuItem>
-    <MenuItem  >
-    CONTECT US
-    </MenuItem>
-  </MenuList>
-</Menu></Show>
+      <Flex
+        visibility="visible"
+        zIndex={"10000"}
+        p={8}
+        w={{ lg: "100%", sm: "100%", md: "100%" }}
+        justifyContent="space-evenly"
+        color="gray.500"
+      >
+        <Show breakpoint="(max-width: 770px)">
+          <Menu>
+            <MenuButton
+              as={IconButton}
+              aria-label="Options"
+              icon={<HamburgerIcon />}
+              variant="outline"
+            />
+            <MenuList>
+              {data.map((i) => (
+                <MenuItem>{i}</MenuItem>
+              ))}
+            </MenuList>
+          </Menu>
+        </Show>
         <div className="logo">
-           <Link to="/">
-
-
-          <Image  w={{ lg: "100%", md: "100%", sm: "100%" }}  
-            src="https://i.postimg.cc/7hFL7SGx/1670760238004-removebg-preview.jpg"
-            alt=""
+          <LinkBox to="/">
+            <Image
+              w={{ lg: "50%", md: "100%", sm: "100%" }}
+              src="https://i.postimg.cc/7hFL7SGx/1670760238004-removebg-preview.jpg"
+              alt=""
             />
-            </Link>
-           <RxHamburgerMenu onClick={handleMiniNav} className="short_logo"
+          </LinkBox>
+          <RxHamburgerMenu
+            onClick={handleMiniNav}
+            className="short_logo"
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHMAAAB8CAMAAABty38BAAAAYFBMVEX///8AAADh4eHPz8/n5+ciIiLr6+smJib8/Pz4+Pjx8fHMzMy/v7+ysrKXl5fZ2dmkpKSsrKy4uLg1NTWMjIydnZ18fHzFxcVoaGguLi5vb29TU1NHR0dZWVl1dXVCQkLOlxADAAACE0lEQVRoge2ZjXKjIBRGr8C6gPwIgmjapu//loup22l3Kp220HQ292Qy0dFwRgOGjwuAIAiCIAiC/I/wm5GWrWTparPYkpKDrm7cGEvKoYmy61RB+tDIeS8OnayRsuvIcQdq5hyu4LSHTvHYSLnKwy4ErpGzOFjmJspzSQngp+rG1R0rd7Ed6mKPxyaCIAiC1Ie3yBa8nB3yMcnqcjgVesYu66+6rA+0fJHfnlfgCnmF30pesc2c6UddZ7O8MhUGaZuhUhoseXyGJsr5+NHHMw3yyuQKT3G+HeGW1mXLK9dZlEIQBEGQarz7Vyb7ush3IlKebp6m33WZllJeybRZNC7mldREWa6v3DVy3kxe+WH1lftGyuO80qoUeZW8ci7WXEGv1Y3F+solrwAjdWFN1rkQBEEQBEEQBHkLDlLsU/ut5Pw0G89vIZ9m/Hzff/GFCiS7NeTlsLeoLgmd+H9a7432ZoQZgkyGjlEEqeIwzuzjRu9ScE6Mi56HoIwKdlYu2piMgj4mZ1SMRgoKTBig1BsRe5btgUQ5jgniJ67Sem/HIF2UaXTUgKfOanpi5M5CGpizZxYVyU7whEcyn6Tqeztr3as+Um/VJ272YBTx3iRjDc23jEellTMk+KQpMXkzMZ22tYnhpLdfQYvZeTNEw7I30OKa0Bfhrz6+3tils/LnHspfb+5n/X3tO1ulD16c8AZ/ADk2Kx9+F5QLAAAAAElFTkSuQmCC"
-            
-            />
-            
-    
+          />
         </div>
         {/* <div >
 
@@ -146,148 +153,146 @@ function Navbar() {
             alt=""
             ></img>
             </div> */}
-            <Hide below='md' >
-        <Box className="links">
-          <Link
-            to="womens"
-            onMouseEnter={() => {
-              let d = "women";
-              setMenu(<Data r={d} />);
-            }}
-            onMouseLeave={() => {
-              setMenu("");
-            }}
-          >
-            WOMEN{" "}
-          </Link>
-          <Link
-            to="men"
-            onMouseEnter={() => {
-              let d = "men";
-              setMenu(
-                <Data
-                  r={d}/>
-              );
-            }}
-            onMouseLeave={() => {
-              setMenu("");
-            }}
-          >
-            MEN
-          </Link>
-          <Link
-            to="beauty"
-            onMouseEnter={() => {
-              let d = "beauty";
-              setMenu(
-                <Data
-                  r={d}
-                  onMouseLeave={() => {
-                    setMenu("");
-                  }}
-                />
-              );
-            }}
-          >
-            BEAUTY
-          </Link>
-          <Link
-            to="kids"
-            onMouseEnter={() => {
-              let d = "kids";
-              setMenu(
-                <Data
-                  r={d}
-                  onMouseLeave={() => {
-                    setMenu("");
-                  }}
-                />
-              );
-            }}
-          >
-            KIDS
-          </Link>
-          <Link
-            to="/"
-            onMouseEnter={() => {
-              let d = "home";
-              setMenu(
-                <Data
-                  r={d}
-                  onMouseLeave={() => {
-                    setMenu("");
-                  }}
-                />
-              );
-            }}
-          >
-            HOME
-          </Link>
-          <Link
-            to="offers"
-            onMouseEnter={() => {
-              let d = "offers";
-              setMenu(
-                <Data
-                  r={d}
-                  onMouseLeave={() => {
-                    setMenu("");
-                  }}
-                />
-              );
-            }}
-          >
-            OFFERS
-          </Link>
-          <Link
-            to="design"
-            onMouseEnter={() => {
-              let d = "designers";
-              setMenu(
-                <Data
-                  r={d}
-                  onMouseLeave={() => {
-                    setMenu("");
-                  }}
-                />
-              );
-            }}
-          >
-            DESIGNERS
-          </Link>
-          <Link
-            to="community"
-            onMouseEnter={() => {
-              let d = "community";
-              setMenu(
-                <Data
-                  r={d}
-                  onMouseLeave={() => {
-                    setMenu("");
-                  }}
-                />
-              );
-            }}
-          >
-            COMMUNITY
-          </Link>
-          <Link
-            to="whycoolmart"
-            onMouseEnter={() => {
-              let d = "why";
-              setMenu(
-                <Data
-                  r={d}
-                  onMouseLeave={() => {
-                    setMenu("");
-                  }}
-                />
-              );
-            }}
-          >
-            WHYCOOLMART
-          </Link>
-        </Box >
+        <Hide below="md">
+          <Box className="links">
+            <LinkBox
+              _hover={{ borderBottom: "1px solid rgb(142, 40, 40)" }}
+              to="womens"
+              onMouseEnter={() => {
+                let d = "women";
+                setMenu(<Data r={d} />);
+              }}
+              onMouseLeave={() => {
+                setMenu("");
+              }}
+            >
+              WOMEN{" "}
+            </LinkBox>
+            <Link
+              to="men"
+              onMouseEnter={() => {
+                let d = "men";
+                setMenu(<Data r={d} />);
+              }}
+              onMouseLeave={() => {
+                setMenu("");
+              }}
+            >
+              MEN
+            </Link>
+            <Link
+              to="beauty"
+              onMouseEnter={() => {
+                let d = "beauty";
+                setMenu(
+                  <Data
+                    r={d}
+                    onMouseLeave={() => {
+                      setMenu("");
+                    }}
+                  />
+                );
+              }}
+            >
+              BEAUTY
+            </Link>
+            <Link
+              to="kids"
+              onMouseEnter={() => {
+                let d = "kids";
+                setMenu(
+                  <Data
+                    r={d}
+                    onMouseLeave={() => {
+                      setMenu("");
+                    }}
+                  />
+                );
+              }}
+            >
+              KIDS
+            </Link>
+            <Link
+              to="/"
+              onMouseEnter={() => {
+                let d = "home";
+                setMenu(
+                  <Data
+                    r={d}
+                    onMouseLeave={() => {
+                      setMenu("");
+                    }}
+                  />
+                );
+              }}
+            >
+              HOME
+            </Link>
+            <Link
+              to="offers"
+              onMouseEnter={() => {
+                let d = "offers";
+                setMenu(
+                  <Data
+                    r={d}
+                    onMouseLeave={() => {
+                      setMenu("");
+                    }}
+                  />
+                );
+              }}
+            >
+              OFFERS
+            </Link>
+            <Link
+              to="design"
+              onMouseEnter={() => {
+                let d = "designers";
+                setMenu(
+                  <Data
+                    r={d}
+                    onMouseLeave={() => {
+                      setMenu("");
+                    }}
+                  />
+                );
+              }}
+            >
+              DESIGNERS
+            </Link>
+            <Link
+              to="community"
+              onMouseEnter={() => {
+                let d = "community";
+                setMenu(
+                  <Data
+                    r={d}
+                    onMouseLeave={() => {
+                      setMenu("");
+                    }}
+                  />
+                );
+              }}
+            >
+              COMMUNITY
+            </Link>
+            <Link
+              to="whycoolmart"
+              onMouseEnter={() => {
+                let d = "why";
+                setMenu(
+                  <Data
+                    r={d}
+                    onMouseLeave={() => {
+                      setMenu("");
+                    }}
+                  />
+                );
+              }}
+            >
+              WHYCOOLMART
+            </Link>
+          </Box>
         </Hide>
         <div className="rightIcons">
           <div className="flag_icon">
@@ -296,42 +301,85 @@ function Navbar() {
               alt=""
             ></img>
           </div>
-         <Link to="cart">
-
-          <div style={{color:"red"}} className="mini" >
-            <Link to={"/cart"}><HiShoppingCart size="26px"  /></Link>
+          <LinkBox to="cart" display="flex">
+            <div style={{ color: "red" }} className="mini">
+              <Link to={"/cart"}>
+                <HiShoppingCart size="26px" />
+              </Link>
+            </div>
+            <Box disabled={true} fontSize="12px" className="drop">
+              <Heading fontSize="12px">
+                <AvatarGroup spacing="1rem">
+                  <Avatar boxSize={8} bg="teal.500" />
+                </AvatarGroup>
+              </Heading>
+              <Box className="dropmenu" bg="white" p="30px">
+                {" "}
+                <Heading mt="30px" fontSize="12px">
+                  Hi
+                </Heading>
+                <Heading mt="30px" fontSize="12px">
+                  my Account
+                </Heading>
+                <Heading mt="30px" fontSize="12px">
+                  My Wishlist
+                </Heading>
+                <Heading mt="30px" fontSize="12px">
+                  My Orders
+                </Heading>
+                <Heading mt="30px" fontSize="12px">
+                  My wallet
+                </Heading>
+                <Heading
+                  onClick={() => {
+                    localStorage.setItem("sts", JSON.stringify(false));
+                  }}
+                  mt="30px"
+                  fontSize="12px"
+                >
+                  Logout
+                </Heading>{" "}
+              </Box>{" "}
+            </Box>
+          </LinkBox>
+          <LoginSignupModal
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+          />
+          <div>
+            <span>
+              {token.length > 0 ? (
+                <img
+                  onClick={() => {
+                    swal({
+                      title: "Are you sure?",
+                      text: "You really want to log out?",
+                      icon: "warning",
+                      buttons: true,
+                      dangerMode: true,
+                    }).then((willDelete) => {
+                      if (willDelete) {
+                        dispatch(logOutUser(""));
+                        swal("Log out successfull", {
+                          icon: "success",
+                        });
+                      } else {
+                      }
+                    });
+                  }}
+                  src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9CAMAAAC4XpwXAAAAY1BMVEX///8AAADX19chISHf399paWmQkJD8/PzPz88wMDCbm5uurq7y8vLs7OwaGhqLi4uCgoLl5eVubm51dXW5ubk3NzdYWFhSUlLAwMA+Pj4ODg57e3teXl6mpqZjY2MpKSlHR0em6miQAAAD1UlEQVRoge2b23aqMBBADSDBECRcFAQR/v8rS9sERG4ZOrHr9LDf7OpySy6TmYkeDjs6UMfLcy+ib/dSL7wRRZExi77tM9CoJK+cWPAWP7XuI/cXoWPcTwMx7W45M25Yntaz8pa7Z/LxuVssydvp983pg2TZ3VIYG/0gXpW3GNLz8T6bfPrKxODTtTlX1KkBvX/RkxOSWehy66orJ0QEyHIe6ssJwR77/Lbu7Lk6qHI+H18nwQ06eQOz3yNMO4PJCfEQ5ZFWlHsGM+KlJ6i9QRz6CionBC/iwDb7N3hb3gFPO+bEexncnqBFW1ig++aKtuxy7eOtB2/RwzccIbc/Yv/dkfeAZ8wnD7Q1P1c7LSHQ9nugl80OQMxswQcs6hHrn6HyGjG3gofaGDGtpeBDLsdM7KBDX6MWFNDUCrmUhK36ArmWgj08ehXtL7ZMhtxwS5lPANVMii4/OI9fG/dPdKupGLWK6ki1jnnk+rVHp31hoHGhyNfiffEwJ2/zjONi68gOsXsmQ3g4n9sXmcFOpcSLp2e/uIWm1tuAPGlGR16dCcyGwSKeG2en7hPYl2tSmdnkc1i+K5LkeEwSwdL3qjvedx2zs7Pzf8CDyAEQ8cUoxCPtzI97PnNFGR8BJCJ0WWpNfYQgZWGZlKFOeKYeKzN7JaGZOe0vd1G9nrncT1R+cInZsp/motG8BpvGfriDTMtKnrtf5+PSta0lNvQoX7myLtmi+eu9VjPbS6bVhu7sFGH3NOOHuczU+VwACrdFVF0VTD1NM5kDR9p10yry6Wb6H+VEFswBN48rPORbOk9/e17K43SQb2gPziEHnrrqD5eqjUd+VxSOr03Xb/n1kWGNq712/QpC1FLtiFFvzUeUE7WQ5MubWoRdSfyy7oIfRZgXzvJNPfk67jRqKl72PN5yb7nIaZfjWXS7/1DJhxw2GyxMeWeXTa+z28+vPD/CgR0pxEkEzB5gurtGhq59Qy9+lr6i1rUjyp92sqYdb+DPz8mDpn3DNcQMgyjS2dmifcOF7zTDIDJlr8f2DZdfkxz7wyNaTRXsUmagWDlFN+78qPX/169PixTjuwvwSPtWw8HbcLl6csBYRlj2k9rqesP+TYNlV31qCzSRHpJdnZoCZE+Q7CrAw/bvCcmuFh3s4r5Asqs0Gfilhd2+23f7bt/tf9yOk9dtteNUsFvtONX7VvvBe9T2T9luP0TWz+Gb7Zj8rh3W5LaR7bD2V4Zsr0Dhg62/IQgKmnj0C+0cIPex5X0/dJ3SxF2+7u8OXDNfJAh0bhoacz+qpDlzl2C54R9U/gt8AGF9Qw5Vc+BZAAAAAElFTkSuQmCC"
+                />
+              ) : (
+                <AiOutlineUser
+                  size="26px"
+                  onClick={() => setModalShow(true)}
+                  src="https://cdn.modesens.com/static/img/20200612account_b2.svg"
+                  alt=""
+                />
+              )}
+            </span>
           </div>
-         </Link>
-         <LoginSignupModal  show={modalShow}
-        onHide={() => setModalShow(false)}/>
-          <div >
-            <span >{token.length> 0 ? <img  onClick={()=>{
-              swal({
-                title: "Are you sure?",
-                text: "You really want to log out?",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-              })
-              .then((willDelete) => {
-                if (willDelete) {dispatch(logOutUser(""))
-                  swal("Log out successfull", {
-                    icon: "success",
-                  });
-                } else {
-                
-                }
-              })
-            }} src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9CAMAAAC4XpwXAAAAY1BMVEX///8AAADX19chISHf399paWmQkJD8/PzPz88wMDCbm5uurq7y8vLs7OwaGhqLi4uCgoLl5eVubm51dXW5ubk3NzdYWFhSUlLAwMA+Pj4ODg57e3teXl6mpqZjY2MpKSlHR0em6miQAAAD1UlEQVRoge2b23aqMBBADSDBECRcFAQR/v8rS9sERG4ZOrHr9LDf7OpySy6TmYkeDjs6UMfLcy+ib/dSL7wRRZExi77tM9CoJK+cWPAWP7XuI/cXoWPcTwMx7W45M25Yntaz8pa7Z/LxuVssydvp983pg2TZ3VIYG/0gXpW3GNLz8T6bfPrKxODTtTlX1KkBvX/RkxOSWehy66orJ0QEyHIe6ssJwR77/Lbu7Lk6qHI+H18nwQ06eQOz3yNMO4PJCfEQ5ZFWlHsGM+KlJ6i9QRz6CionBC/iwDb7N3hb3gFPO+bEexncnqBFW1ig++aKtuxy7eOtB2/RwzccIbc/Yv/dkfeAZ8wnD7Q1P1c7LSHQ9nugl80OQMxswQcs6hHrn6HyGjG3gofaGDGtpeBDLsdM7KBDX6MWFNDUCrmUhK36ArmWgj08ehXtL7ZMhtxwS5lPANVMii4/OI9fG/dPdKupGLWK6ki1jnnk+rVHp31hoHGhyNfiffEwJ2/zjONi68gOsXsmQ3g4n9sXmcFOpcSLp2e/uIWm1tuAPGlGR16dCcyGwSKeG2en7hPYl2tSmdnkc1i+K5LkeEwSwdL3qjvedx2zs7Pzf8CDyAEQ8cUoxCPtzI97PnNFGR8BJCJ0WWpNfYQgZWGZlKFOeKYeKzN7JaGZOe0vd1G9nrncT1R+cInZsp/motG8BpvGfriDTMtKnrtf5+PSta0lNvQoX7myLtmi+eu9VjPbS6bVhu7sFGH3NOOHuczU+VwACrdFVF0VTD1NM5kDR9p10yry6Wb6H+VEFswBN48rPORbOk9/e17K43SQb2gPziEHnrrqD5eqjUd+VxSOr03Xb/n1kWGNq712/QpC1FLtiFFvzUeUE7WQ5MubWoRdSfyy7oIfRZgXzvJNPfk67jRqKl72PN5yb7nIaZfjWXS7/1DJhxw2GyxMeWeXTa+z28+vPD/CgR0pxEkEzB5gurtGhq59Qy9+lr6i1rUjyp92sqYdb+DPz8mDpn3DNcQMgyjS2dmifcOF7zTDIDJlr8f2DZdfkxz7wyNaTRXsUmagWDlFN+78qPX/169PixTjuwvwSPtWw8HbcLl6csBYRlj2k9rqesP+TYNlV31qCzSRHpJdnZoCZE+Q7CrAw/bvCcmuFh3s4r5Asqs0Gfilhd2+23f7bt/tf9yOk9dtteNUsFvtONX7VvvBe9T2T9luP0TWz+Gb7Zj8rh3W5LaR7bD2V4Zsr0Dhg62/IQgKmnj0C+0cIPex5X0/dJ3SxF2+7u8OXDNfJAh0bhoacz+qpDlzl2C54R9U/gt8AGF9Qw5Vc+BZAAAAAElFTkSuQmCC"/>:  
-            <AiOutlineUser size="26px" onClick={() => setModalShow(true)}
-              src="https://cdn.modesens.com/static/img/20200612account_b2.svg"
-              alt=""
-              />}
-              </span>
-
-              
-          </div>
-          <div >
+          <div>
             {/* <span className="admin" >
               <Link to="adminlogin">
             <img 
@@ -340,29 +388,22 @@ function Navbar() {
               />
               </Link>
               </span> */}
-              
           </div>
-          
-          
-          
+
           <div className="search">
-            <img 
+            <img
               style={{ width: "50%%" }}
               src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-512.png"
               alt=""
             />
             <SearchBar />
           </div>
-          <div
-            style={{ marginTop: "-10px", cursor: "pointer" }}
-            
-          >
-           
-          </div>
+          <div style={{ marginTop: "-10px", cursor: "pointer" }}></div>
         </div>
       </Flex>
-        <Box w="100%" position={"absolute"} bg="white">{menu}</Box>
-      
+      <Box w="100%" position={"absolute"} bg="white">
+        {menu}
+      </Box>
     </Box>
   );
 }

@@ -83,7 +83,7 @@ margin-left: 0px;
   margin-left: 15%;
   align-items: center;
   gap: 15px;
-  border: 2px solid green;
+  /* border: 2px solid green; */
   width: 70%;
 }
 .bag{
@@ -129,7 +129,7 @@ visibility: collapse;
   text-decoration: none;
 }
 .links > a:hover {
-  border-bottom: 1px solid rgb(142, 40, 40);
+  /* border-bottom: 1px solid rgb(142, 40, 40); */
 }
 .rightIcons {
   display: flex;
@@ -216,3 +216,32 @@ visibility: collapse;
   border-bottom: 1px solid rgb(142, 40, 40);
 }
 
+.dropmenu {
+  /* visibility: hidden; */
+  padding: 10px;
+  background-color: white;
+  height: auto;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 30px;
+  border-radius: 8px;
+  left: -62.5px;
+  right: inherit;
+  border: 1px solid #e5f0da;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.drop {
+  position: relative;
+  transition: all 0.3s;
+  z-index: 100;
+}
+
+.drop:hover .dropmenu {
+  visibility: visible;
+  pointer-events: painted;
+  opacity: 1;
+}

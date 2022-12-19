@@ -14,12 +14,16 @@ import ProductDetails from './ProductDetails/ProductDetails'
 import { SearchBar } from './Searchbar/SearchBar'
 import Comminity from '../page/Comminity'
 import WhyModesensPage from "../page/WhyModesensPage"
+import Login from './AdminPenal/Login'
+import Otp from './AdminPenal/Otp'
+import ProtectedRoute from './ProtectedRoute'
+import AdminLogin from './AdminLogin'
 export const MainRoutes = () => {
   return (
     <Routes>
         <Route path='/' element={<HomePage/>} />
         <Route path='/adminlogin' element={<Admin_Login/>} />
-        <Route path='/admin' element={<Admin/>} />
+        <Route path='/admin' element={<Admin></Admin>} />
         <Route path="/details/:id" element={<ProductDetails/>}></Route>
         <Route path="/product/:id" element={<Edit/>}></Route>
         <Route path='/men' element={<Mens/>} />
@@ -32,7 +36,9 @@ export const MainRoutes = () => {
         <Route path='/cart' element={<Cart/>} />
         <Route path='/community' element ={<Comminity />} />
         <Route path='/whycoolmart' element ={<WhyModesensPage />} />
-        
+        <Route path='/login' element ={<Login />} />
+        <Route path='/otp' element ={<Otp />} />
+        <Route path='AdminL' element ={<AdminLogin />} />
       </Routes>
   )
 }

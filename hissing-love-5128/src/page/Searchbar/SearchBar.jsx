@@ -62,11 +62,11 @@ export const SearchBar = () => {
         finalFocusRef={btnRef}
       >
         <DrawerOverlay />
-        <DrawerContent>
+        <DrawerContent h="250px">
         
 
 
-          <DrawerBody>
+          <DrawerBody h="400px">
          <SearchInput queryHanlder={queryHanlder}/>
        
 <Wrap w="109%" ml="-22px"  boxShadow='dark-lg'  rounded='md' bg='white'   h="200px"   display={"flex"} justifyContent="space-around"  spacing={7} >

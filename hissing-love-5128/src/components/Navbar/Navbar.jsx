@@ -346,11 +346,12 @@ function Navbar() {
               </Box>{" "} */}
             {/* </Box> */}
           </LinkBox>
+
           <LoginSignupModal
             show={modalShow}
             onHide={() => setModalShow(false)}
           />
-          <div>
+          <Box className="drop" >
             <span>
               {token.length > 0 ? (
                 <img
@@ -382,7 +383,34 @@ function Navbar() {
                 />
               )}
             </span>
-          </div>
+            <Box className="dropmenu" bg="white" p="30px">
+                {" "}
+                <Heading mt="30px" fontSize="12px">
+                  Hi
+                </Heading>
+                <Heading mt="30px" fontSize="12px">
+                  my Account
+                </Heading>
+                <Heading mt="30px" fontSize="12px">
+                  My Wishlist
+                </Heading>
+                <Heading mt="30px" fontSize="12px">
+                  My Orders
+                </Heading>
+               <Link to="/adminlogin"> <Heading mt="30px" fontSize="12px">
+                 Admin Login
+                </Heading></Link>
+                <Heading
+                  onClick={() => {
+                    localStorage.setItem("sts", JSON.stringify(false));
+                  }}
+                  mt="30px"
+                  fontSize="12px"
+                >
+                  Logout
+                </Heading>{" "}
+              </Box>
+          </Box>
           <div>
             {/* <span className="admin" >
               <Link to="adminlogin">

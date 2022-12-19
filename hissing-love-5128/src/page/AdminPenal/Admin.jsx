@@ -136,7 +136,7 @@ const Admin = () => {
         <Box
           style={{ overflow: "scroll" }}
           w={{ lg: "50%", md: "100%", sm: "100%" }}
-          h="580px"
+          h="480px"
           scrollBehavior="auto"
         >
           <Button>DATA </Button>

@@ -13,7 +13,7 @@
 # Tech Stack 
 ### HTML | CSS | JavaScript | NodeJs |React | Redux | Chakra UI
 ### Home page
-![](https://[github.com/bArSu45/haloed-ground-8588/blob/main/public/image/homepage.png](https://github.com/Surendrakumar878/hissing-love-5128/blob/master/hissing-love-5128/public/Screenshot%20(122).png?raw=true))
+![](https://github.com/Surendrakumar878/hissing-love-5128/blob/master/hissing-love-5128/public/Screenshot%20(122).png?raw=true)
 
 ### Login & Sign up Page
 ![](https://github.com/Surendrakumar878/hissing-love-5128/blob/master/hissing-love-5128/public/Screenshot%20(120).png?raw=true)

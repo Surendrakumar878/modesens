@@ -62,11 +62,11 @@ deployed link for demo:- https://coolmartz.netlify.app/
 ![](https://github.com/Surendrakumar878/hissing-love-5128/blob/master/hissing-love-5128/public/Screenshot%20(120).png?raw=true)
 ### Sign Up Page
 ![](https://github.com/Surendrakumar878/hissing-love-5128/blob/master/hissing-love-5128/public/Screenshot%20(121).png?raw=true)
-### login & Admin Page
+<!-- ### login & Admin Page -->
 ![]()
-### Mens Page
+<!-- ### Mens Page -->
 ![]()
-### Womens Page
+<!-- ### Womens Page -->
 ![]()
 ### Cart Page
 ![](https://github.com/Surendrakumar878/hissing-love-5128/blob/master/hissing-love-5128/public/Screenshot%20(123).png?raw=true)
@@ -76,18 +76,18 @@ deployed link for demo:- https://coolmartz.netlify.app/
 ![](https://github.com/Surendrakumar878/hissing-love-5128/blob/master/hissing-love-5128/public/Screenshot%20(124).png?raw=true)
 ### mens Page
 ![](https://github.com/Surendrakumar878/hissing-love-5128/blob/master/hissing-love-5128/public/Screenshot%20(125).png?raw=true)
-### womens Page
+<!-- ### womens Page -->
 ![]()
-### Baeuty Page
+<!-- ### Baeuty Page -->
 ![]()
-### Kids Page
+<!-- ### Kids Page -->
 ![]()
-### Payment Page
+<!-- ### Payment Page -->
 ![]()
 
 
 
-### Payment Page
+<!-- ### Payment Page -->
 ![]()
 This project is completed. 
 ## Final Words

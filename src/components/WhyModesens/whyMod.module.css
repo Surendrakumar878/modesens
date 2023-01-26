@@ -1,0 +1,270 @@
+.whyMod_main {
+  box-sizing: border-box;
+  margin: 10px;
+  /* border: 1px solid red; */
+  font-family: "SuisseIntl";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.head {
+  background-color: #fff;
+  background-image: url("./Images/about-bg.png");
+  background-position: 60%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  margin: auto;
+  margin-top: 0px;
+  width: 90%;
+  
+  /* margin: auto; */
+
+}
+.head p{
+  color: white;
+  font-size: 4.2rem;
+  line-height: 80px;
+  font-style: normal;
+  font-weight: lighter;
+  text-align: left;
+  letter-spacing: .5px;
+  font-weight: 500;
+  padding-top: 7rem;
+  padding-left: 2.5rem;
+  font-family: "SuisseIntl";
+}
+.head h4 {
+  /* font-size: 1.14rem; */
+  margin-top: 0px;
+  font-weight: 100;
+  line-height: 40px;
+  padding-top: 20px;
+  color: white;
+  margin-bottom: 12px;
+  text-align: center;
+  font-family: "SuisseIntl";
+  font-size: 20px;
+  padding-left: 2.5rem;
+  text-align: left;
+}
+
+.head button {
+  
+  align-items: left;
+  justify-content: left;
+  /* margin: auto; */
+  font-weight: 600;
+  color: white;
+  background-color: red;
+  padding: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
+  /* border: 1px solid rgb(21, 21, 21); */
+  transition: 0.3s;
+  cursor: pointer;
+  /* background-color: #fff; */
+}
+.head > button:hover {
+  background-color: rgb(21, 21, 21);
+  color: white;
+}
+
+.iframe {
+  width: 710px;
+  height: 400px;
+  border-left: 1px solid black;
+  background-image: url("https://cdn.modesens.com/static/img/20210407videoposter.jpg");
+  background-size: cover;
+  margin: auto;
+  margin-top: 60px;
+  background-repeat: no-repeat;
+}
+.compare_price {
+  background-color: #f8f7f6;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  padding-bottom: 40px;
+  margin-top: 80px;
+  padding-left: 4rem;
+}
+.left {
+  width: 35%;
+}
+.comp_h {
+  font-style: normal;
+  font-weight: lighter;
+  color: #000;
+  font-size: 2.14rem;
+  line-height: 40px;
+  width: 80%;
+  margin-top: 30px;
+  font-family: "SuisseIntl";
+  text-align: justify;
+}
+.comp_{
+  font-style: normal;
+  font-weight: lighter;
+  color: #000;
+  font-size: 2.14rem;
+  line-height: 40px;
+  /* width: 90%; */
+  margin-top: 30px;
+  font-family: "SuisseIntl";
+  text-align: justify;
+  margin-left: -120px;
+}
+.comp_ + p {
+  /* margin-bottom: 1rem; */
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 15px;
+  /* margin-top: -30px; */
+  color: rgba(0, 0, 0, 0.867);
+  line-height: 20px;
+  font-family: SuisseIntl;
+  align-content: right;
+  width: 100%;
+  text-align: justify;
+  margin-left: -120px;
+  /* text-justify: distribute-all-lines; */
+  
+}
+
+.comp_h + p {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 15px;
+  /* margin-top: -30px; */
+  color: rgba(0, 0, 0, 0.867);
+  line-height: 20px;
+  font-family: SuisseIntl;
+  align-content: right;
+  width: 80%;
+  text-align: justify;
+  /* text-justify: distribute-all-lines; */
+  
+}
+.join_btn {
+  /* padding: 10px; */
+  padding-left: 14px;
+  padding-right: 14px;
+  background-color: rgba(0, 0, 0, 0.937);
+  color: rgba(255, 255, 255, 0.933);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.5s;
+  text-align: left;
+  justify-content: left;
+  margin-left: -205px;
+  text-align: justify;
+}
+.join_btnn {
+  /* padding: 10px; */
+  padding-left: 14px;
+  padding-right: 14px;
+  background-color: rgba(0, 0, 0, 0.937);
+  color: rgba(255, 255, 255, 0.933);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.5s;
+  margin-left: -115%;
+  margin-top: -20%;
+  text-align: justify;
+  
+}
+.compare_img {
+  /* margin-top: 30px; */
+  height: 300px;
+  /* padding-right: 10px; */
+  /* width: 120%; */
+  margin-left: -40px;
+  /* padding-left: -100px; */
+  /* padding-right: 4rem; */
+  width: 750px;
+}
+.first_know {
+  background-color: white;
+  width: 90%;
+}
+.right {
+  margin: 0;
+  padding: 0;
+  margin-left: -20px;
+}
+.right img {
+  margin-top: -200px;
+  margin-bottom: -200px;
+  width: 660px;
+  height: 700px;
+}
+
+.community {
+  background-color: #f8f7f6;
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+  padding-bottom: 40px;
+  margin-top: 80px;
+}
+.community img {
+  height: 900px;
+  width: 1000px;
+  margin: auto;
+  margin-top: 40px;
+}
+.loyalty {
+  width: 1060px;
+  margin: auto;
+  padding: 20px;
+  padding-bottom: 40px;
+}
+.loy_flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.loy_left p {
+  width: 490px;
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.838);
+}
+.loy_right div {
+  display: flex;
+  gap: 10px;
+  width: 460px;
+}
+.loy_right div p {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.838);
+}
+.loy_left button {
+  padding: 10px;
+  padding-left: 14px;
+  padding-right: 14px;
+  background-color: rgba(0, 0, 0, 0.937);
+  color: rgba(255, 255, 255, 0.933);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.loy_left button:hover {
+  background-color: rgba(255, 255, 255, 0);
+  color: rgb(0, 0, 0);
+}
+.learn {
+  padding-top: 1px;
+}

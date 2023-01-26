@@ -1,0 +1,12 @@
+.box{
+    border: 1px solid blue;
+    height:250px;
+    display: flex;
+    width: 90%;
+    
+}
+.box div{
+    height:100%;
+    border: 1px solid blue;
+    width: 80%;
+}

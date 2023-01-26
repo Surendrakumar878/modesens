@@ -1,0 +1,115 @@
+.designerman{
+    margin-left:330px;
+    width:62%;
+    margin-top:24px;
+}
+.designerman h1{
+    font-size: 28px;
+}
+
+.productbox {
+    /* border: 1px solid blue; */
+    width: 75%;
+    gap: 5px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+}
+
+.productbox div {
+    text-align: center;
+    padding: 2px;
+}
+
+.productbox div img {
+    height: 250px;
+    width: 70%;
+    margin-left: 30px;
+}
+
+.productbox div h3 {
+    font-size: 11.9px;
+    margin-top:12px;
+    color: #8E8E8E;
+    font-weight:bolder
+    
+}
+
+.productbox div p {
+    margin-top: 16px;
+    font-size: 11.9px;
+}
+
+.productbox div p span {
+    color: #C00000;
+    font-size: 11.9px;
+    font-weight: bold;
+}
+
+
+.filterbox {
+    /* border: 1px solid green; */
+    width: 25%
+}
+
+.filter h4{
+    color: #8E8E8E;
+    font-weight: bold;
+    font-size: 13.5px;
+    margin-left: 30px;
+    
+}
+.related{
+margin-left: 15px;
+}
+.related p{
+    margin-left:15px;
+    font-size: 13px;
+    color: #8E8E8E;
+}
+.save_btn button{
+    margin-left: 30px;
+    border-radius:0px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: white;
+    width:80%;
+    
+   
+}
+.save_btn button:hover{
+    background-color: black;
+color: white;
+}
+
+@media only screen and (max-width:380px) {
+    .filterbox {
+        display: none;
+    }
+
+    .productbox {
+        margin: auto;
+        width: 90%;
+        gap: 5px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    
+    }
+
+    .productbox div img {
+        height: 120px;
+        width: 70%;
+        margin-left: 30px;
+    }
+
+    .designerman{
+        margin-left:20px;
+        width:90%;
+        margin-top:24px;
+        /* border: 1px solid red; */
+    }
+    .designerman h1{
+     font-size: 25px;
+    }
+
+}

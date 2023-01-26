@@ -1,0 +1,247 @@
+/* .navbar {
+  visibility: visible;
+  display: grid;
+  grid-template-columns: 10% 60% 30%;
+  align-items: center;
+  /* position: relative; */
+  /* height: 50px; */
+  /* padding-left: 1%; */
+  /* margin-top: 1%; */
+  /* border: 2px solid black; */
+  /* position: fixed; */
+  /* display: absolute; */
+  /* z-index: 1; */
+  /* justify-content: space-between; */
+  
+
+.short_logo{
+  visibility: collapse;
+  width: 0px;
+  height: 0px
+}
+.short_log{
+  visibility: collapse;
+  
+  
+  
+}
+
+@media screen and  (max-width: 1150px)
+{
+.hamburger{
+  display: block;
+}
+ 
+ .short_logo{
+  visibility: visible;
+  width: 30%;
+  height: 30%;
+  margin-top: 0px;
+  /* margin: 50% ; */
+}
+
+ .ham_icon{
+  visibility: visible;
+  width: 30%;
+  height: 30%;
+  margin-left: 30px;
+ }
+
+ .links{
+  visibility: collapse;
+ }
+ .full_logo{
+  visibility: collapse;
+  width: 0px;
+  height: 0px
+ }
+ .links{
+font-size: 15px;
+margin-left: 100px;
+ }
+ .navbar {
+  visibility: visible;
+  display: grid;
+  grid-template-columns: 10% 60% 30%;
+  align-items: left;
+}
+.secondDiv > div > div > a {
+  /* display: none; */
+  font-size: 50%;
+  font-weight: bold;
+  
+  
+}
+.flag_icon{
+  visibility: collapse;
+  height: 0px;
+  width: 0px;
+}
+.rightIcons {
+  visibility: visible;
+  display: flex;
+  margin-left: 15%;
+  align-items: center;
+  gap: 15px;
+  /* border: 2px solid green; */
+  width: 70%;
+}
+.bag{
+  visibility: visible;
+  
+}
+.secondDiv{
+visibility: collapse;
+}
+
+.mini{
+  size:"28px"
+}
+}
+/* @media screen and  (max-width: 700px){
+  .mini{
+    size: 16px;
+    visibility: collapse;
+  }
+} */
+
+.full_logo {
+  width: 100%;
+  /* padding-top:7%; */
+  margin-left: 20px;
+}
+.links {
+  display: flex;
+  /* padding-top:1%; */
+  margin-left: 20px;
+  /* width: 1000px; */
+  /* border: 1px solid black; */
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 110%;
+}
+.links > a {
+  margin-left: 3.5%;
+  font-size: 80%;
+  font-weight: bold;
+  width: auto;
+  color: black;
+  text-decoration: none;
+}
+.links > a:hover {
+  border-bottom: 1px solid rgb(142, 40, 40);
+}
+.rightIcons {
+  display: flex;
+  margin-left: 35%;
+  align-items: center;
+  gap: 15px;
+  /* border: 2px solid blue; */
+}
+.rightIcons img {
+  height: 20px;
+  width: 20px;
+}
+.search {
+  display: flex;
+
+  /* gap: 15px; */
+  /* justify-content: space-evenly; */
+  /* margin-right: 40px; */
+}
+.search img{
+  margin-top: 10px;
+}
+.search input {
+  margin-top: -3px;
+  border: none;
+  outline: none;
+  /* border-bottom: 1px solid #333; */
+  width: 80px;
+  margin-left: 5px;
+  
+  background-color: transparent;
+}
+.rightIcons > div > span {
+  /* margin-left:8%; */
+  margin-bottom: 10%;
+  height: 40%;
+ 
+}
+.secondDiv > div {
+  z-index: 1;
+  display: flex;
+  padding-left: 10%;
+  padding-top: 2%;
+  padding-bottom: 1%;
+  border-top: 1px solid rgb(207, 200, 200);
+}
+.secondDiv > div > div {
+  padding-left: 2%;
+}
+
+.secondDiv > div > div > a {
+  font-size: 80%;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+.secondDiv > div > div > a:hover {
+  border-bottom: 1px solid rgb(142, 40, 40);
+}
+.firstdata > div {
+  z-index: 1;
+  border: 1px solid rgb(213, 205, 205);
+  width: 100%;
+  margin-left: -10%;
+  padding-left: 5%;
+  padding-right: 6%;
+  display: grid;
+  grid-template-columns: 23% 23% 23% 23%;
+  padding-top: 2%;
+  padding-bottom: 4%;
+  margin-top: -2.3%;
+}
+.firstdata > div > div {
+  padding: 4%;
+  
+}
+.firstdata > div > div > a {
+  font-size: 80%;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+.firstdata > div > div > a:hover {
+  border-bottom: 1px solid rgb(142, 40, 40);
+}
+
+.dropmenu {
+  /* visibility: hidden; */
+  padding: 10px;
+  background-color: white;
+  height: auto;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 30px;
+  border-radius: 8px;
+  left: -62.5px;
+  right: inherit;
+  border: 1px solid #e5f0da;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.drop {
+  position: relative;
+  transition: all 0.3s;
+  z-index: 100;
+}
+
+.drop:hover .dropmenu {
+  visibility: visible;
+  pointer-events: painted;
+  opacity: 1;
+}

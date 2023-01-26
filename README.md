@@ -16,9 +16,9 @@
 ![](https://github.com/Surendrakumar878/hissing-love-5128/blob/master/public/Screenshot%20(122).png?raw=true)
 
 ### Login & Sign up Page
-![](https://github.com/Surendrakumar878/hissing-love-5128/blob/master/hissing-love-5128/public/Screenshot%20(120).png?raw=true)
+![](https://github.com/Surendrakumar878/hissing-love-5128/blob/master/public/Screenshot%20(120).png?raw=true)
 ### Sign Up Page
-![](https://github.com/Surendrakumar878/hissing-love-5128/blob/master/hissing-love-5128/public/Screenshot%20(121).png?raw=true)
+![](https://github.com/Surendrakumar878/hissing-love-5128/blob/master/public/Screenshot%20(121).png?raw=true)
 ### login & Admin Page
 ![]()
 ### Mens Page
@@ -26,13 +26,13 @@
 ### Womens Page
 ![]()
 ### Cart Page
-![](https://github.com/Surendrakumar878/hissing-love-5128/blob/master/hissing-love-5128/public/Screenshot%20(123).png?raw=true)
+![](https://github.com/Surendrakumar878/hissing-love-5128/blob/master/public/Screenshot%20(123).png?raw=true)
 
 
 ### Search bar Page
-![](https://github.com/Surendrakumar878/hissing-love-5128/blob/master/hissing-love-5128/public/Screenshot%20(124).png?raw=true)
+![](https://github.com/Surendrakumar878/hissing-love-5128/blob/master/public/Screenshot%20(124).png?raw=true)
 ### mens Page
-![](https://github.com/Surendrakumar878/hissing-love-5128/blob/master/hissing-love-5128/public/Screenshot%20(125).png?raw=true)
+![](https://github.com/Surendrakumar878/hissing-love-5128/blob/master/public/Screenshot%20(125).png?raw=true)
 ### womens Page
 ![]()
 ### Baeuty Page

@@ -1,3 +1,4 @@
+import { Button } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useLocation, useSearchParams } from "react-router-dom"
@@ -53,9 +54,9 @@ if(location ||mens.length===0){
                     <h4>MODESENS/SHOP/MENS/CLOTHING</h4>
                     <div style={{ display: "flex", justifyContent: "space-between" }}>
                         <p style={{ fontWeight: "bold", fontSize: "13px", marginLeft: "30px" ,color:"black",marginTop:"22px"}}>10,000+ ITEMS</p>
-                        <img  src="https://cdn-icons-png.flaticon.com/512/54/54481.png" style={{marginTop:"22px",width:"11px",height:"20px" ,marginRight: "40px"}} />
+                        <img  src="https://cdn-icons-png.flaticon.com/512/54/54481.png" style={{marginTop:"22px",width:"18px",height:"20px" ,marginRight: "40px"}} />
                     </div>
-                    <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <div style={{ display: "flex", justifyContent: "space-between" ,marginTop:"5px"}}>
                         <p style={{ color: "black", fontWeight: "bold", fontSize: "13px", marginLeft: "30px" }}>Sort By:</p>
                         <p style={{ color: "black", fontWeight: "bold", fontSize: "13px", marginRight: "40px" }}>Reset</p>
                     </div>
@@ -65,9 +66,12 @@ if(location ||mens.length===0){
                     <label>Ascending</label>
                     <br />
                     <input type="radio" value="desc" name="sortBy" defaultChecked={sort === "desc"} style={{marginRight:"7px"}} />
-                    <label>Descending</label></div>                    
+                    <label>Descending</label></div>  
+
+                    <div className="save_btn" style={{marginTop:"10px"}}>
+                        <Button>SAVE MY SEARCH</Button></div>                  
                     <div  className="related">
-                        <h3 style={{ color: "black", fontWeight: "bold", fontSize: "11.9px", marginLeft: "20px" }}>Related Category</h3>
+                        <h3 style={{ color: "black", fontWeight: "bold", fontSize: "11.9px", marginLeft: "15px" ,marginTop:"10px",marginBottom:"10px"}}>Related Category</h3>
                         <p>Men</p>
                         <p>Men Activewear</p>
                         <p>Men Bitchewear</p>
@@ -75,6 +79,18 @@ if(location ||mens.length===0){
                         <p>Men Jackets</p>
                         <p>Men Jeans</p>
                         <p>Men Jeans</p>
+                    </div>
+                    <div className='related'>
+                        <h3 style={{ color: "black", fontWeight: "bold", fontSize: "11.9px", marginLeft: "15px", marginTop: "10px", marginBottom: "10px" }}>Related Searches</h3>
+                        <p>Gucci Men Clothing</p>
+                        <p>Burberry Men Clothing</p>
+                        <p>Alexander Mcqueen Men Clothing</p>
+                        <p>Fendi Women Clothing</p>
+                        <p>Valentino Men Clothing</p>
+                        <p>Balenciaga Men Clothing</p>
+                        <p>Saint Laurent Men Clothing</p>
+                        <p>Prada Men Clothing</p>
+                        <p>Versace Men Clothing</p>
                     </div>
 
                 </div>

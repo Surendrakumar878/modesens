@@ -107,8 +107,8 @@ export const Womens = () => {
                         <div key={el.id} >
                         <img src={el.image} />
                         <h3 >{el.title}</h3>
-                        <p><span>$169(60% OFF)</span>-${el.price}</p>
-                        <p style={{ color: "#8E8E8E", fontWeight: "bold", fontSize: "11.9px", marginTop: "16px", marginBottom: "8px" }}>Compare 22 stores</p>
+                        <p>{"$"+el.price}</p>
+                       <Button>ADD  TO  BAG</Button>
                     </div></Link>
                     })}
                 </div>

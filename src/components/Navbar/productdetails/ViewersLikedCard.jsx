@@ -51,7 +51,7 @@ function ViewerLikedCard({ el }) {
           {el.title}
         </Card.Title>
         <Card.Text
-          style={{ fontSize: "14px", marginBottom: "7px", marginTop: "7px" }}
+          style={{ fontSize: "14px", marginBottom: "7px", marginTop: "7px" ,color:"red" ,fontWeight:"bold"}}
         >
           ₹ {el.price}
         </Card.Text>

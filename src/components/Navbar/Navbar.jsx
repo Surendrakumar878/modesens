@@ -45,6 +45,12 @@ function Navbar() {
     "PRE OWNED",
     "OCCASIONS",
   ]);
+  const navbarLink=[
+    "beauty",
+    "men",
+    "womens",
+    "kids"
+  ]
   const [modalShow, setModalShow] = React.useState(false);
   const token = useSelector((store) => store.AuthReducer.token);
   console.log("token", token);
@@ -128,21 +134,21 @@ function Navbar() {
               icon={<HamburgerIcon />}
               variant="outline"
             />
-            <MenuList>
-              {data.map((i) => (
-                <MenuItem>{i}</MenuItem>
+            <MenuList border={"1px solid red"}>
+              {navbarLink.map((i) => (
+               <Link to={i}><MenuItem>{i}</MenuItem></Link>
               ))}
             </MenuList>
           </Menu>
-        </Show>
+                 </Show>
         <Box ml="20px">
-          <LinkBox to="/">
+          <Link to="/">
             <Image
               w={{ lg: "50%", md: "100%", sm: "100%" }}
               src="https://i.postimg.cc/7hFL7SGx/1670760238004-removebg-preview.jpg"
               alt=""
             />
-          </LinkBox>
+          </Link>
           
         </Box>
         {/* <div >
@@ -406,6 +412,7 @@ function Navbar() {
                   }}
                   mt="30px"
                   fontSize="12px"
+                  cursor="pointer"
                 >
                   Logout
                 </Heading>{" "}

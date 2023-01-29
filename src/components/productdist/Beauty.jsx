@@ -41,7 +41,7 @@ if(location ||beauty.length===0){
         <h1 >Designer Beauty</h1>
         <p style={{ fontSize: "11.9px", marginTop: "25px" ,fontWeight:"bold"}}>Shop designer clothing for men with price comparison across 500+ stores in one place. Discover the latest designer clothing for men at ModeSens.</p>
     </div>
-    <div className="filter" style={{ display: "flex", marginTop: "28px" }}>
+    <div className="filter" >
 
         <div  className="filterbox">
                <h4>MODESENS/SHOP/MENS/CLOTHING</h4>
@@ -75,13 +75,7 @@ if(location ||beauty.length===0){
                 <p>Gucci Beauty</p>
                 <p>Fendi Beauty</p>
                 <p>Valentino Beauty</p>
-                <p>Saint Laurent Beauty</p>
-                <p>Balenciaga Beauty</p>
-                <p>Prada Beauty</p>
-                <p>Versace Beauty</p>
-                <p>Burberry Beauty</p>
-                <p>Givenchy Beauty</p>
-                <p>Alexander Mcqueen Beauty</p>
+               
             </div>
 
         </div>
@@ -92,8 +86,8 @@ if(location ||beauty.length===0){
                 <div key={el.id} >
                 <img src={el.image} />
                 <h3 >{el.title}</h3>
-                <p><span>$169(60% OFF)</span>-${el.price}</p>
-                <p style={{ color: "#8E8E8E", fontWeight: "bold", fontSize: "11.9px", marginTop: "16px", marginBottom: "8px" }}>Compare 22 stores</p>
+                <p>{"$"+el.price}</p>
+                       <Button>ADD  TO  BAG</Button>
             </div></Link>
             })}
         </div>

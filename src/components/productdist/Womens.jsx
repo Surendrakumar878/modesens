@@ -45,7 +45,7 @@ export const Womens = () => {
                 <h1 >Designer Clothing for Women</h1>
                 <p style={{ fontSize: "11.9px", marginTop: "25px", fontWeight: "bold" }}>Shop designer clothing for men with price comparison across 500+ stores in one place. Discover the latest designer clothing for men at ModeSens.</p>
             </div>
-            <div className="filter" style={{ display: "flex", marginTop: "28px" }}>
+            <div className="filter" >
 
                 <div className="filterbox">
                     <h4>MODESENS/SHOP/MENS/CLOTHING</h4>
@@ -67,36 +67,20 @@ export const Womens = () => {
                         <div className="save_btn" style={{marginTop:"10px"}}>
                         <Button>SAVE MY SEARCH</Button></div>     
                     <div className='related'>
-                        <h3 style={{ color: "black", fontWeight: "bold", fontSize: "11.9px", marginLeft: "15px", marginTop: "10px", marginBottom: "10px" }}>Related Category</h3>
+                        <h3 >Related Category</h3>
                         <p>Women</p>
                         <p>Women Activewear</p>
                         <p>Women Bitchewear</p>
                         <p>Women Coats</p>
                         <p>Women Jackets</p>
                         <p>Women Jeans</p>
-                        <p>Women Jumpsuits</p>
-                        <p>Women Knitwear</p>
-                        <p>Women Lingerie</p>
-                        <p>Women Loungewear</p>
-                        <p>Women Pants</p>
-                        <p>Women Shorts</p>
-                        <p>Women Skirt</p>
-                        <p>Women Suits</p>
-                        <p>Women Tops</p>
-                        <p>Women Clothing Sale</p>
-                        <p>Pre-Owned Women Clothing</p>
+                       
                     </div>
                     <div className='related'>
                         <h3 style={{ color: "black", fontWeight: "bold", fontSize: "11.9px", marginLeft: "15px", marginTop: "10px", marginBottom: "10px" }}>Related Searches</h3>
                         <p>Gucci Women Clothing</p>
                         <p>Burberry Women Clothing</p>
                         <p>Alexander Mcqueen Women Clothing</p>
-                        <p>Fendi Women Clothing</p>
-                        <p>Valentino Women Clothing</p>
-                        <p>Balenciaga Women Clothing</p>
-                        <p>Saint Laurent Women Clothing</p>
-                        <p>Prada Women Clothing</p>
-                        <p>Versace Women Clothing</p>
                     </div>
 
                 </div>
@@ -107,8 +91,8 @@ export const Womens = () => {
                         <div key={el.id} >
                         <img src={el.image} />
                         <h3 >{el.title}</h3>
-                        <p><span>$169(60% OFF)</span>-${el.price}</p>
-                        <p style={{ color: "#8E8E8E", fontWeight: "bold", fontSize: "11.9px", marginTop: "16px", marginBottom: "8px" }}>Compare 22 stores</p>
+                        <p>{"$"+el.price}</p>
+                       <Button>ADD  TO  BAG</Button>
                     </div></Link>
                     })}
                 </div>

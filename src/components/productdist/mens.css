@@ -10,43 +10,61 @@
 .productbox {
     /* border: 1px solid blue; */
     width: 75%;
-    gap: 5px;
+    gap:40px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
 }
 
 .productbox div {
+    /* border: 1px solid black; */
     text-align: center;
-    padding: 2px;
+    margin-bottom: 20px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 5px;
+    
+  
 }
 
+
 .productbox div img {
-    height: 250px;
-    width: 70%;
-    margin-left: 30px;
+    height: 150px;
+    width: 50%;
+    margin-left: 70px;
 }
 
 .productbox div h3 {
     font-size: 11.9px;
     margin-top:12px;
-    color: #8E8E8E;
+    color: black;
     font-weight:bolder
     
 }
 
 .productbox div p {
     margin-top: 16px;
-    font-size: 11.9px;
+    color:red;
+    font-size: 16px;
+    font-weight: 800;
+}
+.productbox div button{
+    background-color:black;
+    color: white;
+    font-size: 12px;
+    width: 70%;
+    
+}
+.productbox div button:hover{
+    background-color: black;
 }
 
-.productbox div p span {
-    color: #C00000;
-    font-size: 11.9px;
-    font-weight: bold;
+
+.filter{
+    display: flex;
+    margin-top: 28px;
 }
-
-
 .filterbox {
     /* border: 1px solid green; */
     width: 25%
@@ -67,6 +85,14 @@ margin-left: 15px;
     font-size: 13px;
     color: #8E8E8E;
 }
+.related h3{
+    color:black;
+    font-weight: bold;
+    font-size: 11.9px;
+     margin-left: 15px;
+      margin-top:10px;
+      margin-bottom: 10px;
+}
 .save_btn button{
     margin-left: 30px;
     border-radius:0px;
@@ -82,7 +108,7 @@ margin-left: 15px;
 color: white;
 }
 
-@media only screen and (max-width:380px) {
+@media all and (min-width:100px) and (max-width:380px) {
     .filterbox {
         display: none;
     }
@@ -92,14 +118,13 @@ color: white;
         width: 90%;
         gap: 5px;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     
     }
 
     .productbox div img {
-        height: 120px;
-        width: 70%;
-        margin-left: 30px;
+        height: 160px;
+        width: 55%;
     }
 
     .designerman{
@@ -113,3 +138,63 @@ color: white;
     }
 
 }
+
+@media all and (min-width:381px) and (max-width:750px) {
+    
+
+    .productbox {
+        margin: auto;
+        width: 90%;
+        gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 20px;
+    
+    }
+    
+.filter{
+display: grid;
+}
+.filterbox{
+    margin: auto;
+    width: 50%;
+}
+.related h3{
+    display: none;
+}
+.related p{
+    display: none;
+}
+
+.designerman{
+    margin-left:20px;
+    width:90%;
+    margin-top:24px;
+}
+.designerman h1{
+ font-size: 25px;
+}
+}
+
+@media all and (min-width:751px) and (max-width:1000px){
+    .productbox {
+        margin: auto;
+        width: 65%;
+        gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    
+    }
+
+    .designerman{
+        margin-left:20px;
+        width:90%;
+        margin-top:24px;
+        
+    }
+    .designerman h1{
+     font-size: 25px;
+    }
+}
+
+/* @media all and (min-width:100px) and (max-width:380px) */

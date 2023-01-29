@@ -48,7 +48,7 @@ if(location ||mens.length===0){
             </div>
 
             {/* /////////////////////// */}
-            <div className="filter" style={{ display: "flex", marginTop: "28px" }}>
+            <div className="filter">
 
                 <div  className="filterbox">
                     <h4>MODESENS/SHOP/MENS/CLOTHING</h4>
@@ -77,20 +77,14 @@ if(location ||mens.length===0){
                         <p>Men Bitchewear</p>
                         <p>Men Coats</p>
                         <p>Men Jackets</p>
-                        <p>Men Jeans</p>
-                        <p>Men Jeans</p>
+                       
                     </div>
                     <div className='related'>
                         <h3 style={{ color: "black", fontWeight: "bold", fontSize: "11.9px", marginLeft: "15px", marginTop: "10px", marginBottom: "10px" }}>Related Searches</h3>
                         <p>Gucci Men Clothing</p>
                         <p>Burberry Men Clothing</p>
                         <p>Alexander Mcqueen Men Clothing</p>
-                        <p>Fendi Women Clothing</p>
-                        <p>Valentino Men Clothing</p>
-                        <p>Balenciaga Men Clothing</p>
-                        <p>Saint Laurent Men Clothing</p>
-                        <p>Prada Men Clothing</p>
-                        <p>Versace Men Clothing</p>
+                       
                     </div>
 
                 </div>
@@ -101,8 +95,8 @@ if(location ||mens.length===0){
                             <div key={el.id} >
                             <img src={el.image} />
                             <h3 >{el.title}</h3>
-                            <p><span>$169(60% OFF)</span>-${el.price}</p>
-                            <p style={{ color: "#8E8E8E", fontWeight: "bold", fontSize: "11.9px", marginTop: "16px", marginBottom: "8px" }}>Compare 22 stores</p>
+                            <p>{"$"+el.price}</p>
+                       <Button>ADD  TO  BAG</Button>
                         </div></Link>
                     })}
                 </div>

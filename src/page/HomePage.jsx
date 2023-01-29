@@ -62,11 +62,11 @@ export const HomePage = () => {
       </Box>
 
       {/* New Partners and Designers */}
-      <Box textAlign={"center"}>
+      <Box textAlign={"center"} mt="30px">
         <Box fontSize={{ lg: "34px", md: "34px", sm: "34px" }}>
           Featured Partners
         </Box>
-        <Box fontSize={{ lg: "24px", md: "24px", sm: "24px" }} color="gray.400">
+        <Box fontSize={{ lg: "24px", md: "24px", sm: "24px" }} color="gray">
           Compare across our 500+ partner stores to find the products you want
           at the best price.
         </Box>
@@ -424,7 +424,7 @@ export const HomePage = () => {
                 w={{ lg: "100px", md: "100%", sm: "100%" }}
                 fontSize={{ lg: "20px", md: "20px", sm: "20px" }}
               >
-                <Text>sale</Text>
+                <Text>SALE</Text>
               </Box>
             </WrapItem>
             <WrapItem
@@ -696,12 +696,12 @@ export const HomePage = () => {
       </Box>
       <Box textAlign={"center"}>
         <Box>
-          <Box fontSize={{ lg: "34px", md: "34px", sm: "34px" }}>
+          <Box mt="20px" fontSize={{ lg: "34px", md: "34px", sm: "34px" }}>
             New To sale
           </Box>
           <Wrap
            mb="10px"
-            
+            mt="20px"
             // pt={{ lg: "10px", md: "10px", sm: "10px" }}
             // pb={{ lg: "10px", md: "10px", sm: "10px" }}
             bg="white"
@@ -724,6 +724,10 @@ export const HomePage = () => {
           <Box>
             {showStatus ? (
               <Button
+              mt="20px"
+              color="white"
+              bg="black"
+              _hover={{ bg: 'black' }}
                 onClick={() => {
                   setShow("auto");
                   setShowStatus(false);
@@ -733,6 +737,9 @@ export const HomePage = () => {
               </Button>
             ) : (
               <Button
+              color="white"
+              bg="black"
+              _hover={{ bg: 'black' }}
                 onClick={() => {
                   setShow("400px");
                   setShowStatus(true);
@@ -745,7 +752,7 @@ export const HomePage = () => {
           </Box>
         </Box>
       </Box>
-      <Box textAlign={"center"}>
+      <Box textAlign={"center"} mt="40px">
         <Box>
           <Box fontSize={{ lg: "34px", md: "34px", sm: "34px" }}>
             Special Offers
@@ -775,8 +782,9 @@ export const HomePage = () => {
           <Box>
             {showStatus ? (
               <Button 
-
-              borderRadius={0}
+              color="white"
+              bg="black"
+              _hover={{ bg: 'black' }}
                 onClick={() => {
                   setSee("auto");
                   setShowStatus(false);
@@ -786,6 +794,9 @@ export const HomePage = () => {
               </Button>
             ) : (
               <Button
+              color="white"
+              bg="black"
+              _hover={{ bg: 'black' }}
                 onClick={() => {
                   setSee("400px");
                   setShowStatus(true);
@@ -798,7 +809,7 @@ export const HomePage = () => {
           </Box>
         </Box>
       </Box>
-      <Box textAlign={"center"}>
+      <Box textAlign={"center"} mt="35px">
         <Box>
           <Box fontSize={{ lg: "34px", md: "34px", sm: "34px" }}>
             Trending Now
@@ -828,6 +839,9 @@ export const HomePage = () => {
           <Box>
             {showStatus ? (
               <Button
+              color="white"
+              bg="black"
+              _hover={{ bg: 'black' }}
                 onClick={() => {
                   setSee("auto");
                   setShowStatus(false);
@@ -837,6 +851,9 @@ export const HomePage = () => {
               </Button>
             ) : (
               <Button
+              color="white"
+              bg="black"
+              _hover={{ bg: 'black' }}
                 onClick={() => {
                   setSee("400px");
                   setShowStatus(true);
@@ -850,7 +867,7 @@ export const HomePage = () => {
         </Box>
       </Box>
       <Box>
-        <Box textAlign={"center"}>
+        <Box textAlign={"center"} mt="35px">
           <Box fontSize={{ lg: "34px", md: "34px", sm: "34px" }}>
             Recently Viewed
           </Box>
@@ -879,6 +896,9 @@ export const HomePage = () => {
           <Box>
             {showStatus ? (
               <Button
+              color="white"
+              bg="black"
+              _hover={{ bg: 'black' }}
                 onClick={() => {
                   setMore("auto");
                   setShowStatus(false);
@@ -888,6 +908,9 @@ export const HomePage = () => {
               </Button>
             ) : (
               <Button
+              color="white"
+              bg="black"
+              _hover={{ bg: 'black' }}
                 onClick={() => {
                   setMore("400px");
                   setShowStatus(true);
@@ -901,7 +924,7 @@ export const HomePage = () => {
         </Box>
       </Box>
       <Box>
-        <Box textAlign={"center"}  mb="10px">
+        <Box textAlign={"center"}  mb="10px" mt="35px">
           <Box fontSize={{ lg: "34px", md: "34px", sm: "34px" }}>
             Community Posts
           </Box>
@@ -932,7 +955,9 @@ export const HomePage = () => {
               alt=""
             />
           </Box>
-          <Button>VIEW ALL</Button>
+          <Button color="white"
+              bg="black"
+              _hover={{ bg: 'black' }}>VIEW ALL</Button>
         </Box>
       </Box>
       <Box
@@ -952,8 +977,9 @@ export const HomePage = () => {
           <Button
             fontSize={{ lg: "20px", md: "24px", sm: "24px" }}
             borderRadius={0}
-            bg={"black"}
             color="white"
+            bg="black"
+            _hover={{ bg: 'black' }}
           >
             DOWNLOAD NOW
           </Button>
@@ -974,8 +1000,9 @@ export const HomePage = () => {
           <Button
             fontSize={{ lg: "20px", md: "24px", sm: "24px" }}
             borderRadius={0}
-            bg={"black"}
             color="white"
+              bg="black"
+              _hover={{ bg: 'black' }}
           >
             INSTALL NOW
           </Button>

@@ -134,7 +134,7 @@ function Navbar() {
               icon={<HamburgerIcon />}
               variant="outline"
             />
-            <MenuList border={"1px solid red"}>
+            <MenuList>
               {navbarLink.map((i) => (
                <Link to={i}><MenuItem>{i}</MenuItem></Link>
               ))}

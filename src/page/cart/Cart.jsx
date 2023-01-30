@@ -56,7 +56,7 @@ export const Cart = () => {
   return (
     <>
       {cartData != [] && cartData.length > 0 ? (
-        <div className="main_cart_1">
+        <div className="main_cart_1" style={{border:"none"}}>
           <div style={{ fontSize: "24px" }} className="cart_heading">
             MODESENS CONCIERGE
           </div>
@@ -86,7 +86,7 @@ export const Cart = () => {
           </div>
         </div>
       ) : (
-        <div className="main_cart">
+        <div className="main_cart" style={{border:"none"}}>
           <div style={{ fontSize: "24px" }} className="cart_heading">
             MODESENS CONCIERGE
           </div>

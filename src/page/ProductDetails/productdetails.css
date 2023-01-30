@@ -168,7 +168,10 @@ body {
 }
 .viewer_ALSO_LIKED{
     display: grid;
-    grid-template-columns: repeat(4,281px);
+    gap:30px 30px;
+    margin:auto;
+    margin-left: 50px;
+    grid-template-columns: repeat(3,281px);
     grid-template-rows: repeat(2,441px);
 }
 .view_more_also_liked{
@@ -383,7 +386,7 @@ body {
       display: grid;
       grid-template-columns: repeat(2,281px);
       grid-template-rows: repeat(4,441px);
-      gap: 0% 15%;
+      gap: 5% 15%;
   }
   .view_more_also_liked{
       width: 100%;

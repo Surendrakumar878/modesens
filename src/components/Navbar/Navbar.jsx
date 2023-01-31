@@ -406,7 +406,7 @@ function Navbar() {
                <Link to="/adminlogin"> <Heading mt="30px" fontSize="12px">
                  Admin Login
                 </Heading></Link>
-                <Heading
+                {/* <Heading
                   onClick={() => {
                     localStorage.setItem("sts", JSON.stringify(false));
                   }}
@@ -415,7 +415,7 @@ function Navbar() {
                   cursor="pointer"
                 >
                   Logout
-                </Heading>{" "}
+                </Heading>{" "} */}
               </Box>
           </Box>
           <div>

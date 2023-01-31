@@ -56,10 +56,10 @@ if(location ||beauty.length===0){
              <div onClick={handleSort}style={{ marginLeft: "30px",fontSize: "13px",marginTop:"10px" }}>
                         <h3 style={{fontSize: "11.9px" ,fontWeight:"bold"}}>Price</h3>
                         <input type="radio" value="asc" name="sortBy" defaultChecked={sort === "asc"} style={{marginRight:"7px",marginTop:"5px"}}/>
-                    <label>Ascending</label>
+                    <label>Low to High</label>
                     <br />
                     <input type="radio" value="desc" name="sortBy" defaultChecked={sort === "desc"} style={{marginRight:"7px"}} />
-                    <label>Descending</label></div>
+                    <label>High to Low</label></div>
                     <div className="save_btn" style={{marginTop:"10px"}}>
                         <Button>SAVE MY SEARCH</Button></div>     
             <div className='related'>
@@ -86,8 +86,8 @@ if(location ||beauty.length===0){
                 <div key={el.id} >
                 <img src={el.image} />
                 <h3 >{el.title}</h3>
-                <p>{"$"+el.price}</p>
-                       <Button>ADD  TO  BAG</Button>
+                <p>{"₹"+el.price}</p>
+                 <Button>ADD  TO  BAG</Button>
             </div></Link>
             })}
         </div>

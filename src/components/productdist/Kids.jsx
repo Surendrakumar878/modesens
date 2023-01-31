@@ -50,16 +50,16 @@ export const Kids = () => {
                         <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" style={{ marginTop: "22px", width: "18px", height: "20px", marginRight: "40px" }} />
                     </div>
                     <div style={{ display: "flex", justifyContent: "space-between", marginTop: "5px" }}>
-                        <p style={{ color: "black", fontWeight: "bold", fontSize: "13px", marginLeft: "30px" }}>Sort By:</p>
+                        <p style={{ color: "red", fontWeight: "bold", fontSize: "13px", marginLeft: "30px" }}>Sort By:</p>
                         <p style={{ color: "black", fontWeight: "bold", fontSize: "13px", marginRight: "40px" }}>Reset</p>
                     </div>
                     <div onClick={handleSort} style={{ marginLeft: "30px", fontSize: "13px", marginTop: "10px" }}>
-                        <h3 style={{ fontSize: "11.9px", fontWeight: "bold" }}>Price</h3>
+                        <h3 style={{ fontSize: "11.9px", fontWeight: "bold" ,color:"red"}}>Price</h3>
                         <input type="radio" value="asc" name="sortBy" defaultChecked={sort === "asc"} style={{ marginRight: "7px", marginTop: "5px" }} />
-                        <label>Ascending</label>
+                        <label style={{fontWeight:"bold"}}>Low to High</label>
                         <br />
                         <input type="radio" value="desc" name="sortBy" defaultChecked={sort === "desc"} style={{ marginRight: "7px" }} />
-                        <label>Descending</label></div>
+                        <label style={{fontWeight:"bold"}}>High to Low</label></div>
                         <div className="save_btn" style={{marginTop:"10px"}}>
                         <Button>SAVE MY SEARCH</Button></div>     
                     <div className='related'>
@@ -87,7 +87,7 @@ export const Kids = () => {
                         <div key={el.id} >
                         <img src={el.image} />
                         <h3 >{el.title}</h3>
-                        <p>{"$"+el.price}</p>
+                        <p>{"₹"+el.price}</p>
                        <Button>ADD  TO  BAG</Button>
                     </div></Link>
                     })}

@@ -136,7 +136,7 @@ function Navbar() {
             />
             <MenuList>
               {navbarLink.map((i) => (
-               <Link to={i}><MenuItem>{i}</MenuItem></Link>
+               <Link to={i}><MenuItem>{i.toUpperCase()}</MenuItem></Link>
               ))}
             </MenuList>
           </Menu>

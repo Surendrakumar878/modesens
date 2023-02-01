@@ -364,6 +364,7 @@ function Navbar() {
               {token.length > 0 ? (
                 <Button
                   onClick={() => {
+                    localStorage.clear()
                     swal({
                       title: "Are you sure?",
                       text: "You really want to log out?",
@@ -383,7 +384,7 @@ function Navbar() {
                   
                 >Logout</Button>
               ) : (
-            <Button onClick={() => setModalShow(true)}>login</Button>
+            <Button onClick={() => setModalShow(true)}>Login</Button>
               )}
           
             </span>

@@ -20,7 +20,7 @@
     /* border: 1px solid black; */
     text-align: center;
     margin-bottom: 20px;
-    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
     padding-bottom: 10px;
     padding-top: 10px;
     border-radius: 5px;
@@ -71,7 +71,7 @@
 }
 
 .filter h4{
-    color: #8E8E8E;
+    color:grey;
     font-weight: bold;
     font-size: 13.5px;
     margin-left: 30px;
@@ -83,7 +83,8 @@ margin-left: 15px;
 .related p{
     margin-left:15px;
     font-size: 13px;
-    color: #8E8E8E;
+    color: #857e7e;
+    cursor: pointer;
 }
 .related h3{
     color:black;
@@ -109,9 +110,9 @@ color: white;
 }
 
 @media all and (min-width:100px) and (max-width:380px) {
-    .filterbox {
+    /* .filterbox {
         display: none;
-    }
+    } */
 
     .productbox {
         margin: auto;
@@ -136,6 +137,20 @@ color: white;
     .designerman h1{
      font-size: 25px;
     }
+
+    .filter{
+        display: grid;
+        }
+        .filterbox{
+            margin: auto;
+            width: 100%;
+        }
+        .related h3{
+            display: none;
+        }
+        .related p{
+            display: none;
+        }
 
 }
 

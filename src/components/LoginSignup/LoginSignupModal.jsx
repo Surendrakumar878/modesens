@@ -207,6 +207,7 @@ function LoginSignupModal(props) {
       .get("https://mocker-api.onrender.com/users")
       .then((res) => {
         let useravailable = res.data.filter((el) => {
+          localStorage.setItem("emailId",el.email)
           return el.email == email && el.password == Password;
         });
         console.log(useravailable);

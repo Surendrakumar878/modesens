@@ -8,7 +8,8 @@ import "./mens.css"
 
 const Mens = () => {
 const mens = useSelector((store) => store.AppReducer.data)
-    console.log(mens)
+    //console.log(mens)
+
     const [serachParams, setsearchParams] = useSearchParams();
     const initiasort = serachParams.getAll("sort")
     const dispatch = useDispatch()
@@ -39,7 +40,7 @@ if(location ||mens.length===0){
         setsearchParams(params)
     }, [setsearchParams, sort])
 
-    console.log(mens)
+    //console.log(mens)
     return (
         <div>
             <div className="designerman" >
@@ -48,6 +49,8 @@ if(location ||mens.length===0){
             </div>
 
             {/* /////////////////////// */}
+
+         {/* ------------------------------------------------fitering part----------------------------------------------- */}
             <div className="filter">
 
                 <div  className="filterbox">
@@ -60,6 +63,8 @@ if(location ||mens.length===0){
                         <p style={{ color: "red", fontWeight: "bold", fontSize: "13px", marginLeft: "30px" }}>Sort By:</p>
                         <p style={{ color: "black", fontWeight: "bold", fontSize: "13px", marginRight: "40px" }}>Reset</p>
                     </div>
+
+                    {/* -------------------------------------sort--------------------------------------- */}
                     <div onClick={handleSort}style={{ marginLeft: "30px",fontSize: "13px",marginTop:"10px" }}>
                         <h3 style={{fontSize: "11.9px" ,fontWeight:"bold",color:"red"}}>Price</h3>
                         <input type="radio" value="asc" name="sortBy" defaultChecked={sort === "asc"} style={{marginRight:"7px",marginTop:"5px"}}/>

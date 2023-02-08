@@ -24,6 +24,7 @@
     box-sizing: content-box;
     position: relative;
     outline: none;
+    font-weight: bold;
   }
   .tabs:not(:last-child){
     border-right: 1px solid rgba(0, 0, 0, 0.274);
@@ -99,3 +100,11 @@
     display: flex;
     justify-content: space-around;
   }
+
+ .grandtotal label{
+  font-weight: bold;
+ }
+
+ @media all and (min-width:100px) and (max-width:380px){
+
+ }

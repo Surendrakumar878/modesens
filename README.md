@@ -1,7 +1,7 @@
 # Coolmart
 ### An online eCommerce website Buy Streetwear Collection for Men & Women Online | Click&Buy.
 ### A collaborative project built by a team of 4 Member executed in 4 days
-
+### 🔗 Checkout [Deployed Link](https://cooolmart.vercel.app/) 
 # Features
 
 ### Login, Signup & Logout, and otp functionality

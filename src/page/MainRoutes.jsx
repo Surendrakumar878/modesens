@@ -18,6 +18,7 @@ import Login from './AdminPenal/Login'
 import Otp from './AdminPenal/Otp'
 import ProtectedRoute from './ProtectedRoute'
 import AdminLogin from './AdminLogin'
+import Tabs from "../components/productdist/checkout"
 export const MainRoutes = () => {
   return (
     <Routes>
@@ -30,6 +31,7 @@ export const MainRoutes = () => {
         <Route path='/womens' element={<Womens/>} />
 
         <Route path='/beauty' element={<Beauty/>} />
+        <Route path='/checkout' element={<Tabs/>} />
         <Route path='/kids' element={<Kids/>} />
         <Route path='/search' element={<SearchBar/>}/>
       

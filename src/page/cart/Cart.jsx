@@ -39,16 +39,17 @@ export const Cart = () => {
         text:"It seems you are not logged in. Login now!",
         icon:"warning"
       })
+      
     }
-    swal({
-      title: "Order Placed Successfully",
-      text: "Thank you for shopping with coolmart and being cool.",
-      icon: "success",
-      buttons: false,
-    });
-    dispatch(checkoutclear([]));
+    // swal({
+    //   title: "Order Placed Successfully",
+    //   text: "Thank you for shopping with coolmart and being cool.",
+    //   icon: "success",
+    //   buttons: false,
+    // });
+    // dispatch(checkoutclear([]));
     setTimeout(() => {
-      navigate("/");
+      navigate("/checkout");
     }, 2000);
   }
 

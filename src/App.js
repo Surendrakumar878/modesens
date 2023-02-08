@@ -6,12 +6,13 @@ import Navbar from './components/Navbar/Navbar';
 import { Footer } from "./components/Footer/Footer";
 import { Box } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
+import Tabs from "./components/productdist/checkout"
 
 
 function App() {
  return (
 <Box>
-
+{/* <Tabs/> */}
 <Navbar />
 <Link href="namefile" download="namefle" ></Link>
 <Box pt="100px">
